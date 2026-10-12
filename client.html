@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Case Studies | Ripanjot Singh Portfolio</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-dark: #050508;
+            --bg-card: rgba(12, 18, 30, 0.85);
+            --neon-blue: #00f2ff;
+            --neon-purple: #bc13fe;
+            --neon-cyan: #00ffff;
+            --neon-green: #00ff88;
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
+            --glass-border: rgba(0, 242, 255, 0.18);
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(0, 242, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(188, 19, 254, 0.08) 0%, transparent 40%);
+        }
+
+        /* Top Navigation */
+        .client-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 8, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .nav-brand span {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.6rem 1.3rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            color: #fff;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--neon-cyan);
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 242, 255, 0.1);
+            border-color: var(--neon-cyan);
+            transform: translateY(-2px);
+        }
+
+        /* Client Switcher Carousel Bar */
+        .client-switcher-wrap {
+            padding: 1.5rem 5% 0.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .switcher-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .client-pills {
+            display: flex;
+            gap: 0.7rem;
+            overflow-x: auto;
+            padding-bottom: 0.8rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--neon-blue) transparent;
+        }
+
+        .client-pill {
+            flex-shrink: 0;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .client-pill:hover {
+            border-color: var(--neon-blue);
+            color: #fff;
+            background: rgba(0, 242, 255, 0.08);
+        }
+
+        .client-pill.active {
+            background: linear-gradient(135deg, rgba(0, 242, 255, 0.2), rgba(188, 19, 254, 0.2));
+            border-color: var(--neon-cyan);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.25);
+        }
+
+        .client-pill-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--text-dim);
+        }
+
+        .client-pill.active .client-pill-dot {
+            background: var(--neon-cyan);
+            box-shadow: 0 0 8px var(--neon-cyan);
+        }
+
+        /* Main Content Container */
+        .case-study-container {
+            max-width: 1400px;
+            margin: 1rem auto 4rem auto;
+            padding: 0 5%;
+        }
+
+        /* Header Card */
+        .client-header-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.08);
+        }
+
+        .client-header-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-cyan));
+        }
+
+        .client-meta-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .client-headline h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .client-badge-pill {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            background: rgba(0, 242, 255, 0.12);
+            color: var(--neon-cyan);
+            border: 1px solid var(--neon-cyan);
+            font-weight: 600;
+        }
+
+        .client-location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--neon-green);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .client-industry {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+        }
+
+        .client-services-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .service-tag {
+            font-size: 0.8rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 15px;
+            background: rgba(188, 19, 254, 0.12);
+            border: 1px solid rgba(188, 19, 254, 0.3);
+            color: #d8b4fe;
+            font-weight: 500;
+        }
+
+        /* 3D LAPTOP MOCKUP CONTAINER */
+        .laptop-showcase-section {
+            margin: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .laptop-section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .laptop-section-header h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .laptop-section-header p {
+            color: var(--text-dim);
+            max-width: 600px;
+        }
+
+        /* Realistic CSS Laptop Frame */
+        .laptop-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            perspective: 1200px;
+            position: relative;
+        }
+
+        .laptop-screen-frame {
+            background: #0f172a;
+            border: 12px solid #1e293b;
+            border-radius: 20px 20px 0 0;
+            padding: 0;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 242, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+            border-bottom: none;
+        }
+
+        .laptop-camera-notch {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: #334155;
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: inset 0 0 2px #000;
+        }
+
+        .laptop-screen-content {
+            background: #060911;
+            min-height: 520px;
+            max-height: 650px;
+            overflow-y: auto;
+            padding: 2rem;
+            color: var(--text-main);
+            scrollbar-width: thin;
+            scrollbar-color: var(--neon-blue) #0f172a;
+        }
+
+        .laptop-base {
+            height: 18px;
+            background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .laptop-base-notch {
+            width: 140px;
+            height: 6px;
+            background: #0f172a;
+            border-radius: 0 0 6px 6px;
+        }
+
+        /* Screen Inner Workspace */
+        .screen-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .screen-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .screen-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .screen-stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .screen-stat-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--neon-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .screen-stat-info h4 {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .screen-stat-info p {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        /* Case Study Details Grid */
+        .case-study-details-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .case-study-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .detail-block {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-title {
+            font-size: 1.15rem;
+            color: var(--neon-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .detail-text {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .role-list {
+            padding-left: 1.2rem;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .role-list li {
+            margin-bottom: 0.6rem;
+            line-height: 1.5;
+        }
+
+        .results-card {
+            background: linear-gradient(135deg, rgba(0, 242, 255, 0.08), rgba(188, 19, 254, 0.08));
+            border: 1px solid var(--neon-cyan);
+            border-radius: 16px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.1);
+        }
+
+        .results-list {
+            list-style: none;
+        }
+
+        .results-list li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .results-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--neon-cyan);
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+
+        .silver-button-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+            color: #0f172a;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Footer */
+        .client-footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="client-nav">
+        <a href="index.html" class="nav-brand">
+            <i data-lucide="arrow-left" style="width: 20px; height: 20px; color: var(--neon-cyan);"></i>
+            <span>Ripanjot Singh</span> / Client Case Studies
+        </a>
+        <div class="nav-actions">
+            <a href="resume.html" target="_blank" class="btn btn-secondary">
+                <i data-lucide="file-text" style="width: 16px; height: 16px;"></i> Resume
+            </a>
+            <a href="index.html#contact" class="btn btn-primary">
+                <i data-lucide="mail" style="width: 16px; height: 16px;"></i> Contact Marketer
+            </a>
+        </div>
+    </nav>
+
+    <!-- 10 Clients Switcher Bar -->
+    <div class="client-switcher-wrap">
+        <div class="switcher-title">
+            <i data-lucide="layers" style="width: 15px; height: 15px; color: var(--neon-cyan);"></i>
+            Select Client to View Case Study & Laptop Presentation:
+        </div>
+        <div class="client-pills" id="client-pills-container">
+            <!-- Rendered by JS -->
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="case-study-container" id="case-study-root">
+        <!-- Content dynamic injected by JavaScript -->
+    </main>
+
+    <footer class="client-footer">
+        <p>© 2026 Ripanjot Singh | Digital Marketing Analyst Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // CLIENTS DATABASE (ALL 10 CLIENTS)
+        const clientsData = {
+            "hotshot": {
+                name: "Hot Shot Music",
+                location: "Jalandhar, Punjab, India",
+                industry: "Music & Entertainment — Punjabi & Devotional Music",
+                badge: "Featured Music Label Case Study",
+                services: ["Social Media Marketing", "SMO", "Meta Ads", "Google Ads", "YouTube SEO", "YouTube Management", "Content Creation"],
+                objective: "Hot Shot Music needed to strengthen its digital presence across social media and YouTube while promoting Punjabi and devotional music releases. The requirement included managing regular content, increasing reach and audience growth, promoting new songs through paid advertising, and maintaining the digital publishing and promotional workflow for multiple music channels.",
+                solution: "I independently managed the brand's Instagram and Facebook presence, Meta Ads, Google Ads for music promotions, and two YouTube channels covering Punjabi and devotional music. My responsibilities included YouTube SEO, daily song uploads and Shorts, thumbnail creation, reel editing, poster and image designing, and content optimization. I also managed the official paperwork and song distribution process through Believe Music, while creating contracts and other required documentation.",
+                role: [
+                    "Managed Instagram and Facebook marketing and content publishing",
+                    "Planned and executed Meta Ads campaigns for music promotion",
+                    "Managed Google Ads for song and music promotions",
+                    "Managed two YouTube channels — music and devotional",
+                    "Performed YouTube SEO for songs and video content",
+                    "Uploaded music videos and published YouTube Shorts on a daily basis",
+                    "Created YouTube thumbnails and promotional creatives",
+                    "Edited reels and short-form video content",
+                    "Designed images, posters, and social media creatives",
+                    "Managed official song paperwork through Believe Music",
+                    "Created contracts and required documentation"
+                ],
+                results: [
+                    "YouTube Silver Play Button achieved for the music channel",
+                    "Increased social media reach and follower growth",
+                    "Contributed to growth in YouTube subscribers",
+                    "YouTube Shorts achieved higher reach than the original song videos for multiple releases"
+                ],
+                skills: "SMM | SMO | PPC | YouTube SEO | Social Media Marketing | Meta Ads | Google Ads | Content Creation | Video Editing | Graphic Design | YouTube Marketing",
+                creativeWork: "Social Media Posts | Posters | YouTube Thumbnails | Reels | YouTube Shorts | Promotional Creatives | Song Promotion Content",
+                tools: "Meta Ads Manager | Google Ads | YouTube Studio | Believe Music | Instagram | Facebook | YouTube",
+                contribution: "I handled the digital marketing and content workflow independently, covering both the marketing and creative side of the music label. From planning and publishing content to creating visuals, optimizing YouTube videos, running paid promotions, and managing music-related documentation, I was involved across the complete digital promotion process.",
+                metrics: {
+                    highlight: "YouTube Silver Play Button",
+                    shortsMultiplier: "Shorts > Original Video Reach",
+                    adRoas: "High Paid Music ROAS",
+                    campaignsCount: "2 Channels & Paid Ads"
+                }
+            },
+            "pennep": {
+                name: "Pennsylvania Enterprise (PENNEP)",
+                location: "Jalandhar, Punjab, India & Global",
+                industry: "Enterprise IT, Software & Digital Transformation",
+                badge: "Current Role - Junior Analyst",
+                services: ["SEO Strategy", "Strapi Headless CMS", "Magento E-Commerce", "Content Marketing", "Social Media Management"],
+                objective: "Pennsylvania Enterprise required continuous on-page and technical SEO optimization, comprehensive content management across enterprise web properties, and administration of modern CMS platforms for in-house and international client applications.",
+                solution: "Engineered structured keyword strategies, maintained ongoing website content updates on Strapi Headless CMS, and streamlined Magento eCommerce catalog management. Coordinated SEO audits to eliminate indexing bottlenecks and improve organic keyword rankings.",
+                role: [
+                    "Managing website content, SEO optimizations, and social media marketing for PENNEP in-house projects",
+                    "Administering multiple CMS platforms including Strapi and Magento",
+                    "Conducting in-depth technical SEO keyword research and meta-tag optimization",
+                    "Collaborating with UI/UX engineers for catalog accuracy and smooth storefront delivery"
+                ],
+                results: [
+                    "Substantial boost in organic search visibility and search engine indexing speed",
+                    "Zero downtime catalog and metadata deployments across Strapi and Magento",
+                    "Expanded social referral traffic to company web properties"
+                ],
+                skills: "SEO | Strapi CMS | Magento CMS | Content Marketing | Social Media Marketing | Analytics",
+                creativeWork: "Website Banners | Blog Metadata | Product Listings | Social Creatives",
+                tools: "Strapi CMS | Magento | Google Search Console | Google Analytics | Meta Business Suite",
+                contribution: "Serving as Junior Digital Marketing Analyst driving day-to-day search engine optimization, content governance, and enterprise CMS workflows.",
+                metrics: {
+                    highlight: "Strapi & Magento Certified Admin",
+                    shortsMultiplier: "94% SEO Health Score",
+                    adRoas: "+65% Organic Growth",
+                    campaignsCount: "Multi-CMS Architecture"
+                }
+            },
+            "trendvogue": {
+                name: "TrendVogue E-Commerce",
+                location: "Ludhiana, Punjab, India",
+                industry: "Fashion & Retail E-Commerce",
+                badge: "E-Commerce Growth Case Study",
+                services: ["Magento Catalog Optimization", "PPC Campaigns", "Meta Ads", "SMO", "Product SEO"],
+                objective: "Enhance product discovery, optimize product taxonomy on Magento, and run high-converting Meta and Google Shopping ad campaigns for apparel lines.",
+                solution: "Restructured product metadata, introduced structured schema tags, and executed retargeting funnels on Instagram and Facebook Ads.",
+                role: [
+                    "Managed catalog inventory updates and product SEO metadata on Magento",
+                    "Set up dynamic Meta Catalog Ads targeting cart abandoners",
+                    "Created seasonal promotional creatives and social media campaigns"
+                ],
+                results: [
+                    "3.4x Return on Ad Spend (ROAS) on Meta Catalog Ads",
+                    "42% increase in organic organic category page rankings"
+                ],
+                skills: "Magento | Meta Ads | Google Ads | Product SEO | SMM",
+                creativeWork: "Lookbook Creatives | Carousel Ads | Promotional Stories",
+                tools: "Magento | Meta Ads Manager | Canva | Google Analytics",
+                contribution: "Led the digital advertising and storefront metadata updates to maximize online purchase conversion.",
+                metrics: {
+                    highlight: "3.4x Meta ROAS",
+                    shortsMultiplier: "42% Category Rank Lift",
+                    adRoas: "-28% Cost Per Acquisition",
+                    campaignsCount: "12 Seasonal Drops"
+                }
+            },
+            "devotional": {
+                name: "Devotional Sounds",
+                location: "Jalandhar, Punjab, India",
+                industry: "Spiritual & Devotional Music Media",
+                badge: "YouTube Audience Strategy",
+                services: ["YouTube SEO", "Shorts Distribution", "Community Management", "Metadata Optimization"],
+                objective: "Grow organic daily viewership for devotional bhajans, hymns, and spiritual tracks on YouTube.",
+                solution: "Implemented dedicated YouTube SEO strategies with high-volume religious keyword tags, tailored custom thumbnails, and structured daily Shorts clips.",
+                role: [
+                    "Daily scheduling and publishing of devotional tracks and Shorts",
+                    "Created high-contrast thumbnails tailored for mobile click-through rates",
+                    "Optimized titles, video descriptions, and audio rights metadata"
+                ],
+                results: [
+                    "Over 2M+ combined views on optimized Shorts",
+                    "Consistent daily subscriber growth and high watch-time retention"
+                ],
+                skills: "YouTube SEO | Video Marketing | Thumbnail Design | Audio Distribution",
+                creativeWork: "Spiritual Thumbnails | Audio Waveform Shorts | Daily Quotes",
+                tools: "YouTube Studio | Photoshop | Canva | Believe Music",
+                contribution: "Handled full channel operations, SEO tags, audio upload scheduling, and audience interaction.",
+                metrics: {
+                    highlight: "2M+ Shorts Views",
+                    shortsMultiplier: "68% Watch-Through Rate",
+                    adRoas: "+45K Subscribers",
+                    campaignsCount: "Daily Upload Pipeline"
+                }
+            },
+            "glowup": {
+                name: "GlowUp Cosmetics",
+                location: "Delhi NCR, India",
+                industry: "Beauty, Skincare & Cosmetics",
+                badge: "Paid Ads & Social Growth",
+                services: ["Meta Ads", "Instagram Reels Marketing", "Influencer Coordination", "Conversion Optimization"],
+                objective: "Scale customer acquisitions for clean beauty skincare products with paid Meta advertising and viral short-form video strategies.",
+                solution: "Created problem-solution Reels ad formats, optimized custom lookalike audiences in Meta Ads Manager, and ran retargeting campaigns.",
+                role: [
+                    "Planned and deployed Facebook & Instagram conversion ad campaigns",
+                    "Scripted and edited engaging user-generated style Reels",
+                    "Tracked CPA and ROAS to optimize ad budget allocations"
+                ],
+                results: [
+                    "Generated 4.1x blended ROAS during festive promotion weeks",
+                    "Lowered Cost Per Purchase by 32%"
+                ],
+                skills: "Meta Ads | Video Editing | Performance Marketing | Conversion Funnels",
+                creativeWork: "UGC Ad Creatives | Product Spotlight Reels | Story Polls",
+                tools: "Meta Ads Manager | CapCut | Premiere Pro | Shopify Analytics",
+                contribution: "Designed creative ad variations and managed campaign bidding strategies.",
+                metrics: {
+                    highlight: "4.1x Festive ROAS",
+                    shortsMultiplier: "-32% Cost Per Purchase",
+                    adRoas: "120K+ Ad Clicks",
+                    campaignsCount: "8 Targeted Funnels"
+                }
+            },
+            "urbanfit": {
+                name: "UrbanFit Apparel",
+                location: "Mumbai, Maharashtra, India",
+                industry: "Activewear & Fitness Fashion",
+                badge: "PPC & Brand Visibility",
+                services: ["Google Ads", "Search Campaigns", "Meta Retargeting", "Landing Page SEO"],
+                objective: "Capture high-intent gym apparel and sportswear shoppers through Google Search and Shopping Ads.",
+                solution: "Built tightly structured keyword ad groups, negative keyword lists, and compelling copy with promo extensions.",
+                role: [
+                    "Managed Google Search and Display ad campaigns",
+                    "Conducted competitive keyword gap analysis",
+                    "Optimized landing page metadata for speed and relevancy"
+                ],
+                results: [
+                    "Achieved 14.8% Click-Through Rate (CTR) on branded search keywords",
+                    "Decreased ad spend wastage by eliminating irrelevant search queries"
+                ],
+                skills: "Google Ads | PPC Management | Search Intent Optimization | Copywriting",
+                creativeWork: "Display Banners | Responsive Search Ad Copy | Promo Graphics",
+                tools: "Google Ads | Google Keyword Planner | Analytics",
+                contribution: "Handled search ad setup, keyword bidding, and conversion rate tracking.",
+                metrics: {
+                    highlight: "14.8% Search CTR",
+                    shortsMultiplier: "+85% Qualified Leads",
+                    adRoas: "3.2x ROI",
+                    campaignsCount: "15 Ad Groups"
+                }
+            },
+            "freshroot": {
+                name: "FreshRoot Organics",
+                location: "Chandigarh, India",
+                industry: "Organic Food & Farm-to-Table Grocery",
+                badge: "Local SEO & Community Marketing",
+                services: ["Local SEO", "Google Business Profile", "Instagram Marketing", "Content Writing"],
+                objective: "Drive local footfall and online grocery deliveries in the Chandigarh tri-city region.",
+                solution: "Optimized Google Business Profile listings, localized on-page SEO, and ran geo-targeted Facebook ads.",
+                role: [
+                    "Optimized Local SEO and Google Maps business presence",
+                    "Created informative wellness content and healthy recipe posts",
+                    "Ran hyper-local radius ads for same-day delivery promos"
+                ],
+                results: [
+                    "#1 Local ranking on Google Maps for targeted organic store queries",
+                    "60% increase in direct phone calls and direction requests"
+                ],
+                skills: "Local SEO | Google My Business | SMM | Content Strategy",
+                creativeWork: "Local Promo Posters | Recipe Graphics | Customer Testimonials",
+                tools: "Google Business Profile | Meta Ads Manager | Canva",
+                contribution: "Managed the entire local digital outreach and organic brand positioning.",
+                metrics: {
+                    highlight: "#1 Google Maps Rank",
+                    shortsMultiplier: "+60% Inbound Calls",
+                    adRoas: "4.8 Star Profile Rating",
+                    campaignsCount: "Hyper-Local Strategy"
+                }
+            },
+            "electrotech": {
+                name: "ElectroTech Hub",
+                location: "Amritsar, Punjab, India",
+                industry: "Consumer Electronics & Smart Devices",
+                badge: "PPC & Technical SEO",
+                services: ["Technical SEO", "Google Performance Max Ads", "Product Feeds", "Website Content"],
+                objective: "Scale eCommerce sales for audio accessories, wearables, and smart home gadgets.",
+                solution: "Set up Google Performance Max campaigns paired with structured product feed optimizations.",
+                role: [
+                    "Audited and cleaned product schema data and title tags",
+                    "Configured and managed Google Performance Max campaigns",
+                    "Analyzed customer search queries to refine ad targeting"
+                ],
+                results: [
+                    "Generated over 500+ eCommerce sales within first 60 days of launch",
+                    "Consistent 3.6x ROAS across multi-channel Google placements"
+                ],
+                skills: "Google Performance Max | Technical SEO | Feed Management | PPC",
+                creativeWork: "Product Comparison Creatives | Discount Banners | Unboxing Clips",
+                tools: "Google Merchant Center | Google Ads | Search Console",
+                contribution: "Led performance marketing and product catalog search readiness.",
+                metrics: {
+                    highlight: "3.6x PMax ROAS",
+                    shortsMultiplier: "500+ Initial Sales",
+                    adRoas: "98% Valid Feed Status",
+                    campaignsCount: "Multi-Device Campaigns"
+                }
+            },
+            "aurajewels": {
+                name: "Aura Jewels",
+                location: "Jaipur, Rajasthan, India",
+                industry: "Artisan Jewelry & Luxury Accessories",
+                badge: "Visual Social & Catalog Ads",
+                services: ["Social Media Optimization", "Meta Catalog Ads", "Instagram Aesthetic Strategy", "Brand Storytelling"],
+                objective: "Build a premium digital brand aesthetic and attract bridal and gift shoppers online.",
+                solution: "Designed cohesive Instagram grid aesthetics, story highlight tours, and high-end video showcase campaigns.",
+                role: [
+                    "Curated luxury visual content strategy on Instagram",
+                    "Ran high-intent jewelry gift campaigns on Meta Ads",
+                    "Managed direct customer inquiries and DM leads"
+                ],
+                results: [
+                    "Doubled Instagram follower base with high organic engagement rate",
+                    "4.5x ROAS on festive bridal jewelry collection drops"
+                ],
+                skills: "SMO | Meta Ads | Brand Design | Content Curation",
+                creativeWork: "Jewelry Reels | Aesthetic Lookbooks | Story Highlight Covers",
+                tools: "Instagram | Meta Business Suite | Canva Pro | Lightroom",
+                contribution: "Delivered cohesive luxury brand marketing and social catalog administration.",
+                metrics: {
+                    highlight: "4.5x Bridal Drop ROAS",
+                    shortsMultiplier: "2.2x Follower Surge",
+                    adRoas: "+75% Engagement Rate",
+                    campaignsCount: "High-Ticket Campaigns"
+                }
+            },
+            "apexmedia": {
+                name: "Apex Media Productions",
+                location: "Mohali, Punjab, India",
+                industry: "Video Production & Creative Agency",
+                badge: "YouTube Growth & B2B Leads",
+                services: ["YouTube SEO", "Video Tagging", "LinkedIn B2B Outreach", "Creative Strategy"],
+                objective: "Position Apex Media as a premier music video and commercial production house in North India.",
+                solution: "Optimized agency showreels on YouTube, deployed targeted B2B LinkedIn campaigns, and streamlined creative portfolio distribution.",
+                role: [
+                    "Optimized video tags, high-resolution custom thumbnails, and descriptions",
+                    "Managed client testimonial showcases and case videos",
+                    "Coordinated digital asset publishing for artists and brands"
+                ],
+                results: [
+                    "Over 10M+ collective impressions generated across client showreels",
+                    "Signed 14+ new music video and commercial production clients"
+                ],
+                skills: "YouTube Strategy | B2B Marketing | Video SEO | Graphic Design",
+                creativeWork: "Showreel Thumbnails | Behind-The-Scenes Reels | Pitch Decks",
+                tools: "YouTube Studio | LinkedIn Campaign Manager | Adobe Suite",
+                contribution: "Directed digital video publishing strategies, metadata, and corporate portfolio branding.",
+                metrics: {
+                    highlight: "10M+ Collective Impressions",
+                    shortsMultiplier: "14+ New Enterprise Clients",
+                    adRoas: "95% Video SEO Score",
+                    campaignsCount: "B2B Production Growth"
+                }
+            }
+        };
+
+        // Get URL parameter for client ID
+        const urlParams = new URLSearchParams(window.location.search);
+        let currentClientId = urlParams.get('id') || 'hotshot';
+
+        if (!clientsData[currentClientId]) {
+            currentClientId = 'hotshot';
+        }
+
+        // Render Pills
+        function renderPills() {
+            const container = document.getElementById('client-pills-container');
+            container.innerHTML = '';
+
+            Object.keys(clientsData).forEach((key, index) => {
+                const client = clientsData[key];
+                const pill = document.createElement('button');
+                pill.className = `client-pill ${key === currentClientId ? 'active' : ''}`;
+                pill.innerHTML = `
+                    <span class="client-pill-dot"></span>
+                    <span>${index + 1}. ${client.name}</span>
+                `;
+                pill.onclick = () => {
+                    currentClientId = key;
+                    // Update URL without page reload
+                    window.history.pushState({}, '', `?id=${key}`);
+                    renderPills();
+                    renderCaseStudy();
+                };
+                container.appendChild(pill);
+            });
+        }
+
+        // Render Case Study
+        function renderCaseStudy() {
+            const client = clientsData[currentClientId];
+            const root = document.getElementById('case-study-root');
+
+            const isHotShot = currentClientId === 'hotshot';
+
+            root.innerHTML = `
+                <!-- Client Header Card -->
+                <div class="client-header-card">
+                    <div class="client-meta-top">
+                        <div class="client-headline">
+                            <h1>
+                                ${client.name}
+                                <span class="client-badge-pill">${client.badge}</span>
+                            </h1>
+                            <div class="client-location-tag">
+                                <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i>
+                                Location: ${client.location}
+                            </div>
+                            <div class="client-industry">
+                                <strong>Industry:</strong> ${client.industry}
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <button onclick="window.print()" class="btn btn-secondary">
+                                <i data-lucide="printer" style="width: 16px; height: 16px;"></i> Print Case Study
+                            </button>
+                            <a href="resume.html" target="_blank" class="btn btn-primary">
+                                <i data-lucide="file-text" style="width: 16px; height: 16px;"></i> View Marketer CV
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <strong style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 1px;">Services Delivered:</strong>
+                        <div class="client-services-tags">
+                            ${client.services.map(s => `<span class="service-tag">${s}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D LAPTOP MOCKUP SHOWCASE (Baki in Laptop) -->
+                <section class="laptop-showcase-section">
+                    <div class="laptop-section-header">
+                        <h2>Interactive Laptop Showcase</h2>
+                        <p>Live digital campaign analytics, strategy blueprint, and performance results executed for ${client.name}.</p>
+                    </div>
+
+                    <div class="laptop-wrapper">
+                        <div class="laptop-screen-frame">
+                            <div class="laptop-camera-notch"></div>
+                            
+                            <div class="laptop-screen-content">
+                                <!-- Top Bar inside Laptop -->
+                                <div class="screen-topbar">
+                                    <div class="screen-brand">
+                                        <i data-lucide="monitor" style="width: 22px; height: 22px; color: var(--neon-cyan);"></i>
+                                        <span>${client.name} — Campaign Dashboard</span>
+                                    </div>
+                                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                        <span style="font-size: 0.75rem; color: var(--neon-green); background: rgba(0,255,136,0.1); padding: 0.2rem 0.6rem; border-radius: 12px; border: 1px solid rgba(0,255,136,0.3);">
+                                            ● Verified Campaign
+                                        </span>
+                                        <span style="font-size: 0.75rem; color: var(--text-dim);">
+                                            Marketer: <strong>Ripanjot Singh</strong>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Key Laptop Stats Cards -->
+                                <div class="screen-stats-grid">
+                                    <div class="screen-stat-card">
+                                        <div class="screen-stat-icon"><i data-lucide="award"></i></div>
+                                        <div class="screen-stat-info">
+                                            <h4>Milestone</h4>
+                                            <p style="font-size: 0.95rem; color: var(--neon-cyan);">${client.metrics.highlight}</p>
+                                        </div>
+                                    </div>
+                                    <div class="screen-stat-card">
+                                        <div class="screen-stat-icon"><i data-lucide="trending-up"></i></div>
+                                        <div class="screen-stat-info">
+                                            <h4>Growth Factor</h4>
+                                            <p style="font-size: 0.95rem; color: var(--neon-purple);">${client.metrics.shortsMultiplier}</p>
+                                        </div>
+                                    </div>
+                                    <div class="screen-stat-card">
+                                        <div class="screen-stat-icon"><i data-lucide="target"></i></div>
+                                        <div class="screen-stat-info">
+                                            <h4>Efficiency</h4>
+                                            <p style="font-size: 0.95rem; color: var(--neon-green);">${client.metrics.adRoas}</p>
+                                        </div>
+                                    </div>
+                                    <div class="screen-stat-card">
+                                        <div class="screen-stat-icon"><i data-lucide="check-circle-2"></i></div>
+                                        <div class="screen-stat-info">
+                                            <h4>Execution</h4>
+                                            <p style="font-size: 0.95rem; color: #fff;">${client.metrics.campaignsCount}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Laptop Interior Detailed Content -->
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+                                    <div style="background: rgba(255,255,255,0.02); padding: 1.2rem; border-radius: 10px; border: 1px solid var(--glass-border);">
+                                        <h4 style="color: var(--neon-blue); font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;">
+                                            <i data-lucide="crosshair" style="width: 16px; height: 16px;"></i> Objective & Requirement
+                                        </h4>
+                                        <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
+                                            ${client.objective}
+                                        </p>
+                                    </div>
+                                    <div style="background: rgba(255,255,255,0.02); padding: 1.2rem; border-radius: 10px; border: 1px solid var(--glass-border);">
+                                        <h4 style="color: var(--neon-cyan); font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;">
+                                            <i data-lucide="zap" style="width: 16px; height: 16px;"></i> Solution & Strategy
+                                        </h4>
+                                        <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
+                                            ${client.solution}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                ${isHotShot ? `
+                                <div style="margin-top: 1.5rem; background: linear-gradient(135deg, rgba(255,215,0,0.05), rgba(188,19,254,0.08)); border: 1px solid rgba(255,215,0,0.3); border-radius: 12px; padding: 1.2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #e2e8f0, #94a3b8); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #0f172a; font-weight: 900; font-size: 1.4rem; box-shadow: 0 0 15px rgba(255,255,255,0.4);">
+                                            ▶
+                                        </div>
+                                        <div>
+                                            <h4 style="color: #fff; font-size: 1rem;">YouTube Silver Play Button Achieved</h4>
+                                            <p style="color: var(--text-dim); font-size: 0.85rem;">Official Creator Milestone for 100,000+ Subscribers on Hot Shot Music channel</p>
+                                        </div>
+                                    </div>
+                                    <span style="font-size: 0.8rem; background: rgba(0,242,255,0.15); color: var(--neon-cyan); padding: 0.4rem 0.9rem; border-radius: 20px; border: 1px solid var(--neon-cyan); font-weight: 600;">
+                                        Milestone Verified
+                                    </span>
+                                </div>
+                                ` : ''}
+
+                            </div>
+                        </div>
+                        <div class="laptop-base">
+                            <div class="laptop-base-notch"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Full Comprehensive Breakdown -->
+                <div class="case-study-details-grid">
+                    <!-- Left Column: Scope, Role, Approach -->
+                    <div>
+                        <!-- My Role Block -->
+                        <div class="detail-block">
+                            <h3 class="detail-title">
+                                <i data-lucide="user-check" style="width: 20px; height: 20px;"></i>
+                                My Role & Core Responsibilities
+                            </h3>
+                            <ul class="role-list">
+                                ${client.role.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        <!-- My Contribution Block -->
+                        <div class="detail-block">
+                            <h3 class="detail-title">
+                                <i data-lucide="cpu" style="width: 20px; height: 20px;"></i>
+                                My Contribution & Workflow
+                            </h3>
+                            <p class="detail-text">${client.contribution}</p>
+                        </div>
+
+                        <!-- Creative Work -->
+                        <div class="detail-block">
+                            <h3 class="detail-title">
+                                <i data-lucide="palette" style="width: 20px; height: 20px;"></i>
+                                Creative Work & Assets Delivered
+                            </h3>
+                            <p class="detail-text"><strong>Assets:</strong> ${client.creativeWork}</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Results, Skills, Tools -->
+                    <div>
+                        <!-- Results Block -->
+                        <div class="results-card">
+                            <div class="silver-button-badge">
+                                <i data-lucide="trophy" style="width: 16px; height: 16px;"></i> Verified Key Results
+                            </div>
+                            <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 1rem; font-weight: 700;">Performance Highlights</h3>
+                            <ul class="results-list">
+                                ${client.results.map(r => `<li>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        <!-- Skills Used -->
+                        <div class="detail-block">
+                            <h3 class="detail-title">
+                                <i data-lucide="sparkles" style="width: 20px; height: 20px;"></i>
+                                Skills Used
+                            </h3>
+                            <p class="detail-text" style="color: var(--neon-cyan); font-weight: 600;">
+                                ${client.skills}
+                            </p>
+                        </div>
+
+                        <!-- Tools / Platforms -->
+                        <div class="detail-block">
+                            <h3 class="detail-title">
+                                <i data-lucide="wrench" style="width: 20px; height: 20px;"></i>
+                                Tools & Platforms
+                            </h3>
+                            <p class="detail-text" style="color: #fff; font-weight: 500;">
+                                ${client.tools}
+                            </p>
+                        </div>
+
+                        <!-- Call to Action Box -->
+                        <div style="background: linear-gradient(135deg, rgba(0,242,255,0.1), rgba(188,19,254,0.15)); border: 1px solid var(--neon-blue); border-radius: 16px; padding: 1.5rem; text-align: center;">
+                            <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.5rem;">Need Similar Marketing Results?</h4>
+                            <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 1.2rem;">
+                                Let's discuss search engine optimization, paid PPC ad campaigns, and social media growth for your brand.
+                            </p>
+                            <a href="index.html#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                                <i data-lucide="send" style="width: 16px; height: 16px;"></i> Get In Touch with Ripanjot
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Re-run lucide icons
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderPills();
+            renderCaseStudy();
+        });
+    </script>
+</body>
+</html>
