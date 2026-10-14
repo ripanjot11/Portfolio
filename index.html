@@ -1192,6 +1192,200 @@
                 padding: 20px;
             }
         }
+    
+        /* === IMPRESSIVE SKILLS SECTION ENHANCEMENTS === */
+        .skills-toolbar-wrap {
+            max-width: 900px;
+            margin: 0 auto 2.5rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .skills-filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+        }
+
+        .skill-filter-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--glass-border);
+            color: var(--text-dim);
+            padding: 0.55rem 1.1rem;
+            border-radius: 24px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .skill-filter-btn:hover {
+            color: #fff;
+            border-color: var(--neon-blue);
+            background: rgba(0, 242, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .skill-filter-btn.active {
+            background: linear-gradient(135deg, rgba(0, 242, 255, 0.2), rgba(112, 0, 255, 0.25));
+            border-color: var(--neon-blue);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+        }
+
+        .skills-search-box {
+            position: relative;
+            width: 100%;
+            max-width: 520px;
+        }
+
+        .skills-search-box input {
+            width: 100%;
+            background: rgba(10, 15, 25, 0.8);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 0.75rem 2.8rem 0.75rem 2.8rem;
+            color: #ffffff;
+            font-size: 0.9rem;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .skills-search-box input:focus {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.25), inset 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .skills-search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--neon-cyan);
+            pointer-events: none;
+        }
+
+        .skills-count-pill {
+            position: absolute;
+            right: 0.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 242, 255, 0.15);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            color: var(--neon-cyan);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+        }
+
+        /* 3D Tilt Glare Overlay */
+        .circle-skill-card {
+            position: relative;
+            transform-style: preserve-3d;
+            will-change: transform;
+            overflow: hidden;
+        }
+
+        .circle-skill-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.12), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .circle-skill-card:hover::after {
+            opacity: 1;
+        }
+
+        .circle-skill-card.skill-hidden {
+            display: none !important;
+        }
+
+        .circle-skill-card.skill-dimmed {
+            opacity: 0.25;
+            filter: grayscale(80%) blur(1px);
+            transform: scale(0.95);
+        }
+
+        .circle-skill-card.skill-highlighted {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 35px rgba(0, 242, 255, 0.35);
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        /* YouTube Card Enhancements */
+        .yt-special-card {
+            border-color: rgba(255, 0, 85, 0.4) !important;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15) !important;
+        }
+
+        .yt-special-card:hover {
+            border-color: #ff0055 !important;
+            box-shadow: 0 15px 45px rgba(255, 0, 0, 0.35) !important;
+        }
+
+        .yt-special-ribbon {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(255, 119, 0, 0.25));
+            border: 1px solid rgba(255, 50, 50, 0.6);
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            color: #ffffff;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+            animation: ytPulseGlow 2.5s infinite alternate;
+        }
+
+        @keyframes ytPulseGlow {
+            0% { box-shadow: 0 0 8px rgba(255, 0, 0, 0.2); }
+            100% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
+        }
+
+        .yt-logo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(255, 0, 0, 0.15);
+            border: 1px solid rgba(255, 0, 0, 0.4);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: #ff4d4d;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        /* Clickable tags */
+        .circle-skill-tags .tag {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .circle-skill-tags .tag:hover {
+            background: rgba(0, 242, 255, 0.25);
+            border-color: var(--neon-cyan);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
     </style>
 </head>
 <body>
@@ -1208,7 +1402,6 @@
             <a href="#skills" class="nav-item">Skills</a>
             <a href="#clients" class="nav-item">Clients</a>
             <a href="#experience" class="nav-item">Experience</a>
-            <a href="#projects" class="nav-item">Projects</a>
             <a href="resume.html" target="_blank" class="nav-item">Resume</a>
             <a href="#contact" class="nav-item">Contact</a>
         </div>
@@ -1274,33 +1467,33 @@
                 </p>
             
             </div>
-            <div class="about-stats">
+                        <div class="about-stats">
                 <div class="stat-card glass" data-reveal>
-                    <span class="stat-number" data-count="4">0</span>
+                    <span class="stat-number" data-count="4" data-suffix="+">4+</span>
                     <span class="stat-label">Years Experience</span>
                 </div>
                 <div class="stat-card glass" data-reveal>
-                    <span class="stat-number" data-count="10">0</span>
+                    <span class="stat-number" data-count="10" data-suffix="+">10+</span>
                     <span class="stat-label">Industries Managed</span>
                 </div>
                 <div class="stat-card glass" data-reveal>
-                    <span class="stat-number" data-count="100">0</span>
-                    <span class="stat-label">K+ Subs (Silver Play Button)</span>
+                    <span class="stat-number" data-count="100" data-suffix="K+">100K+</span>
+                    <span class="stat-label">YouTube Subscribers Achieved</span>
                 </div>
                 <div class="stat-card glass" data-reveal>
-                    <span class="stat-number" data-count="100">0</span>
-                    <span class="stat-label">Growth Marketing</span>
+                    <span class="stat-number" data-count="360" data-suffix="°">360°</span>
+                    <span class="stat-label">Digital Marketing</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EDUCATION & QUALIFICATIONS SECTION (AFTER ABOUT) -->
+        <!-- EDUCATION & QUALIFICATIONS SECTION (AFTER ABOUT) -->
     <section id="certifications">
         <h2 class="section-title" data-reveal>Education & Qualifications</h2>
         <div class="certs-grid">
             <div class="cert-card glass" data-reveal>
-                <div class="cert-icon"><i data-lucide="award"></i></div>
+                <div class="cert-icon"><i data-lucide="graduation-cap"></i></div>
                 <div class="cert-info">
                     <h4>MBA (Marketing Management)</h4>
                     <span>NMIMS</span>
@@ -1316,206 +1509,400 @@
                 </div>
             </div>
             <div class="cert-card glass" data-reveal>
-                <div class="cert-icon"><i data-lucide="award"></i></div>
+                <div class="cert-icon"><i data-lucide="book-open"></i></div>
                 <div class="cert-info">
                     <h4>Bachelor of Commerce (B.Com)</h4>
                     <span>Guru Nanak Dev University</span>
                     <span class="cert-date">May 2019 - May 2022</span>
                 </div>
             </div>
-            <div class="cert-card glass" data-reveal>
-                <div class="cert-icon"><i data-lucide="layers"></i></div>
-                <div class="cert-info">
-                    <h4>Strapi CMS Management</h4>
-                    <span>Pennsylvania Enterprise (PENNEP)</span>
-                    <span class="cert-date">2023 - Present</span>
-                </div>
-            </div>
-            <div class="cert-card glass" data-reveal>
-                <div class="cert-icon"><i data-lucide="shopping-bag"></i></div>
-                <div class="cert-info">
-                    <h4>Magento E-Commerce CMS</h4>
-                    <span>Pennsylvania Enterprise (PENNEP)</span>
-                    <span class="cert-date">2023 - Present</span>
-                </div>
-            </div>
-            <div class="cert-card glass" data-reveal>
-                <div class="cert-icon"><i data-lucide="target"></i></div>
-                <div class="cert-info">
-                    <h4>Google Ads & Meta Ads Management</h4>
-                    <span>Hot Shot Music</span>
-                    <span class="cert-date">2022 - 2023</span>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- 6 CIRCLE SKILLS SECTION -->
+        <!-- 12 CIRCLE SKILLS SECTION -->
     <section id="skills">
-        <h2 class="section-title" data-reveal>Skills</h2>
-        <p style="text-align: center; color: var(--text-dim); max-width: 650px; margin: -1.5rem auto 2.5rem auto;" data-reveal>
-            Specialized competencies evaluated across practical marketing campaigns, technical SEO, PPC optimization, CMS architecture, and audience growth.
-        </p>
+        <h2 class="section-title" data-reveal>Skills & Core Competencies</h2>
         <div class="circle-skills-grid">
-            <!-- 1. SEO -->
-            <div class="circle-skill-card" data-reveal>
+            <!-- 1. 1. Search Engine Optimization (SEO) -->
+            <div class="circle-skill-card" data-category="organic" data-reveal>
                 <div class="circle-meter-wrapper">
                     <svg class="circle-meter-svg" viewBox="0 0 150 150">
                         <defs>
-                            <linearGradient id="grad-seo" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <linearGradient id="grad-skill-1" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" stop-color="#00f2ff" />
                                 <stop offset="100%" stop-color="#00c8ff" />
                             </linearGradient>
                         </defs>
                         <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
-                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="95" stroke="url(#grad-seo)" />
+                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="100" stroke="url(#grad-skill-1)" />
                     </svg>
                     <div class="circle-meter-center">
-                        <i data-lucide="search" class="circle-meter-icon" style="width: 24px; height: 24px;"></i>
-                        <span class="circle-meter-percent" data-count="95">0</span>
+                        <i data-lucide="search" class="circle-meter-icon" style="width: 50px; height: 50px; color: #00f2ff; filter: drop-shadow(0 0 16px rgba(0, 242, 255, 0.7));"></i>
                     </div>
                 </div>
-                <h3 class="circle-skill-title">Search Engine Optimization</h3>
-                <p class="circle-skill-desc">Technical SEO, On-Page keyword optimization, site architecture, metadata indexing, and organic traffic acceleration.</p>
+                <h3 class="circle-skill-title">1. Search Engine Optimization (SEO)</h3>
+                <p class="circle-skill-desc">Improving search visibility through keyword research, technical optimization, website structure, metadata, content optimization, and organic traffic growth.</p>
                 <div class="circle-skill-tags">
                     <span class="tag">On-Page SEO</span>
+                    <span class="tag">Off-Page SEO</span>
                     <span class="tag">Technical SEO</span>
                     <span class="tag">Keyword Research</span>
+                    <span class="tag">YouTube SEO</span>
+                    <span class="tag">Metadata Optimization</span>
+                    <span class="tag">Website Architecture</span>
+                    <span class="tag">Organic Growth</span>
                 </div>
             </div>
 
-            <!-- 2. SEM & PPC -->
-            <div class="circle-skill-card" data-reveal>
+            <!-- 2. 2. Social Media Marketing (SMM) -->
+            <div class="circle-skill-card" data-category="organic" data-reveal>
                 <div class="circle-meter-wrapper">
                     <svg class="circle-meter-svg" viewBox="0 0 150 150">
                         <defs>
-                            <linearGradient id="grad-ppc" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#00f2ff" />
-                                <stop offset="100%" stop-color="#bc13fe" />
-                            </linearGradient>
-                        </defs>
-                        <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
-                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="92" stroke="url(#grad-ppc)" />
-                    </svg>
-                    <div class="circle-meter-center">
-                        <i data-lucide="mouse-pointer-click" class="circle-meter-icon" style="width: 24px; height: 24px; color: var(--neon-purple);"></i>
-                        <span class="circle-meter-percent" data-count="92">0</span>
-                    </div>
-                </div>
-                <h3 class="circle-skill-title">SEM & PPC Advertising</h3>
-                <p class="circle-skill-desc">Search engine marketing, bid strategy management, click-through rate (CTR) maximization, and cost-per-lead optimization.</p>
-                <div class="circle-skill-tags">
-                    <span class="tag">Search Ads</span>
-                    <span class="tag">Bid Strategy</span>
-                    <span class="tag">PPC Audit</span>
-                </div>
-            </div>
-
-            <!-- 3. Google & Meta Ads -->
-            <div class="circle-skill-card" data-reveal>
-                <div class="circle-meter-wrapper">
-                    <svg class="circle-meter-svg" viewBox="0 0 150 150">
-                        <defs>
-                            <linearGradient id="grad-ads" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#bc13fe" />
-                                <stop offset="100%" stop-color="#ff007f" />
-                            </linearGradient>
-                        </defs>
-                        <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
-                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="94" stroke="url(#grad-ads)" />
-                    </svg>
-                    <div class="circle-meter-center">
-                        <i data-lucide="target" class="circle-meter-icon" style="width: 24px; height: 24px; color: #ff007f;"></i>
-                        <span class="circle-meter-percent" data-count="94">0</span>
-                    </div>
-                </div>
-                <h3 class="circle-skill-title">Google Ads & Meta Ads</h3>
-                <p class="circle-skill-desc">High-converting paid campaign execution across Google Display/Search and Meta (Facebook & Instagram Ads Manager).</p>
-                <div class="circle-skill-tags">
-                    <span class="tag">Meta Ads Manager</span>
-                    <span class="tag">Google Ads</span>
-                    <span class="tag">Conversion Funnels</span>
-                </div>
-            </div>
-
-            <!-- 4. SMM & SMO -->
-            <div class="circle-skill-card" data-reveal>
-                <div class="circle-meter-wrapper">
-                    <svg class="circle-meter-svg" viewBox="0 0 150 150">
-                        <defs>
-                            <linearGradient id="grad-smm" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <linearGradient id="grad-skill-2" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" stop-color="#00ff88" />
                                 <stop offset="100%" stop-color="#00f2ff" />
                             </linearGradient>
                         </defs>
                         <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
-                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="90" stroke="url(#grad-smm)" />
+                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="100" stroke="url(#grad-skill-2)" />
                     </svg>
                     <div class="circle-meter-center">
-                        <i data-lucide="share-2" class="circle-meter-icon" style="width: 24px; height: 24px; color: var(--neon-green);"></i>
-                        <span class="circle-meter-percent" data-count="90">0</span>
+                        <i data-lucide="share-2" class="circle-meter-icon" style="width: 50px; height: 50px; color: #00ff88; filter: drop-shadow(0 0 16px rgba(0, 255, 136, 0.7));"></i>
                     </div>
                 </div>
-                <h3 class="circle-skill-title">SMM & SMO Marketing</h3>
-                <p class="circle-skill-desc">Social Media Marketing & Optimization, brand storytelling, profile optimization, viral reel creation, and engagement growth.</p>
+                <h3 class="circle-skill-title">2. Social Media Marketing (SMM)</h3>
+                <p class="circle-skill-desc">Managing social media presence through strategic content planning, audience engagement, trend-based content, and brand-building activities across platforms.</p>
                 <div class="circle-skill-tags">
-                    <span class="tag">Social Media Strategy</span>
-                    <span class="tag">SMO</span>
-                    <span class="tag">Reels / Shorts</span>
+                    <span class="tag">Social Media Management</span>
+                    <span class="tag">Content Calendar</span>
+                    <span class="tag">Audience Growth</span>
+                    <span class="tag">Trend Research</span>
+                    <span class="tag">Brand Awareness</span>
+                    <span class="tag">Community Engagement</span>
+                    <span class="tag">Competitor Research</span>
                 </div>
             </div>
 
-            <!-- 5. CMS Strapi & Magento -->
-            <div class="circle-skill-card" data-reveal>
+            <!-- 3. 3. Social Media Optimization (SMO) -->
+            <div class="circle-skill-card" data-category="organic" data-reveal>
                 <div class="circle-meter-wrapper">
                     <svg class="circle-meter-svg" viewBox="0 0 150 150">
                         <defs>
-                            <linearGradient id="grad-cms" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#ffaa00" />
+                            <linearGradient id="grad-skill-3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ff007f" />
+                                <stop offset="100%" stop-color="#bc13fe" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
+                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="100" stroke="url(#grad-skill-3)" />
+                    </svg>
+                    <div class="circle-meter-center">
+                        <i data-lucide="sparkles" class="circle-meter-icon" style="width: 50px; height: 50px; color: #ff007f; filter: drop-shadow(0 0 16px rgba(255, 0, 127, 0.7));"></i>
+                    </div>
+                </div>
+                <h3 class="circle-skill-title">3. Social Media Optimization (SMO)</h3>
+                <p class="circle-skill-desc">Optimizing social profiles and content to improve discoverability, engagement, reach, and overall organic performance.</p>
+                <div class="circle-skill-tags">
+                    <span class="tag">Profile Optimization</span>
+                    <span class="tag">Content Optimization</span>
+                    <span class="tag">Organic Reach</span>
+                    <span class="tag">Engagement Growth</span>
+                    <span class="tag">Hashtag Strategy</span>
+                    <span class="tag">Platform Optimization</span>
+                </div>
+            </div>
+
+            <!-- 4. 4. Paid Advertising & Performance Marketing -->
+            <div class="circle-skill-card" data-category="paid" data-reveal>
+                <div class="circle-meter-wrapper">
+                    <svg class="circle-meter-svg" viewBox="0 0 150 150">
+                        <defs>
+                            <linearGradient id="grad-skill-4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#bc13fe" />
                                 <stop offset="100%" stop-color="#ff0055" />
                             </linearGradient>
                         </defs>
                         <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
-                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="89" stroke="url(#grad-cms)" />
+                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="100" stroke="url(#grad-skill-4)" />
                     </svg>
                     <div class="circle-meter-center">
-                        <i data-lucide="layers" class="circle-meter-icon" style="width: 24px; height: 24px; color: #ffaa00;"></i>
-                        <span class="circle-meter-percent" data-count="89">0</span>
+                        <i data-lucide="target" class="circle-meter-icon" style="width: 50px; height: 50px; color: #bc13fe; filter: drop-shadow(0 0 16px rgba(188, 19, 254, 0.7));"></i>
                     </div>
                 </div>
-                <h3 class="circle-skill-title">CMS (Strapi & Magento)</h3>
-                <p class="circle-skill-desc">Expert in Headless CMS Strapi and enterprise Magento eCommerce: product cataloging, taxonomy, and content structures.</p>
+                <h3 class="circle-skill-title">4. Paid Advertising & Performance Marketing</h3>
+                <p class="circle-skill-desc">Planning, launching, and optimizing paid campaigns to drive brand awareness, leads, enquiries, website traffic, and sales.</p>
                 <div class="circle-skill-tags">
-                    <span class="tag">Strapi CMS</span>
-                    <span class="tag">Magento E-Commerce</span>
-                    <span class="tag">Catalog SEO</span>
+                    <span class="tag">Meta Ads</span>
+                    <span class="tag">Google Ads</span>
+                    <span class="tag">LinkedIn Ads</span>
+                    <span class="tag">PPC Campaigns</span>
+                    <span class="tag">Lead Generation</span>
+                    <span class="tag">Sales Campaigns</span>
+                    <span class="tag">Audience Targeting</span>
+                    <span class="tag">Campaign Optimization</span>
+                    <span class="tag">Performance Tracking</span>
                 </div>
             </div>
 
-            <!-- 6. YouTube Video SEO & Growth -->
-            <div class="circle-skill-card" data-reveal>
+            <!-- 5. 5. Content Marketing & Strategy -->
+            <div class="circle-skill-card" data-category="organic" data-reveal>
                 <div class="circle-meter-wrapper">
                     <svg class="circle-meter-svg" viewBox="0 0 150 150">
                         <defs>
-                            <linearGradient id="grad-yt" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <linearGradient id="grad-skill-5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ffaa00" />
+                                <stop offset="100%" stop-color="#ff7700" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
+                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="100" stroke="url(#grad-skill-5)" />
+                    </svg>
+                    <div class="circle-meter-center">
+                        <i data-lucide="file-text" class="circle-meter-icon" style="width: 50px; height: 50px; color: #ffaa00; filter: drop-shadow(0 0 16px rgba(255, 170, 0, 0.7));"></i>
+                    </div>
+                </div>
+                <h3 class="circle-skill-title">5. Content Marketing & Strategy</h3>
+                <p class="circle-skill-desc">Developing content strategies that communicate brand value, attract audiences, support SEO, and achieve marketing objectives.</p>
+                <div class="circle-skill-tags">
+                    <span class="tag">Content Strategy</span>
+                    <span class="tag">Blog Writing</span>
+                    <span class="tag">Website Copywriting</span>
+                    <span class="tag">Ad Copywriting</span>
+                    <span class="tag">Content Research</span>
+                    <span class="tag">Promotional Content</span>
+                    <span class="tag">Content Planning</span>
+                    <span class="tag">Marketing Strategy</span>
+                </div>
+            </div>
+
+            <!-- 6. 6. Creative Design & Video Production -->
+            <div class="circle-skill-card" data-category="creative" data-reveal>
+                <div class="circle-meter-wrapper">
+                    <svg class="circle-meter-svg" viewBox="0 0 150 150">
+                        <defs>
+                            <linearGradient id="grad-skill-6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ff0055" />
+                                <stop offset="100%" stop-color="#bc13fe" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
+                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="100" stroke="url(#grad-skill-6)" />
+                    </svg>
+                    <div class="circle-meter-center">
+                        <i data-lucide="video" class="circle-meter-icon" style="width: 50px; height: 50px; color: #ff0055; filter: drop-shadow(0 0 16px rgba(255, 0, 85, 0.7));"></i>
+                    </div>
+                </div>
+                <h3 class="circle-skill-title">6. Creative Design & Video Production</h3>
+                <p class="circle-skill-desc">Creating visual and video content for social media, advertising, brand promotion, and digital engagement.</p>
+                <div class="circle-skill-tags">
+                    <span class="tag">Social Media Creatives</span>
+                    <span class="tag">Graphic Design</span>
+                    <span class="tag">Poster Design</span>
+                    <span class="tag">Reel Creation</span>
+                    <span class="tag">YouTube Shorts</span>
+                    <span class="tag">Video Editing</span>
+                    <span class="tag">AI Reels</span>
+                    <span class="tag">Voice-over Videos</span>
+                    <span class="tag">Business Videos</span>
+                    <span class="tag">Thumbnail Design</span>
+                </div>
+            </div>
+
+            <!-- 7. 7. Website & CMS Management -->
+            <div class="circle-skill-card" data-category="management" data-reveal>
+                <div class="circle-meter-wrapper">
+                    <svg class="circle-meter-svg" viewBox="0 0 150 150">
+                        <defs>
+                            <linearGradient id="grad-skill-7" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00f2ff" />
+                                <stop offset="100%" stop-color="#7000ff" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
+                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="100" stroke="url(#grad-skill-7)" />
+                    </svg>
+                    <div class="circle-meter-center">
+                        <i data-lucide="layers" class="circle-meter-icon" style="width: 50px; height: 50px; color: #00f2ff; filter: drop-shadow(0 0 16px rgba(0, 242, 255, 0.7));"></i>
+                    </div>
+                </div>
+                <h3 class="circle-skill-title">7. Website & CMS Management</h3>
+                <p class="circle-skill-desc">Managing website content, landing pages, product listings, and website structure to support user experience, SEO, and conversions.</p>
+                <div class="circle-skill-tags">
+                    <span class="tag">WordPress</span>
+                    <span class="tag">Strapi CMS</span>
+                    <span class="tag">Adobe Magento</span>
+                    <span class="tag">Website Content Management</span>
+                    <span class="tag">Landing Page Creation</span>
+                    <span class="tag">Website Revamp</span>
+                    <span class="tag">eCommerce Product Management</span>
+                    <span class="tag">Content Optimization</span>
+                </div>
+            </div>
+
+            <!-- 8. 8. YouTube & Digital Publishing -->
+            <div class="circle-skill-card yt-special-card" data-category="organic creative" data-reveal>
+                <div class="yt-special-ribbon">
+                    <svg viewBox="0 0 28 20" width="14" height="10"><path d="M27.4 3.1c-.3-1.2-1.2-2.1-2.4-2.4C22.9 0 14 0 14 0S5.1 0 3 0.7C1.8 1 0.9 1.9 0.6 3.1 0 5.2 0 10 0 10s0 4.8 0.6 6.9c.3 1.2 1.2 2.1 2.4 2.4 2.1 0.7 11 0.7 11 0.7s8.9 0 11-0.7c1.2-.3 2.1-1.2 2.4-2.4.6-2.1.6-6.9.6-6.9s0-4.8-.6-6.9z" fill="#FF0000"/><polygon points="11,14 18,10 11,6" fill="#FFFFFF"/></svg>
+                    Silver Play Button (100K+)
+                </div>
+                <div class="circle-meter-wrapper">
+                    <svg class="circle-meter-svg" viewBox="0 0 150 150">
+                        <defs>
+                            <linearGradient id="grad-skill-8" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" stop-color="#ff0000" />
                                 <stop offset="100%" stop-color="#ff7700" />
                             </linearGradient>
                         </defs>
                         <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
-                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="95" stroke="url(#grad-yt)" />
+                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="100" stroke="url(#grad-skill-8)" />
                     </svg>
                     <div class="circle-meter-center">
-                        <i data-lucide="youtube" class="circle-meter-icon" style="width: 24px; height: 24px; color: #ff3333;"></i>
-                        <span class="circle-meter-percent" data-count="95">0</span>
+                        <svg class="yt-official-logo" viewBox="0 0 28 20" width="62" height="44" style="filter: drop-shadow(0 0 18px rgba(255, 0, 0, 0.85));">
+                        <path d="M27.4 3.1c-.3-1.2-1.2-2.1-2.4-2.4C22.9 0 14 0 14 0S5.1 0 3 0.7C1.8 1 0.9 1.9 0.6 3.1 0 5.2 0 10 0 10s0 4.8 0.6 6.9c.3 1.2 1.2 2.1 2.4 2.4 2.1 0.7 11 0.7 11 0.7s8.9 0 11-0.7c1.2-.3 2.1-1.2 2.4-2.4.6-2.1.6-6.9.6-6.9s0-4.8-.6-6.9z" fill="#FF0000"/>
+                        <polygon points="11,14 18,10 11,6" fill="#FFFFFF"/>
+                    </svg>
                     </div>
                 </div>
-                <h3 class="circle-skill-title">YouTube SEO & Content Growth</h3>
-                <p class="circle-skill-desc">Channel growth lead, video tag optimization, CTR thumbnail design, Shorts distribution, and Silver Play Button milestone delivery.</p>
+                <h3 class="circle-skill-title" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; flex-wrap: wrap;">
+                    <span>8. YouTube & Digital Publishing</span>
+                    <span class="yt-logo-badge">
+                        <svg viewBox="0 0 28 20" width="14" height="10"><path d="M27.4 3.1c-.3-1.2-1.2-2.1-2.4-2.4C22.9 0 14 0 14 0S5.1 0 3 0.7C1.8 1 0.9 1.9 0.6 3.1 0 5.2 0 10 0 10s0 4.8 0.6 6.9c.3 1.2 1.2 2.1 2.4 2.4 2.1 0.7 11 0.7 11 0.7s8.9 0 11-0.7c1.2-.3 2.1-1.2 2.4-2.4.6-2.1.6-6.9.6-6.9s0-4.8-.6-6.9z" fill="#FF0000"/><polygon points="11,14 18,10 11,6" fill="#FFFFFF"/></svg>
+                        YouTube Growth
+                    </span>
+                </h3>
+                <p class="circle-skill-desc">Managing video channels and publishing workflows, with a focus on discoverability, content consistency, audience growth, and music promotion.</p>
                 <div class="circle-skill-tags">
-                    <span class="tag">YouTube Studio</span>
+                    <span class="tag">YouTube Channel Management</span>
                     <span class="tag">Video SEO</span>
-                    <span class="tag">Silver Play Button</span>
+                    <span class="tag">Video Publishing</span>
+                    <span class="tag">Channel Growth</span>
+                    <span class="tag">Short-Form Strategy</span>
+                    <span class="tag">Music Promotion</span>
+                    <span class="tag">Digital Publishing</span>
+                    <span class="tag">YouTube Studio</span>
+                </div>
+            </div>
+
+            <!-- 9. 9. Brand Management & Campaign Strategy -->
+            <div class="circle-skill-card" data-category="paid" data-reveal>
+                <div class="circle-meter-wrapper">
+                    <svg class="circle-meter-svg" viewBox="0 0 150 150">
+                        <defs>
+                            <linearGradient id="grad-skill-9" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#bc13fe" />
+                                <stop offset="100%" stop-color="#00f2ff" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
+                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="100" stroke="url(#grad-skill-9)" />
+                    </svg>
+                    <div class="circle-meter-center">
+                        <i data-lucide="award" class="circle-meter-icon" style="width: 50px; height: 50px; color: #bc13fe; filter: drop-shadow(0 0 16px rgba(188, 19, 254, 0.7));"></i>
+                    </div>
+                </div>
+                <h3 class="circle-skill-title">9. Brand Management & Campaign Strategy</h3>
+                <p class="circle-skill-desc">Building brand visibility through integrated campaigns, promotional activities, market research, and audience-focused communication.</p>
+                <div class="circle-skill-tags">
+                    <span class="tag">Digital Brand Management</span>
+                    <span class="tag">Campaign Planning</span>
+                    <span class="tag">Brand Positioning</span>
+                    <span class="tag">Market Research</span>
+                    <span class="tag">Promotional Offers</span>
+                    <span class="tag">Influencer Collaborations</span>
+                    <span class="tag">Giveaway Campaigns</span>
+                    <span class="tag">Podcast Promotion</span>
+                    <span class="tag">Client Testimonials</span>
+                </div>
+            </div>
+
+            <!-- 10. 10. Music Promotion & Distribution -->
+            <div class="circle-skill-card" data-category="creative" data-reveal>
+                <div class="circle-meter-wrapper">
+                    <svg class="circle-meter-svg" viewBox="0 0 150 150">
+                        <defs>
+                            <linearGradient id="grad-skill-10" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ff0055" />
+                                <stop offset="100%" stop-color="#ff7700" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
+                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="100" stroke="url(#grad-skill-10)" />
+                    </svg>
+                    <div class="circle-meter-center">
+                        <i data-lucide="music" class="circle-meter-icon" style="width: 50px; height: 50px; color: #ff0055; filter: drop-shadow(0 0 16px rgba(255, 0, 85, 0.7));"></i>
+                    </div>
+                </div>
+                <h3 class="circle-skill-title">10. Music Promotion & Distribution</h3>
+                <p class="circle-skill-desc">Supporting music releases through digital promotion, video publishing, channel optimization, and music-related administrative documentation.</p>
+                <div class="circle-skill-tags">
+                    <span class="tag">Music Promotion</span>
+                    <span class="tag">Music Distribution Paperwork</span>
+                    <span class="tag">Copyright-Related Coordination</span>
+                    <span class="tag">Music Video SEO</span>
+                    <span class="tag">Reels Promotion</span>
+                    <span class="tag">YouTube Growth</span>
+                </div>
+            </div>
+
+            <!-- 11. 11. Analytics & Campaign Optimization -->
+            <div class="circle-skill-card" data-category="paid" data-reveal>
+                <div class="circle-meter-wrapper">
+                    <svg class="circle-meter-svg" viewBox="0 0 150 150">
+                        <defs>
+                            <linearGradient id="grad-skill-11" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00ff88" />
+                                <stop offset="100%" stop-color="#00c8ff" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
+                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="100" stroke="url(#grad-skill-11)" />
+                    </svg>
+                    <div class="circle-meter-center">
+                        <i data-lucide="bar-chart-2" class="circle-meter-icon" style="width: 50px; height: 50px; color: #00ff88; filter: drop-shadow(0 0 16px rgba(0, 255, 136, 0.7));"></i>
+                    </div>
+                </div>
+                <h3 class="circle-skill-title">11. Analytics & Campaign Optimization</h3>
+                <p class="circle-skill-desc">Monitoring campaign performance and using insights to improve targeting, creative effectiveness, audience engagement, and marketing outcomes.</p>
+                <div class="circle-skill-tags">
+                    <span class="tag">Campaign Performance Monitoring</span>
+                    <span class="tag">Lead Tracking</span>
+                    <span class="tag">Audience Analysis</span>
+                    <span class="tag">Performance Optimization</span>
+                    <span class="tag">Competitor Analysis</span>
+                    <span class="tag">Problem Solving</span>
+                    <span class="tag">Results-Oriented Execution</span>
+                </div>
+            </div>
+
+            <!-- 12. 12. Professional & Project Management -->
+            <div class="circle-skill-card" data-category="management" data-reveal>
+                <div class="circle-meter-wrapper">
+                    <svg class="circle-meter-svg" viewBox="0 0 150 150">
+                        <defs>
+                            <linearGradient id="grad-skill-12" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#38bdf8" />
+                                <stop offset="100%" stop-color="#818cf8" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="circle-meter-bg" cx="75" cy="75" r="65" />
+                        <circle class="circle-meter-progress" cx="75" cy="75" r="65" data-percent="100" stroke="url(#grad-skill-12)" />
+                    </svg>
+                    <div class="circle-meter-center">
+                        <i data-lucide="briefcase" class="circle-meter-icon" style="width: 50px; height: 50px; color: #38bdf8; filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.7));"></i>
+                    </div>
+                </div>
+                <h3 class="circle-skill-title">12. Professional & Project Management</h3>
+                <p class="circle-skill-desc">Managing projects independently while coordinating with clients, collaborating with teams, and supporting training and execution across different industries.</p>
+                <div class="circle-skill-tags">
+                    <span class="tag">Independent Project Management</span>
+                    <span class="tag">Client Communication</span>
+                    <span class="tag">Team Collaboration</span>
+                    <span class="tag">Intern Training</span>
+                    <span class="tag">Creative Thinking</span>
+                    <span class="tag">Cross-Industry Adaptability</span>
+                    <span class="tag">Attention to Detail</span>
+                    <span class="tag">Content Planning</span>
                 </div>
             </div>
         </div>
@@ -1523,10 +1910,7 @@
 
     <!-- 12 CIRCLE CLIENTS SECTION -->
     <section id="clients">
-        <h2 class="section-title" data-reveal>Clients Worked With (12 Clients)</h2>
-        <p style="text-align: center; color: var(--text-dim); max-width: 700px; margin: -1.5rem auto 2.5rem auto;" data-reveal>
-            Clicking on any of the <strong>12 client cards</strong> will open their comprehensive case study with detailed solutions, roles, results, and campaign performance!
-        </p>
+        <h2 class="section-title" data-reveal>Clients Worked With </h2>
 
         <div class="clients-circle-grid">
             <!-- 1. Hot Shot Music -->
@@ -1815,189 +2199,6 @@
                     <li><strong>Creative Work:</strong> Created high-CTR thumbnails, posters, promotional creatives, and edited engaging short-form video reels and YouTube Shorts.</li>
                     <li><strong>Distribution & Contracts:</strong> Managed official song paperwork and distribution workflow with Believe Music, and drafted artist agreements.</li>
                 </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title" data-reveal>Featured Projects</h2>
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card glass" data-reveal>
-                <div class="project-img">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="PENNEP Digital Marketing & SEO" referrerPolicy="no-referrer">
-                </div>
-                <div class="project-content">
-                    <h3>PENNEP In-House SEO & Digital Growth</h3>
-                    <p>On-page SEO optimization, website content management, and social media marketing strategy for PENNEP digital channels.</p>
-                    <div class="project-tags">
-                        <span class="tag">SEO</span>
-                        <span class="tag">Content Marketing</span>
-                        <span class="tag">PENNEP</span>
-                    </div>
-                    <div class="project-insights">
-                        <strong>Insight:</strong> Increased organic keyword visibility and web traffic through structured content updates and technical SEO.
-                    </div>
-                </div>
-            </div>
-            <!-- Project 2 -->
-            <div class="project-card glass" data-reveal>
-                <div class="project-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS84f-GA19gtGdyt67kr7Du3RHDhl85FlPTBPbngLQafA&s=10">
-                </div>
-                <div class="project-content">
-                    <h3>Strapi & Magento E-Commerce Platform</h3>
-                    <p>End-to-end product catalog management and web content optimization on Strapi and Magento for eCommerce clients.</p>
-                    <div class="project-tags">
-                        <span class="tag">Strapi</span>
-                        <span class="tag">Magento</span>
-                        <span class="tag">E-Commerce</span>
-                    </div>
-                    <div class="project-insights">
-                        <strong>Insight:</strong> Streamlined store updates, optimized product meta tags, and enhanced user shopping experience.
-                    </div>
-                </div>
-            </div>
-            <!-- Project 3 -->
-            <div class="project-card glass" data-reveal>
-                <div class="project-img">
-                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800" alt="Hot Shot Music YouTube Management" referrerPolicy="no-referrer">
-                </div>
-                <div class="project-content">
-                    <h3>Hot Shot Music YouTube & Social Growth</h3>
-                    <p>Management of 2 YouTube channels, YouTube Shorts optimization, and social media marketing for a music record label.</p>
-                    <div class="project-tags">
-                        <span class="tag">YouTube</span>
-                        <span class="tag">Social Media</span>
-                        <span class="tag">Shorts</span>
-                    </div>
-                    <div class="project-insights">
-                        <strong>Insight:</strong> Boosted channel engagement and subscriber retention via targeted video SEO and shorts distribution.
-                    </div>
-                </div>
-            </div>
-            <!-- Project 4 -->
-            <div class="project-card glass" data-reveal>
-                <div class="project-img">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="Google & Meta Ads Campaigns" referrerPolicy="no-referrer">
-                </div>
-                <div class="project-content">
-                    <h3>Google Ads & Meta Paid Advertising</h3>
-                    <p>Targeted PPC ad campaigns on Google Search and Meta Ads (Facebook & Instagram) for brand reach and user conversion.</p>
-                    <div class="project-tags">
-                        <span class="tag">Google Ads</span>
-                        <span class="tag">Meta Ads</span>
-                        <span class="tag">PPC</span>
-                    </div>
-                    <div class="project-insights">
-                        <strong>Insight:</strong> Reduced ad acquisition costs while expanding target demographic reach and link click-through rates.
-                    </div>
-                </div>
-            </div>
-            <!-- Project 5 -->
-            <div class="project-card glass" data-reveal>
-                <div class="project-img">
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800" alt="E-Commerce Client Social Media" referrerPolicy="no-referrer">
-                </div>
-                <div class="project-content">
-                    <h3>E-Commerce Social Media & SMO</h3>
-                    <p>Social media channel management, brand engagement, and product promo campaigns for retail eCommerce clients.</p>
-                    <div class="project-tags">
-                        <span class="tag">SMO</span>
-                        <span class="tag">SMM</span>
-                        <span class="tag">E-Commerce</span>
-                    </div>
-                    <div class="project-insights">
-                        <strong>Insight:</strong> Drove consistent social referral traffic directly to online store checkout pages.
-                    </div>
-                </div>
-            </div>
-            <!-- Project 6 -->
-            <div class="project-card glass" data-reveal>
-                <div class="project-img">
-                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=800" alt="Digital Marketing Audit" referrerPolicy="no-referrer">
-                </div>
-                <div class="project-content">
-                    <h3>Website Content & SEO Audits</h3>
-                    <p>In-depth digital marketing audits, competitor analysis, and website content optimization for client growth.</p>
-                    <div class="project-tags">
-                        <span class="tag">Audit</span>
-                        <span class="tag">Competitor Analysis</span>
-                        <span class="tag">Content Strategy</span>
-                    </div>
-                    <div class="project-insights">
-                        <strong>Insight:</strong> Identified key keyword gaps and implemented structural fixes to accelerate organic site rank.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="cv">
-        <h2 class="section-title" data-reveal>Resume Highlight</h2>
-        <div class="cv-card glass" data-reveal>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--neon-blue); padding-bottom: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
-                <div>
-                    <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 0.3rem;">Ripanjot Singh</h3>
-                    <p style="color: var(--neon-cyan); font-size: 1.1rem; font-weight: 600;">Junior Digital Marketing Analyst</p>
-                    <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.3rem;">Pennsylvania Enterprise (PENNEP) | Jalandhar, Punjab, India</p>
-                </div>
-                <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-                    <a href="resume_pf.html" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; font-size: 0.9rem; cursor: pointer; background: linear-gradient(135deg, #00f2ff, #7000ff); border: none; font-weight: 700; text-decoration: none;">
-                        <i data-lucide="external-link" style="width: 18px; height: 18px;"></i> Open Full CV Webpage
-                    </a>
-                    <button onclick="downloadCV()" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; font-size: 0.9rem; border-color: var(--neon-purple); color: var(--neon-purple); cursor: pointer; font-weight: 600;">
-                        <i data-lucide="download" style="width: 18px; height: 18px;"></i> Download Resume
-                    </button>
-                    <a href="resume.html" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; font-size: 0.9rem; cursor: pointer; text-decoration: none;">
-                        <i data-lucide="printer" style="width: 18px; height: 18px;"></i> Print Resume
-                    </a>
-                </div>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div>
-                    <h4 style="color: var(--neon-blue); font-size: 1.1rem; margin-bottom: 0.8rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">Executive Summary</h4>
-                    <p style="color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem;">
-                        Dynamic Junior Digital Marketing Analyst with an <strong>MBA in Marketing Management</strong> from NMIMS. Proven track record in Search Engine Optimization (SEO), PPC Campaigns, Google Ads, Meta Ads, and E-Commerce CMS Management (Strapi & Magento).
-                    </p>
-                    <h4 style="color: var(--neon-blue); font-size: 1.1rem; margin-bottom: 0.8rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">Core Digital Competencies</h4>
-                    <div class="project-tags">
-                        <span class="tag">Search Engine Optimization (SEO)</span>
-                        <span class="tag">Google Ads / SEM</span>
-                        <span class="tag">Meta Ads (FB & IG)</span>
-                        <span class="tag">Strapi CMS</span>
-                        <span class="tag">Magento E-Commerce</span>
-                        <span class="tag">YouTube Growth & Shorts</span>
-                        <span class="tag">Social Media Optimization</span>
-                        <span class="tag">Google Analytics</span>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 style="color: var(--neon-blue); font-size: 1.1rem; margin-bottom: 0.8rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">Career Snapshot</h4>
-                    <div style="margin-bottom: 1rem;">
-                        <div style="display: flex; justify-content: space-between; font-weight: 600; color: #fff;">
-                            <span>Junior Digital Marketing Analyst</span>
-                            <span style="color: var(--neon-cyan); font-size: 0.85rem;">2023 - Present</span>
-                        </div>
-                        <div style="color: var(--neon-purple); font-size: 0.85rem;">Pennsylvania Enterprise (PENNEP)</div>
-                    </div>
-                    <div style="margin-bottom: 1rem;">
-                        <div style="display: flex; justify-content: space-between; font-weight: 600; color: #fff;">
-                            <span>Digital Marketing & YouTube Lead</span>
-                            <span style="color: var(--neon-cyan); font-size: 0.85rem;">2022 - 2023</span>
-                        </div>
-                        <div style="color: var(--neon-purple); font-size: 0.85rem;">Hot Shot Music, Jalandhar</div>
-                    </div>
-
-                    <h4 style="color: var(--neon-blue); font-size: 1.1rem; margin-bottom: 0.8rem; margin-top: 1.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">Academic Qualifications</h4>
-                    <ul style="color: var(--text-dim); font-size: 0.9rem; padding-left: 1.2rem; line-height: 1.6;">
-                        <li><strong>MBA in Marketing Management</strong> - NMIMS (2022 - 2024)</li>
-                        <li><strong>Diploma in Digital Marketing</strong> - GTB Computer Ed (2022)</li>
-                        <li><strong>Bachelor of Commerce (B.Com)</strong> - GNDU (2019 - 2022)</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
@@ -2314,10 +2515,15 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // Animated Counters
+                // Animated Counters
         function animateCounter(el) {
             if (el.classList.contains('counted')) return;
             const target = parseInt(el.getAttribute('data-count'));
+            if (isNaN(target)) return;
+            const prefix = el.getAttribute('data-prefix') || '';
+            const suffix = el.getAttribute('data-suffix') !== null 
+                ? el.getAttribute('data-suffix') 
+                : (el.classList.contains('circle-meter-percent') ? '%' : '+');
             let current = 0;
             const duration = 2000;
             const step = Math.max(1, target / (duration / 16));
@@ -2325,11 +2531,11 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
             const timer = setInterval(() => {
                 current += step;
                 if (current >= target) {
-                    el.textContent = target + (target === 100 ? '%' : '+');
+                    el.textContent = prefix + target + suffix;
                     el.classList.add('counted');
                     clearInterval(timer);
                 } else {
-                    el.textContent = Math.floor(current) + (target === 100 ? '%' : '+');
+                    el.textContent = prefix + Math.floor(current) + suffix;
                 }
             }, 16);
         }
@@ -2588,6 +2794,109 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
         }
+    
+        // === 3D TILT & INTERACTIVE SKILLS SECTION JAVASCRIPT ===
+        (function initSkillSectionInteractions() {
+            const skillCards = document.querySelectorAll('.circle-skill-card');
+            const searchInput = document.getElementById('skills-search-input');
+            const countPill = document.getElementById('skills-count-pill');
+            const filterBtns = document.querySelectorAll('.skill-filter-btn');
+
+            // 1. Interactive 3D Perspective Tilt with Dynamic Glare
+            skillCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = ((y - centerY) / centerY) * -10;
+                    const rotateY = ((x - centerX) / centerX) * 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale(1.02)`;
+                    card.style.setProperty('--mouse-x', `${((x / rect.width) * 100).toFixed(1)}%`);
+                    card.style.setProperty('--mouse-y', `${((y / rect.height) * 100).toFixed(1)}%`);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                    card.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                });
+
+                card.addEventListener('mouseenter', () => {
+                    card.style.transition = 'none';
+                });
+            });
+
+            // 2. Category Tab Filtering with Smooth Animation
+            let activeFilter = 'all';
+
+            function applyFilters() {
+                const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+                let visibleCount = 0;
+
+                skillCards.forEach((card, index) => {
+                    const cardCat = card.getAttribute('data-category') || '';
+                    const text = card.textContent.toLowerCase();
+
+                    const matchesCategory = (activeFilter === 'all') || cardCat.includes(activeFilter);
+                    const matchesQuery = !query || text.includes(query);
+
+                    if (matchesCategory && matchesQuery) {
+                        card.classList.remove('skill-hidden');
+                        card.classList.remove('skill-dimmed');
+                        if (query) {
+                            card.classList.add('skill-highlighted');
+                        } else {
+                            card.classList.remove('skill-highlighted');
+                        }
+                        card.style.animation = `fadeInUp 0.4s ease forwards ${(visibleCount * 0.05).toFixed(2)}s`;
+                        visibleCount++;
+                    } else if (matchesCategory && !matchesQuery) {
+                        card.classList.remove('skill-hidden');
+                        card.classList.add('skill-dimmed');
+                        card.classList.remove('skill-highlighted');
+                    } else {
+                        card.classList.add('skill-hidden');
+                        card.classList.remove('skill-highlighted');
+                    }
+                });
+
+                if (countPill) {
+                    countPill.textContent = `${visibleCount} Skill${visibleCount === 1 ? '' : 's'}`;
+                }
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    activeFilter = btn.getAttribute('data-filter') || 'all';
+                    applyFilters();
+                });
+            });
+
+            // 3. Live Keyword Search
+            if (searchInput) {
+                searchInput.addEventListener('input', applyFilters);
+            }
+
+            // 4. Clickable Tag Filtering
+            document.querySelectorAll('.circle-skill-tags .tag').forEach(tag => {
+                tag.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const tagText = tag.textContent.trim();
+                    if (searchInput) {
+                        searchInput.value = tagText;
+                        applyFilters();
+                        searchInput.focus();
+                    }
+                });
+            });
+        })();
+
     </script>
 </body>
 </html>
