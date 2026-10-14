@@ -1386,12 +1386,419 @@
             transform: translateY(-2px);
         }
 
+    
+        /* === COMPREHENSIVE MOBILE EXPERIENCE ENHANCEMENTS === */
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Nav Backdrop for Mobile Drawer */
+        .nav-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 998;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Mobile Scroll-to-Top Floating Button */
+        .mobile-scroll-top {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.2rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(8, 12, 20, 0.92);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 20px rgba(0, 242, 255, 0.35);
+            z-index: 990;
+        }
+
+        .mobile-scroll-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .mobile-scroll-top:active {
+            transform: scale(0.92);
+        }
+
+        /* Mobile Drawer Header */
+        .mobile-drawer-header {
+            display: none;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        @media (max-width: 992px) {
+            .mobile-drawer-header {
+                display: flex;
+            }
+            .mobile-drawer-title {
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: #ffffff;
+            }
+            .mobile-drawer-close {
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid var(--glass-border);
+                color: #ffffff;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+        }
+
+        /* Fine-tuned Responsive rules */
+        @media (max-width: 992px) {
+            nav {
+                padding: 0.9rem 5%;
+            }
+            .nav-links {
+                padding: 1.5rem 1.8rem;
+                width: min(300px, 82vw);
+            }
+            .hero-container {
+                gap: 2rem;
+            }
+            .hero-content h1 {
+                font-size: clamp(2.2rem, 7vw, 3.2rem);
+            }
+            .hero-image {
+                flex: 0 0 clamp(180px, 45vw, 230px);
+                width: clamp(180px, 45vw, 230px);
+                height: clamp(180px, 45vw, 230px);
+                margin: 0 auto;
+                order: -1;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .about-text {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 55px 4.5%;
+            }
+            .section-title {
+                font-size: clamp(1.75rem, 6vw, 2.2rem);
+                margin-bottom: 2rem;
+            }
+            #hero {
+                min-height: auto;
+                padding: 95px 4.5% 50px 4.5%;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .hero-content p {
+                text-align: left;
+                font-size: 0.92rem;
+                line-height: 1.65;
+            }
+            .cta-group {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.8rem;
+            }
+            .cta-group .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.85rem 1.2rem;
+            }
+
+            /* About Stats Mobile */
+            .about-stats {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.85rem;
+                margin-top: 1.5rem;
+            }
+            .stat-card {
+                padding: 1.15rem 0.65rem;
+                border-radius: 14px;
+            }
+            .stat-number {
+                font-size: clamp(1.6rem, 5.5vw, 2.1rem);
+            }
+            .stat-label {
+                font-size: 0.72rem;
+                line-height: 1.35;
+                margin-top: 0.35rem;
+            }
+
+            /* Education Grid Mobile */
+            .certs-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+            .cert-card {
+                padding: 1.15rem 1rem;
+                border-radius: 14px;
+            }
+
+            /* Skills Mobile */
+            .skills-toolbar-wrap {
+                margin: 0 auto 1.5rem auto;
+                width: 100%;
+            }
+            .skills-filter-tabs {
+                width: 100%;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                padding: 0.3rem 0.2rem 0.7rem 0.2rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 0.5rem;
+            }
+            .skills-filter-tabs::-webkit-scrollbar {
+                display: none;
+            }
+            .skill-filter-btn {
+                flex-shrink: 0;
+                font-size: 0.78rem;
+                padding: 0.45rem 0.85rem;
+                white-space: nowrap;
+            }
+            .skills-search-box {
+                width: 100%;
+                max-width: 100%;
+            }
+            .skills-search-box input {
+                font-size: 16px; /* Prevents auto zoom in iOS */
+                padding: 0.7rem 2.4rem 0.7rem 2.4rem;
+            }
+            .skills-count-pill {
+                font-size: 0.7rem;
+                padding: 0.15rem 0.5rem;
+            }
+            .circle-skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .circle-skill-card {
+                padding: 1.75rem 1.15rem;
+                border-radius: 18px;
+            }
+            .circle-meter-wrapper {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 1.1rem;
+            }
+            .circle-meter-svg {
+                width: 120px;
+                height: 120px;
+            }
+            .circle-meter-icon {
+                width: 42px !important;
+                height: 42px !important;
+            }
+            .yt-official-logo {
+                width: 50px !important;
+                height: 35px !important;
+            }
+            .circle-skill-title {
+                font-size: 1.12rem;
+            }
+            .circle-skill-desc {
+                font-size: 0.85rem;
+                line-height: 1.5;
+            }
+            .circle-skill-tags {
+                gap: 0.35rem;
+            }
+            .circle-skill-tags .tag {
+                font-size: 0.72rem;
+                padding: 0.22rem 0.55rem;
+            }
+
+            /* Clients Grid Mobile (2 Columns) */
+            .clients-circle-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.85rem;
+            }
+            .client-circle-card {
+                padding: 1.15rem 0.65rem;
+                border-radius: 16px;
+            }
+            .client-circle-avatar {
+                width: 68px;
+                height: 68px;
+                margin-bottom: 0.65rem;
+            }
+            .client-circle-icon {
+                width: 30px !important;
+                height: 30px !important;
+            }
+            .client-circle-number {
+                width: 22px;
+                height: 22px;
+                font-size: 0.7rem;
+            }
+            .client-circle-name {
+                font-size: 0.92rem;
+                line-height: 1.25;
+                margin-bottom: 0.3rem;
+            }
+            .client-circle-location {
+                font-size: 0.7rem;
+                padding: 0.12rem 0.45rem;
+                margin-bottom: 0.35rem;
+            }
+            .client-circle-industry {
+                font-size: 0.72rem;
+                line-height: 1.35;
+                margin-bottom: 0.5rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .client-circle-action {
+                font-size: 0.72rem;
+            }
+
+            /* Hot Shot Spotlight Mobile */
+            .hotshot-spotlight-card {
+                padding: 1.4rem 1.1rem;
+                margin-top: 1.8rem;
+                border-radius: 18px;
+            }
+            .spotlight-grid {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+            .silver-button-trophy {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.7rem;
+                padding: 0.9rem;
+            }
+            .silver-play-icon {
+                margin: 0 auto;
+            }
+            .hotshot-spotlight-card .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Experience Timeline Mobile */
+            .experience-timeline {
+                padding-left: 0.5rem;
+            }
+            .timeline-item {
+                padding: 1.35rem 1.1rem;
+                margin-bottom: 1.35rem;
+                margin-left: 0.6rem;
+                border-radius: 16px;
+            }
+            .timeline-item::before {
+                left: -17px;
+                top: 1.5rem;
+                width: 12px;
+                height: 12px;
+            }
+            .timeline-item h3 {
+                font-size: 1.1rem;
+                line-height: 1.3;
+            }
+            .timeline-item ul {
+                padding-left: 1.1rem;
+                font-size: 0.86rem;
+                line-height: 1.6;
+            }
+
+            /* Contact Mobile */
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: left;
+            }
+            .contact-info {
+                text-align: left;
+            }
+            .contact-info h3 {
+                font-size: 1.35rem;
+                margin-bottom: 0.8rem;
+            }
+            .contact-methods {
+                gap: 0.85rem;
+            }
+            .contact-method {
+                padding: 0.8rem;
+                background: rgba(255, 255, 255, 0.02);
+                border-radius: 12px;
+                border: 1px solid var(--glass-border);
+            }
+            .contact-form {
+                text-align: left;
+                gap: 1rem;
+            }
+            .form-group input, .form-group textarea {
+                font-size: 16px; /* Prevents auto zoom in iOS */
+                padding: 0.85rem;
+            }
+            .contact-form .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.85rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .clients-circle-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 <body>
 
     <canvas id="bg-canvas"></canvas>
     <div id="cursor-glow"></div>
+
+    <div id="nav-backdrop" class="nav-backdrop"></div>
+    <button id="mobile-scroll-top" class="mobile-scroll-top" aria-label="Scroll to top"><i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i></button>
 
     <nav id="navbar">
         <a href="#hero" class="logo">Ripanjot.Portfolio</a>
@@ -2802,33 +3209,36 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
             const countPill = document.getElementById('skills-count-pill');
             const filterBtns = document.querySelectorAll('.skill-filter-btn');
 
-            // 1. Interactive 3D Perspective Tilt with Dynamic Glare
-            skillCards.forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const rotateX = ((y - centerY) / centerY) * -10;
-                    const rotateY = ((x - centerX) / centerX) * 10;
-                    
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale(1.02)`;
-                    card.style.setProperty('--mouse-x', `${((x / rect.width) * 100).toFixed(1)}%`);
-                    card.style.setProperty('--mouse-y', `${((y / rect.height) * 100).toFixed(1)}%`);
-                });
+            // 1. Interactive 3D Perspective Tilt with Dynamic Glare (Desktop only)
+            const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+            if (canHover) {
+                skillCards.forEach(card => {
+                    card.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        
+                        const rotateX = ((y - centerY) / centerY) * -10;
+                        const rotateY = ((x - centerX) / centerX) * 10;
+                        
+                        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale(1.02)`;
+                        card.style.setProperty('--mouse-x', `${((x / rect.width) * 100).toFixed(1)}%`);
+                        card.style.setProperty('--mouse-y', `${((y / rect.height) * 100).toFixed(1)}%`);
+                    });
 
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = '';
-                    card.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                });
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = '';
+                        card.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                    });
 
-                card.addEventListener('mouseenter', () => {
-                    card.style.transition = 'none';
+                    card.addEventListener('mouseenter', () => {
+                        card.style.transition = 'none';
+                    });
                 });
-            });
+            }
 
             // 2. Category Tab Filtering with Smooth Animation
             let activeFilter = 'all';
@@ -2894,6 +3304,74 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
                         searchInput.focus();
                     }
                 });
+            });
+        })();
+
+    
+        // === MOBILE DRAWER & SCROLL-TO-TOP ENHANCEMENTS ===
+        (function initMobileExperience() {
+            // 1. Back to Top Button
+            const scrollTopBtn = document.getElementById('mobile-scroll-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 350) {
+                    scrollTopBtn && scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn && scrollTopBtn.classList.remove('visible');
+                }
+            }, { passive: true });
+
+            if (scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // 2. Mobile Backdrop & Drawer Close
+            const navLinks = document.getElementById('nav-links');
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const navBackdrop = document.getElementById('nav-backdrop');
+            const drawerCloseBtn = document.getElementById('drawer-close-btn');
+
+            function closeMobileMenu() {
+                if (navLinks) navLinks.classList.remove('mobile-active');
+                if (navBackdrop) navBackdrop.classList.remove('active');
+                if (mobileToggle) {
+                    mobileToggle.innerHTML = '<i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i>';
+                    if (window.lucide) lucide.createIcons();
+                }
+            }
+
+            function openMobileMenu() {
+                if (navLinks) navLinks.classList.add('mobile-active');
+                if (navBackdrop) navBackdrop.classList.add('active');
+                if (mobileToggle) {
+                    mobileToggle.innerHTML = '<i data-lucide="x" id="menu-icon" style="width: 22px; height: 22px;"></i>';
+                    if (window.lucide) lucide.createIcons();
+                }
+            }
+
+            if (mobileToggle) {
+                mobileToggle.onclick = (e) => {
+                    e.stopPropagation();
+                    const isOpen = navLinks && navLinks.classList.contains('mobile-active');
+                    if (isOpen) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
+                    }
+                };
+            }
+
+            if (navBackdrop) {
+                navBackdrop.addEventListener('click', closeMobileMenu);
+            }
+
+            if (drawerCloseBtn) {
+                drawerCloseBtn.addEventListener('click', closeMobileMenu);
+            }
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
             });
         })();
 
