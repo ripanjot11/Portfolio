@@ -81,7 +81,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 1.1rem 4%;
+            padding: 1.2rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -95,7 +95,7 @@
 
         nav.scrolled {
             background: rgba(5, 5, 5, 0.95);
-            padding: 0.8rem 4%;
+            padding: 0.85rem 8%;
             border-bottom: 1px solid var(--glass-border);
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
         }
@@ -174,11 +174,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 110px 4% 70px 4%;
+            padding: 120px 10% 80px 10%;
             position: relative;
-            max-width: 1440px;
-            margin: 0 auto;
-            width: 100%;
         }
 
         .hero-container {
@@ -293,10 +290,7 @@
 
         /* Sections General */
         section {
-            padding: 85px 4%;
-            max-width: 1440px;
-            margin: 0 auto;
-            width: 100%;
+            padding: 100px 10%;
         }
 
         .section-title {
@@ -462,8 +456,8 @@
         /* 10 CIRCLE CLIENTS SECTION */
         .clients-circle-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
@@ -673,8 +667,8 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
 
         .project-card {
@@ -812,8 +806,7 @@
 
         /* Experience Section */
         .experience-timeline {
-            max-width: 1050px;
-            width: 100%;
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
         }
@@ -994,10 +987,10 @@
             display: block;
         }
 
-        /* Responsive & Mobile Optimization (Full Side Filling) */
+        /* Responsive */
         @media (max-width: 992px) {
             nav {
-                padding: 1rem 3%;
+                padding: 1rem 5%;
             }
             .mobile-menu-btn {
                 display: flex;
@@ -1006,7 +999,7 @@
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 290px;
+                width: 280px;
                 height: 100vh;
                 background: rgba(8, 12, 20, 0.98);
                 backdrop-filter: blur(20px);
@@ -1014,7 +1007,7 @@
                 border-left: 1px solid var(--neon-blue);
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 5rem 1.8rem 2rem 1.8rem;
+                padding: 5rem 2rem 2rem 2rem;
                 gap: 1.2rem;
                 transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
                 box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
@@ -1026,24 +1019,20 @@
             .nav-links a {
                 font-size: 1rem;
                 width: 100%;
-                padding: 0.6rem 0;
+                padding: 0.5rem 0;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            }
-            section {
-                padding: 70px 3%;
             }
             .about-grid, .contact-container, .hero-container {
                 grid-template-columns: 1fr;
                 flex-direction: column;
                 text-align: center;
-                gap: 2.5rem;
             }
             #hero {
                 min-height: 100vh;
-                padding: 110px 3% 60px 3%;
+                padding: 130px 6% 70px 6%;
             }
             .hero-container {
-                gap: 2rem;
+                gap: 2.5rem;
             }
             .hero-image {
                 flex: 0 0 240px;
@@ -1062,7 +1051,6 @@
             }
             .cta-group {
                 justify-content: center;
-                flex-wrap: wrap;
             }
             .hero-socials {
                 justify-content: center;
@@ -1070,230 +1058,36 @@
         }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 0.85rem 1rem;
-            }
-            nav.scrolled {
-                padding: 0.75rem 1rem;
-            }
-            .logo {
-                font-size: 1.15rem;
-                letter-spacing: 1px;
-            }
             section {
-                padding: 55px 1rem;
-            }
-            #hero {
-                padding: 95px 1rem 45px 1rem;
-                min-height: auto;
-            }
-            .section-title {
-                font-size: 1.85rem;
-                margin-bottom: 2rem;
-            }
-            .section-title::after {
-                width: 60px;
-                height: 3px;
-                bottom: -8px;
-            }
-            .hero-container {
-                gap: 1.8rem;
-            }
-            .hero-content h1 {
-                font-size: 2.3rem;
-                line-height: 1.15;
-            }
-            .hero-content .typing-container {
-                font-size: 1.15rem;
-                margin-bottom: 1.5rem;
-            }
-            .cta-group {
-                flex-direction: column;
-                width: 100%;
-                gap: 0.8rem;
-            }
-            .cta-group .btn {
-                width: 100%;
-                text-align: center;
-                padding: 0.85rem 1.2rem;
-                font-size: 0.9rem;
-            }
-            .hero-image {
-                flex: 0 0 200px;
-                width: 200px;
-                height: 200px;
-            }
-            .about-grid {
-                gap: 2rem;
-                text-align: left;
-            }
-            .about-text {
-                font-size: 0.93rem;
-                line-height: 1.7;
-            }
-            .about-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.8rem;
-            }
-            .stat-card {
-                padding: 1.2rem 0.6rem;
-            }
-            .stat-number {
-                font-size: 1.9rem;
-            }
-            .stat-label {
-                font-size: 0.75rem;
-            }
-            .certs-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            .cert-card {
-                padding: 1.2rem 1rem;
+                padding: 70px 5%;
             }
             .circle-skills-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-            .circle-skill-card {
-                padding: 1.8rem 1.2rem;
-            }
             .clients-circle-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.85rem;
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 1.2rem;
             }
             .client-circle-card {
-                padding: 1.3rem 0.6rem;
-                border-radius: 16px;
+                padding: 1.5rem 0.8rem;
             }
             .client-circle-avatar {
-                width: 78px;
-                height: 78px;
-                margin-bottom: 0.8rem;
-            }
-            .client-circle-number {
-                width: 22px;
-                height: 22px;
-                font-size: 0.7rem;
-            }
-            .client-circle-name {
-                font-size: 0.95rem;
-                margin-bottom: 0.3rem;
-            }
-            .client-circle-location {
-                font-size: 0.72rem;
-                padding: 0.15rem 0.4rem;
-                margin-bottom: 0.4rem;
-            }
-            .client-circle-industry {
-                font-size: 0.73rem;
-                margin-bottom: 0.7rem;
-                line-height: 1.35;
-            }
-            .client-circle-action {
-                font-size: 0.75rem;
+                width: 85px;
+                height: 85px;
             }
             .hotshot-spotlight-card {
-                padding: 1.4rem 1rem;
-                margin-top: 2rem;
-                border-radius: 18px;
-            }
-            .spotlight-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .silver-button-trophy {
-                padding: 1rem;
-                gap: 0.8rem;
-            }
-            .silver-play-icon {
-                width: 48px;
-                height: 48px;
-                font-size: 1.4rem;
-            }
-            .experience-timeline {
-                padding: 0;
-            }
-            .timeline-item {
-                padding: 1.4rem 1rem;
-                margin-bottom: 1.5rem;
-            }
-            .timeline-item::before {
-                left: -10px;
-                width: 12px;
-                height: 12px;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .project-content {
-                padding: 1.4rem 1rem;
+                padding: 1.5rem 1.2rem;
             }
             .cv-card {
-                padding: 1.4rem 1rem;
-                border-radius: 16px;
+                padding: 1.5rem 1.2rem;
             }
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: left;
+            .btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.88rem;
             }
-            .contact-info h3 {
-                font-size: 1.5rem;
-            }
-            .form-group input, .form-group textarea {
-                padding: 0.85rem;
-            }
-            footer {
-                padding: 2.5rem 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            section {
-                padding: 45px 0.75rem;
-            }
-            #hero {
-                padding: 85px 0.75rem 40px 0.75rem;
-            }
-            nav {
-                padding: 0.75rem 0.75rem;
-            }
-            .clients-circle-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.65rem;
-            }
-            .client-circle-card {
-                padding: 1.1rem 0.45rem;
-            }
-            .client-circle-avatar {
-                width: 68px;
-                height: 68px;
-            }
-            .client-circle-name {
-                font-size: 0.86rem;
-            }
-            .client-circle-location {
-                font-size: 0.68rem;
-            }
-            .client-circle-industry {
-                font-size: 0.68rem;
-            }
-            .about-stats {
-                gap: 0.6rem;
-            }
-            .stat-card {
-                padding: 1rem 0.5rem;
-            }
-            .stat-number {
-                font-size: 1.65rem;
-            }
-            .stat-label {
-                font-size: 0.7rem;
-            }
-            .cv-card, .hotshot-spotlight-card, .timeline-item, .project-content {
-                padding: 1.2rem 0.85rem;
+            .section-title {
+                font-size: 2rem;
             }
         }
 
@@ -1415,7 +1209,7 @@
             <a href="#clients" class="nav-item">Clients</a>
             <a href="#experience" class="nav-item">Experience</a>
             <a href="#projects" class="nav-item">Projects</a>
-            <a href="resume_pf.html" target="_blank" class="nav-item">Resume</a>
+            <a href="resume.html" target="_blank" class="nav-item">Resume</a>
             <a href="#contact" class="nav-item">Contact</a>
         </div>
         <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle navigation menu">
@@ -1439,7 +1233,7 @@
                     <p>With a blend of creativity, analytical thinking, and hands-on execution, I focus on delivering quality work and measurable marketing results.</p>
                 </div>
                 <div class="cta-group" data-reveal style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-                    <a href="resume_pf.html" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #00f2ff, #7000ff); border: none; color: #fff; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 0 20px rgba(0, 242, 255, 0.5); padding: 0.8rem 1.6rem; font-size: 1rem; text-decoration: none;">
+                    <a href="resume.html" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #00f2ff, #7000ff); border: none; color: #fff; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 0 20px rgba(0, 242, 255, 0.5); padding: 0.8rem 1.6rem; font-size: 1rem; text-decoration: none;">
                         <i data-lucide="file-text" style="width: 20px; height: 20px;"></i> View Resume
                     </a>
                     <a href="#clients" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.4rem;">
@@ -1478,9 +1272,7 @@
                 <p>
                     I have generated <strong>100+ tutor leads for an edtech platform</strong> and <strong>100+ relevant call enquiries per day for an electronics business</strong> through Meta Ads. My achievements also include helping a music label earn the <strong>YouTube Silver Play Button (100K+ subscribers)</strong> and driving <strong>1 million organic reach in one month</strong> for a news and media platform.
                 </p>
-                <p>
-                    I combine marketing strategy with hands-on creative skills, including social media posts, ad creatives, landing pages, business videos, reels, YouTube Shorts, thumbnail creatives and shoots. I also have experience with WordPress, Strapi, and Magento CMS, YouTube channel management, digital video publishing, copyright-related matters, and training interns.
-                </p>
+            
             </div>
             <div class="about-stats">
                 <div class="stat-card glass" data-reveal>
@@ -1753,58 +1545,10 @@
                 </span>
             </a>
 
-            <!-- 2. English Partner -->
-            <a href="client.html?id=englishpartner" target="_blank" class="client-circle-card" data-reveal>
-                <div class="client-circle-avatar" style="border-color: #00ff88;">
-                    <span class="client-circle-number">2</span>
-                    <i data-lucide="graduation-cap" class="client-circle-icon" style="width: 42px; height: 42px; color: #00ff88;"></i>
-                </div>
-                <h3 class="client-circle-name">English Partner</h3>
-                <span class="client-circle-location">
-                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> India & Canada
-                </span>
-                <p class="client-circle-industry">EdTech / Online Learning (100+ Tutor Leads)</p>
-                <span class="client-circle-action">
-                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
-                </span>
-            </a>
-
-            <!-- 3. Trendvogue Lifestyle -->
-            <a href="client.html?id=trendvogue" target="_blank" class="client-circle-card" data-reveal>
-                <div class="client-circle-avatar" style="border-color: #bc13fe;">
-                    <span class="client-circle-number">3</span>
-                    <i data-lucide="shopping-cart" class="client-circle-icon" style="width: 42px; height: 42px; color: #bc13fe;"></i>
-                </div>
-                <h3 class="client-circle-name">Trendvogue Lifestyle</h3>
-                <span class="client-circle-location">
-                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> United Kingdom (UK Market)
-                </span>
-                <p class="client-circle-industry">eCommerce / Fashion & Apparel (UK Market)</p>
-                <span class="client-circle-action">
-                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
-                </span>
-            </a>
-
-            <!-- 4. CareMax Hospital -->
-            <a href="client.html?id=caremax" target="_blank" class="client-circle-card" data-reveal>
-                <div class="client-circle-avatar" style="border-color: #ff3366;">
-                    <span class="client-circle-number">4</span>
-                    <i data-lucide="heart-pulse" class="client-circle-icon" style="width: 42px; height: 42px; color: #ff3366;"></i>
-                </div>
-                <h3 class="client-circle-name">CareMax Hospital</h3>
-                <span class="client-circle-location">
-                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Jalandhar, Punjab, India
-                </span>
-                <p class="client-circle-industry">Healthcare / Multispeciality Hospital</p>
-                <span class="client-circle-action">
-                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
-                </span>
-            </a>
-
-            <!-- 5. PENNEP (Pennsylvania Enterprise) -->
+            <!-- 2. PENNEP (Pennsylvania Enterprise) -->
             <a href="client.html?id=pennep" target="_blank" class="client-circle-card" data-reveal>
                 <div class="client-circle-avatar" style="border-color: var(--neon-blue);">
-                    <span class="client-circle-number">5</span>
+                    <span class="client-circle-number">2</span>
                     <i data-lucide="building" class="client-circle-icon" style="width: 42px; height: 42px; color: var(--neon-blue);"></i>
                 </div>
                 <h3 class="client-circle-name">PENNEP (Pennsylvania Enterprise)</h3>
@@ -1817,81 +1561,129 @@
                 </span>
             </a>
 
-            <!-- 6. Jalandhar Live -->
-            <a href="client.html?id=jalandharlive" target="_blank" class="client-circle-card" data-reveal>
+            <!-- 3. SKUK -->
+            <a href="client.html?id=skuk" target="_blank" class="client-circle-card" data-reveal>
+                <div class="client-circle-avatar" style="border-color: #bc13fe;">
+                    <span class="client-circle-number">3</span>
+                    <i data-lucide="shopping-cart" class="client-circle-icon" style="width: 42px; height: 42px; color: #bc13fe;"></i>
+                </div>
+                <h3 class="client-circle-name">SKUK</h3>
+                <span class="client-circle-location">
+                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> United Kingdom (UK Market)
+                </span>
+                <p class="client-circle-industry">eCommerce — UK Market</p>
+                <span class="client-circle-action">
+                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+                </span>
+            </a>
+
+            <!-- 4. ARCLANTIC -->
+            <a href="client.html?id=arclantic" target="_blank" class="client-circle-card" data-reveal>
                 <div class="client-circle-avatar" style="border-color: #00f2ff;">
-                    <span class="client-circle-number">6</span>
+                    <span class="client-circle-number">4</span>
                     <i data-lucide="newspaper" class="client-circle-icon" style="width: 42px; height: 42px; color: #00f2ff;"></i>
                 </div>
-                <h3 class="client-circle-name">Jalandhar Live</h3>
+                <h3 class="client-circle-name">ARCLANTIC</h3>
+                <span class="client-circle-location">
+                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Digital News & Media
+                </span>
+                <p class="client-circle-industry">News & Media Platform</p>
+                <span class="client-circle-action">
+                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+                </span>
+            </a>
+
+            <!-- 5. EMPENHANCE -->
+            <a href="client.html?id=empenhance" target="_blank" class="client-circle-card" data-reveal>
+                <div class="client-circle-avatar" style="border-color: #00ff88;">
+                    <span class="client-circle-number">5</span>
+                    <i data-lucide="graduation-cap" class="client-circle-icon" style="width: 42px; height: 42px; color: #00ff88;"></i>
+                </div>
+                <h3 class="client-circle-name">EMPENHANCE</h3>
+                <span class="client-circle-location">
+                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Canada & India
+                </span>
+                <p class="client-circle-industry">EdTech | Online Learning</p>
+                <span class="client-circle-action">
+                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+                </span>
+            </a>
+
+            <!-- 6. SocialIndigo -->
+            <a href="client.html?id=socialindigo" target="_blank" class="client-circle-card" data-reveal>
+                <div class="client-circle-avatar" style="border-color: #ffaa00;">
+                    <span class="client-circle-number">6</span>
+                    <i data-lucide="sparkles" class="client-circle-icon" style="width: 42px; height: 42px; color: #ffaa00;"></i>
+                </div>
+                <h3 class="client-circle-name">SocialIndigo</h3>
+                <span class="client-circle-location">
+                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Digital Updates Media
+                </span>
+                <p class="client-circle-industry">News & Digital Media (1M Reach)</p>
+                <span class="client-circle-action">
+                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+                </span>
+            </a>
+
+            <!-- 7. Regenta Hilltop Shimla -->
+            <a href="client.html?id=regenta" target="_blank" class="client-circle-card" data-reveal>
+                <div class="client-circle-avatar" style="border-color: #ff007f;">
+                    <span class="client-circle-number">7</span>
+                    <i data-lucide="hotel" class="client-circle-icon" style="width: 42px; height: 42px; color: #ff007f;"></i>
+                </div>
+                <h3 class="client-circle-name">Regenta Hilltop Shimla</h3>
+                <span class="client-circle-location">
+                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Shimla, Himachal Pradesh
+                </span>
+                <p class="client-circle-industry">Hospitality | Hotels & Restaurants</p>
+                <span class="client-circle-action">
+                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+                </span>
+            </a>
+
+            <!-- 8. Dinesh Dhall -->
+            <a href="client.html?id=dineshdhall" target="_blank" class="client-circle-card" data-reveal>
+                <div class="client-circle-avatar" style="border-color: #ff7700;">
+                    <span class="client-circle-number">8</span>
+                    <i data-lucide="megaphone" class="client-circle-icon" style="width: 42px; height: 42px; color: #ff7700;"></i>
+                </div>
+                <h3 class="client-circle-name">Dinesh Dhall</h3>
+                <span class="client-circle-location">
+                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Jalandhar North, Punjab
+                </span>
+                <p class="client-circle-industry">Political Communications & Outreach</p>
+                <span class="client-circle-action">
+                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+                </span>
+            </a>
+
+            <!-- 9. Trouble Tracers -->
+            <a href="client.html?id=troubletracers" target="_blank" class="client-circle-card" data-reveal>
+                <div class="client-circle-avatar" style="border-color: #00e5ff;">
+                    <span class="client-circle-number">9</span>
+                    <i data-lucide="cpu" class="client-circle-icon" style="width: 42px; height: 42px; color: #00e5ff;"></i>
+                </div>
+                <h3 class="client-circle-name">Trouble Tracers</h3>
+                <span class="client-circle-location">
+                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Punjab, India
+                </span>
+                <p class="client-circle-industry">Electronics Retail & Security Solutions</p>
+                <span class="client-circle-action">
+                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+                </span>
+            </a>
+
+            <!-- 10. Tagore Hospital -->
+            <a href="client.html?id=tagore" target="_blank" class="client-circle-card" data-reveal>
+                <div class="client-circle-avatar" style="border-color: #ff3366;">
+                    <span class="client-circle-number">10</span>
+                    <i data-lucide="heart-pulse" class="client-circle-icon" style="width: 42px; height: 42px; color: #ff3366;"></i>
+                </div>
+                <h3 class="client-circle-name">Tagore Hospital</h3>
                 <span class="client-circle-location">
                     <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Jalandhar, Punjab, India
                 </span>
-                <p class="client-circle-industry">Digital News & Media (1M+ Organic Reach)</p>
-                <span class="client-circle-action">
-                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
-                </span>
-            </a>
-
-            <!-- 7. Simran Electronics -->
-            <a href="client.html?id=simranelectronics" target="_blank" class="client-circle-card" data-reveal>
-                <div class="client-circle-avatar" style="border-color: #00e5ff;">
-                    <span class="client-circle-number">7</span>
-                    <i data-lucide="cpu" class="client-circle-icon" style="width: 42px; height: 42px; color: #00e5ff;"></i>
-                </div>
-                <h3 class="client-circle-name">Simran Electronics</h3>
-                <span class="client-circle-location">
-                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Punjab, India
-                </span>
-                <p class="client-circle-industry">Electronics Retail & Security (100+ Daily Calls)</p>
-                <span class="client-circle-action">
-                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
-                </span>
-            </a>
-
-            <!-- 8. Lovely Sweet House -->
-            <a href="client.html?id=lovelysweet" target="_blank" class="client-circle-card" data-reveal>
-                <div class="client-circle-avatar" style="border-color: #ff7700;">
-                    <span class="client-circle-number">8</span>
-                    <i data-lucide="coffee" class="client-circle-icon" style="width: 42px; height: 42px; color: #ff7700;"></i>
-                </div>
-                <h3 class="client-circle-name">Lovely Sweet House</h3>
-                <span class="client-circle-location">
-                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Punjab, India
-                </span>
-                <p class="client-circle-industry">Hospitality / Food & Confectionery</p>
-                <span class="client-circle-action">
-                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
-                </span>
-            </a>
-
-            <!-- 9. DSR Tax Solution -->
-            <a href="client.html?id=dsrtax" target="_blank" class="client-circle-card" data-reveal>
-                <div class="client-circle-avatar" style="border-color: #38bdf8;">
-                    <span class="client-circle-number">9</span>
-                    <i data-lucide="file-text" class="client-circle-icon" style="width: 42px; height: 42px; color: #38bdf8;"></i>
-                </div>
-                <h3 class="client-circle-name">DSR Tax Solution</h3>
-                <span class="client-circle-location">
-                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> India
-                </span>
-                <p class="client-circle-industry">Financial & Taxation Services</p>
-                <span class="client-circle-action">
-                    See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
-                </span>
-            </a>
-
-            <!-- 10. Shubh Shagun Wedding Mall -->
-            <a href="client.html?id=shubhshagun" target="_blank" class="client-circle-card" data-reveal>
-                <div class="client-circle-avatar" style="border-color: #e879f9;">
-                    <span class="client-circle-number">10</span>
-                    <i data-lucide="sparkles" class="client-circle-icon" style="width: 42px; height: 42px; color: #e879f9;"></i>
-                </div>
-                <h3 class="client-circle-name">Shubh Shagun Wedding Mall</h3>
-                <span class="client-circle-location">
-                    <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Punjab, India
-                </span>
-                <p class="client-circle-industry">Retail / Wedding Fashion & Lifestyle</p>
+                <p class="client-circle-industry">Healthcare | Hospital & Medical</p>
                 <span class="client-circle-action">
                     See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
                 </span>
@@ -1907,7 +1699,7 @@
                 <span class="client-circle-location">
                     <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Punjab, India
                 </span>
-                <p class="client-circle-industry">Immigration & Education Consultancy</p>
+                <p class="client-circle-industry">Immigration | Study & Tourist Visas</p>
                 <span class="client-circle-action">
                     See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
                 </span>
@@ -1923,7 +1715,7 @@
                 <span class="client-circle-location">
                     <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i> Jalandhar, Punjab, India
                 </span>
-                <p class="client-circle-industry">Commercial Retail & Entertainment (Shopping Mall)</p>
+                <p class="client-circle-industry">Retail | Shopping Mall & Commercial</p>
                 <span class="client-circle-action">
                     See Details <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
                 </span>
@@ -2157,7 +1949,7 @@
                     <button onclick="downloadCV()" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; font-size: 0.9rem; border-color: var(--neon-purple); color: var(--neon-purple); cursor: pointer; font-weight: 600;">
                         <i data-lucide="download" style="width: 18px; height: 18px;"></i> Download Resume
                     </button>
-                    <a href="resume_pf.html" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; font-size: 0.9rem; cursor: pointer; text-decoration: none;">
+                    <a href="resume.html" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; font-size: 0.9rem; cursor: pointer; text-decoration: none;">
                         <i data-lucide="printer" style="width: 18px; height: 18px;"></i> Print Resume
                     </a>
                 </div>
@@ -2752,7 +2544,7 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
 
         // CV Page Redirect & Download Handlers
         function openCVModal() {
-            window.open('resume_pf.html', '_blank');
+            window.open('resume.html', '_blank');
         }
 
         function closeCVModal() {

@@ -551,11 +551,11 @@
         </div>
     </nav>
 
-    <!-- 10 Clients Switcher Bar -->
+    <!-- 12 Clients Switcher Bar -->
     <div class="client-switcher-wrap">
         <div class="switcher-title">
             <i data-lucide="layers" style="width: 15px; height: 15px; color: var(--neon-cyan);"></i>
-            Select Client to View Case Study & Laptop Presentation:
+            Select Client to View Case Study Details:
         </div>
         <div class="client-pills" id="client-pills-container">
             <!-- Rendered by JS -->
@@ -572,301 +572,514 @@
     </footer>
 
     <script>
-        // CLIENTS DATABASE (ALL 10 CLIENTS)
+        // CLIENTS DATABASE (EXACT 12 CLIENTS SPECIFIED)
         const clientsData = {
-            "hotshot": {
-                name: "Hot Shot Music",
-                location: "Jalandhar, Punjab, India",
-                industry: "Music & Entertainment — Punjabi & Devotional Music",
-                badge: "Featured Music Label Case Study",
-                services: ["Social Media Marketing", "SMO", "Meta Ads", "Google Ads", "YouTube SEO", "YouTube Management", "Content Creation"],
-                objective: "Hot Shot Music needed to strengthen its digital presence across social media and YouTube while promoting Punjabi and devotional music releases. The requirement included managing regular content, increasing reach and audience growth, promoting new songs through paid advertising, and maintaining the digital publishing and promotional workflow for multiple music channels.",
-                solution: "I independently managed the brand's Instagram and Facebook presence, Meta Ads, Google Ads for music promotions, and two YouTube channels covering Punjabi and devotional music. My responsibilities included YouTube SEO, daily song uploads and Shorts, thumbnail creation, reel editing, poster and image designing, and content optimization. I also managed the official paperwork and song distribution process through Believe Music, while creating contracts and other required documentation.",
-                role: [
-                    "Managed Instagram and Facebook marketing and content publishing",
-                    "Planned and executed Meta Ads campaigns for music promotion",
-                    "Managed Google Ads for song and music promotions",
-                    "Managed two YouTube channels — music and devotional",
-                    "Performed YouTube SEO for songs and video content",
-                    "Uploaded music videos and published YouTube Shorts on a daily basis",
-                    "Created YouTube thumbnails and promotional creatives",
-                    "Edited reels and short-form video content",
-                    "Designed images, posters, and social media creatives",
-                    "Managed official song paperwork through Believe Music",
-                    "Created contracts and required documentation"
-                ],
-                results: [
-                    "YouTube Silver Play Button achieved for the music channel",
-                    "Increased social media reach and follower growth",
-                    "Contributed to growth in YouTube subscribers",
-                    "YouTube Shorts achieved higher reach than the original song videos for multiple releases"
-                ],
-                skills: "SMM | SMO | PPC | YouTube SEO | Social Media Marketing | Meta Ads | Google Ads | Content Creation | Video Editing | Graphic Design | YouTube Marketing",
-                creativeWork: "Social Media Posts | Posters | YouTube Thumbnails | Reels | YouTube Shorts | Promotional Creatives | Song Promotion Content",
-                tools: "Meta Ads Manager | Google Ads | YouTube Studio | Believe Music | Instagram | Facebook | YouTube",
-                contribution: "I handled the digital marketing and content workflow independently, covering both the marketing and creative side of the music label. From planning and publishing content to creating visuals, optimizing YouTube videos, running paid promotions, and managing music-related documentation, I was involved across the complete digital promotion process.",
-                metrics: {
-                    highlight: "YouTube Silver Play Button",
-                    shortsMultiplier: "Shorts > Original Video Reach",
-                    adRoas: "High Paid Music ROAS",
-                    campaignsCount: "2 Channels & Paid Ads"
-                }
-            },
-            "pennep": {
-                name: "Pennsylvania Enterprise (PENNEP)",
-                location: "Jalandhar, Punjab, India & Global",
-                industry: "Enterprise IT, Software & Digital Transformation",
-                badge: "Current Role - Junior Analyst",
-                services: ["SEO Strategy", "Strapi Headless CMS", "Magento E-Commerce", "Content Marketing", "Social Media Management"],
-                objective: "Pennsylvania Enterprise required continuous on-page and technical SEO optimization, comprehensive content management across enterprise web properties, and administration of modern CMS platforms for in-house and international client applications.",
-                solution: "Engineered structured keyword strategies, maintained ongoing website content updates on Strapi Headless CMS, and streamlined Magento eCommerce catalog management. Coordinated SEO audits to eliminate indexing bottlenecks and improve organic keyword rankings.",
-                role: [
-                    "Managing website content, SEO optimizations, and social media marketing for PENNEP in-house projects",
-                    "Administering multiple CMS platforms including Strapi and Magento",
-                    "Conducting in-depth technical SEO keyword research and meta-tag optimization",
-                    "Collaborating with UI/UX engineers for catalog accuracy and smooth storefront delivery"
-                ],
-                results: [
-                    "Substantial boost in organic search visibility and search engine indexing speed",
-                    "Zero downtime catalog and metadata deployments across Strapi and Magento",
-                    "Expanded social referral traffic to company web properties"
-                ],
-                skills: "SEO | Strapi CMS | Magento CMS | Content Marketing | Social Media Marketing | Analytics",
-                creativeWork: "Website Banners | Blog Metadata | Product Listings | Social Creatives",
-                tools: "Strapi CMS | Magento | Google Search Console | Google Analytics | Meta Business Suite",
-                contribution: "Serving as Junior Digital Marketing Analyst driving day-to-day search engine optimization, content governance, and enterprise CMS workflows.",
-                metrics: {
-                    highlight: "Strapi & Magento Certified Admin",
-                    shortsMultiplier: "94% SEO Health Score",
-                    adRoas: "+65% Organic Growth",
-                    campaignsCount: "Multi-CMS Architecture"
-                }
-            },
-            "trendvogue": {
-                name: "TrendVogue E-Commerce",
-                location: "Ludhiana, Punjab, India",
-                industry: "Fashion & Retail E-Commerce",
-                badge: "E-Commerce Growth Case Study",
-                services: ["Magento Catalog Optimization", "PPC Campaigns", "Meta Ads", "SMO", "Product SEO"],
-                objective: "Enhance product discovery, optimize product taxonomy on Magento, and run high-converting Meta and Google Shopping ad campaigns for apparel lines.",
-                solution: "Restructured product metadata, introduced structured schema tags, and executed retargeting funnels on Instagram and Facebook Ads.",
-                role: [
-                    "Managed catalog inventory updates and product SEO metadata on Magento",
-                    "Set up dynamic Meta Catalog Ads targeting cart abandoners",
-                    "Created seasonal promotional creatives and social media campaigns"
-                ],
-                results: [
-                    "3.4x Return on Ad Spend (ROAS) on Meta Catalog Ads",
-                    "42% increase in organic organic category page rankings"
-                ],
-                skills: "Magento | Meta Ads | Google Ads | Product SEO | SMM",
-                creativeWork: "Lookbook Creatives | Carousel Ads | Promotional Stories",
-                tools: "Magento | Meta Ads Manager | Canva | Google Analytics",
-                contribution: "Led the digital advertising and storefront metadata updates to maximize online purchase conversion.",
-                metrics: {
-                    highlight: "3.4x Meta ROAS",
-                    shortsMultiplier: "42% Category Rank Lift",
-                    adRoas: "-28% Cost Per Acquisition",
-                    campaignsCount: "12 Seasonal Drops"
-                }
-            },
-            "devotional": {
-                name: "Devotional Sounds",
-                location: "Jalandhar, Punjab, India",
-                industry: "Spiritual & Devotional Music Media",
-                badge: "YouTube Audience Strategy",
-                services: ["YouTube SEO", "Shorts Distribution", "Community Management", "Metadata Optimization"],
-                objective: "Grow organic daily viewership for devotional bhajans, hymns, and spiritual tracks on YouTube.",
-                solution: "Implemented dedicated YouTube SEO strategies with high-volume religious keyword tags, tailored custom thumbnails, and structured daily Shorts clips.",
-                role: [
-                    "Daily scheduling and publishing of devotional tracks and Shorts",
-                    "Created high-contrast thumbnails tailored for mobile click-through rates",
-                    "Optimized titles, video descriptions, and audio rights metadata"
-                ],
-                results: [
-                    "Over 2M+ combined views on optimized Shorts",
-                    "Consistent daily subscriber growth and high watch-time retention"
-                ],
-                skills: "YouTube SEO | Video Marketing | Thumbnail Design | Audio Distribution",
-                creativeWork: "Spiritual Thumbnails | Audio Waveform Shorts | Daily Quotes",
-                tools: "YouTube Studio | Photoshop | Canva | Believe Music",
-                contribution: "Handled full channel operations, SEO tags, audio upload scheduling, and audience interaction.",
-                metrics: {
-                    highlight: "2M+ Shorts Views",
-                    shortsMultiplier: "68% Watch-Through Rate",
-                    adRoas: "+45K Subscribers",
-                    campaignsCount: "Daily Upload Pipeline"
-                }
-            },
-            "glowup": {
-                name: "GlowUp Cosmetics",
-                location: "Delhi NCR, India",
-                industry: "Beauty, Skincare & Cosmetics",
-                badge: "Paid Ads & Social Growth",
-                services: ["Meta Ads", "Instagram Reels Marketing", "Influencer Coordination", "Conversion Optimization"],
-                objective: "Scale customer acquisitions for clean beauty skincare products with paid Meta advertising and viral short-form video strategies.",
-                solution: "Created problem-solution Reels ad formats, optimized custom lookalike audiences in Meta Ads Manager, and ran retargeting campaigns.",
-                role: [
-                    "Planned and deployed Facebook & Instagram conversion ad campaigns",
-                    "Scripted and edited engaging user-generated style Reels",
-                    "Tracked CPA and ROAS to optimize ad budget allocations"
-                ],
-                results: [
-                    "Generated 4.1x blended ROAS during festive promotion weeks",
-                    "Lowered Cost Per Purchase by 32%"
-                ],
-                skills: "Meta Ads | Video Editing | Performance Marketing | Conversion Funnels",
-                creativeWork: "UGC Ad Creatives | Product Spotlight Reels | Story Polls",
-                tools: "Meta Ads Manager | CapCut | Premiere Pro | Shopify Analytics",
-                contribution: "Designed creative ad variations and managed campaign bidding strategies.",
-                metrics: {
-                    highlight: "4.1x Festive ROAS",
-                    shortsMultiplier: "-32% Cost Per Purchase",
-                    adRoas: "120K+ Ad Clicks",
-                    campaignsCount: "8 Targeted Funnels"
-                }
-            },
-            "urbanfit": {
-                name: "UrbanFit Apparel",
-                location: "Mumbai, Maharashtra, India",
-                industry: "Activewear & Fitness Fashion",
-                badge: "PPC & Brand Visibility",
-                services: ["Google Ads", "Search Campaigns", "Meta Retargeting", "Landing Page SEO"],
-                objective: "Capture high-intent gym apparel and sportswear shoppers through Google Search and Shopping Ads.",
-                solution: "Built tightly structured keyword ad groups, negative keyword lists, and compelling copy with promo extensions.",
-                role: [
-                    "Managed Google Search and Display ad campaigns",
-                    "Conducted competitive keyword gap analysis",
-                    "Optimized landing page metadata for speed and relevancy"
-                ],
-                results: [
-                    "Achieved 14.8% Click-Through Rate (CTR) on branded search keywords",
-                    "Decreased ad spend wastage by eliminating irrelevant search queries"
-                ],
-                skills: "Google Ads | PPC Management | Search Intent Optimization | Copywriting",
-                creativeWork: "Display Banners | Responsive Search Ad Copy | Promo Graphics",
-                tools: "Google Ads | Google Keyword Planner | Analytics",
-                contribution: "Handled search ad setup, keyword bidding, and conversion rate tracking.",
-                metrics: {
-                    highlight: "14.8% Search CTR",
-                    shortsMultiplier: "+85% Qualified Leads",
-                    adRoas: "3.2x ROI",
-                    campaignsCount: "15 Ad Groups"
-                }
-            },
-            "freshroot": {
-                name: "FreshRoot Organics",
-                location: "Chandigarh, India",
-                industry: "Organic Food & Farm-to-Table Grocery",
-                badge: "Local SEO & Community Marketing",
-                services: ["Local SEO", "Google Business Profile", "Instagram Marketing", "Content Writing"],
-                objective: "Drive local footfall and online grocery deliveries in the Chandigarh tri-city region.",
-                solution: "Optimized Google Business Profile listings, localized on-page SEO, and ran geo-targeted Facebook ads.",
-                role: [
-                    "Optimized Local SEO and Google Maps business presence",
-                    "Created informative wellness content and healthy recipe posts",
-                    "Ran hyper-local radius ads for same-day delivery promos"
-                ],
-                results: [
-                    "#1 Local ranking on Google Maps for targeted organic store queries",
-                    "60% increase in direct phone calls and direction requests"
-                ],
-                skills: "Local SEO | Google My Business | SMM | Content Strategy",
-                creativeWork: "Local Promo Posters | Recipe Graphics | Customer Testimonials",
-                tools: "Google Business Profile | Meta Ads Manager | Canva",
-                contribution: "Managed the entire local digital outreach and organic brand positioning.",
-                metrics: {
-                    highlight: "#1 Google Maps Rank",
-                    shortsMultiplier: "+60% Inbound Calls",
-                    adRoas: "4.8 Star Profile Rating",
-                    campaignsCount: "Hyper-Local Strategy"
-                }
-            },
-            "electrotech": {
-                name: "ElectroTech Hub",
-                location: "Amritsar, Punjab, India",
-                industry: "Consumer Electronics & Smart Devices",
-                badge: "PPC & Technical SEO",
-                services: ["Technical SEO", "Google Performance Max Ads", "Product Feeds", "Website Content"],
-                objective: "Scale eCommerce sales for audio accessories, wearables, and smart home gadgets.",
-                solution: "Set up Google Performance Max campaigns paired with structured product feed optimizations.",
-                role: [
-                    "Audited and cleaned product schema data and title tags",
-                    "Configured and managed Google Performance Max campaigns",
-                    "Analyzed customer search queries to refine ad targeting"
-                ],
-                results: [
-                    "Generated over 500+ eCommerce sales within first 60 days of launch",
-                    "Consistent 3.6x ROAS across multi-channel Google placements"
-                ],
-                skills: "Google Performance Max | Technical SEO | Feed Management | PPC",
-                creativeWork: "Product Comparison Creatives | Discount Banners | Unboxing Clips",
-                tools: "Google Merchant Center | Google Ads | Search Console",
-                contribution: "Led performance marketing and product catalog search readiness.",
-                metrics: {
-                    highlight: "3.6x PMax ROAS",
-                    shortsMultiplier: "500+ Initial Sales",
-                    adRoas: "98% Valid Feed Status",
-                    campaignsCount: "Multi-Device Campaigns"
-                }
-            },
-            "aurajewels": {
-                name: "Aura Jewels",
-                location: "Jaipur, Rajasthan, India",
-                industry: "Artisan Jewelry & Luxury Accessories",
-                badge: "Visual Social & Catalog Ads",
-                services: ["Social Media Optimization", "Meta Catalog Ads", "Instagram Aesthetic Strategy", "Brand Storytelling"],
-                objective: "Build a premium digital brand aesthetic and attract bridal and gift shoppers online.",
-                solution: "Designed cohesive Instagram grid aesthetics, story highlight tours, and high-end video showcase campaigns.",
-                role: [
-                    "Curated luxury visual content strategy on Instagram",
-                    "Ran high-intent jewelry gift campaigns on Meta Ads",
-                    "Managed direct customer inquiries and DM leads"
-                ],
-                results: [
-                    "Doubled Instagram follower base with high organic engagement rate",
-                    "4.5x ROAS on festive bridal jewelry collection drops"
-                ],
-                skills: "SMO | Meta Ads | Brand Design | Content Curation",
-                creativeWork: "Jewelry Reels | Aesthetic Lookbooks | Story Highlight Covers",
-                tools: "Instagram | Meta Business Suite | Canva Pro | Lightroom",
-                contribution: "Delivered cohesive luxury brand marketing and social catalog administration.",
-                metrics: {
-                    highlight: "4.5x Bridal Drop ROAS",
-                    shortsMultiplier: "2.2x Follower Surge",
-                    adRoas: "+75% Engagement Rate",
-                    campaignsCount: "High-Ticket Campaigns"
-                }
-            },
-            "apexmedia": {
-                name: "Apex Media Productions",
-                location: "Mohali, Punjab, India",
-                industry: "Video Production & Creative Agency",
-                badge: "YouTube Growth & B2B Leads",
-                services: ["YouTube SEO", "Video Tagging", "LinkedIn B2B Outreach", "Creative Strategy"],
-                objective: "Position Apex Media as a premier music video and commercial production house in North India.",
-                solution: "Optimized agency showreels on YouTube, deployed targeted B2B LinkedIn campaigns, and streamlined creative portfolio distribution.",
-                role: [
-                    "Optimized video tags, high-resolution custom thumbnails, and descriptions",
-                    "Managed client testimonial showcases and case videos",
-                    "Coordinated digital asset publishing for artists and brands"
-                ],
-                results: [
-                    "Over 10M+ collective impressions generated across client showreels",
-                    "Signed 14+ new music video and commercial production clients"
-                ],
-                skills: "YouTube Strategy | B2B Marketing | Video SEO | Graphic Design",
-                creativeWork: "Showreel Thumbnails | Behind-The-Scenes Reels | Pitch Decks",
-                tools: "YouTube Studio | LinkedIn Campaign Manager | Adobe Suite",
-                contribution: "Directed digital video publishing strategies, metadata, and corporate portfolio branding.",
-                metrics: {
-                    highlight: "10M+ Collective Impressions",
-                    shortsMultiplier: "14+ New Enterprise Clients",
-                    adRoas: "95% Video SEO Score",
-                    campaignsCount: "B2B Production Growth"
-                }
-            }
-        };
+    "hotshot": {
+        "name": "Hot Shot Music",
+        "location": "Jalandhar, Punjab, India",
+        "industry": "Music & Entertainment — Punjabi & Devotional Music",
+        "badge": "YouTube Silver Play Button Label",
+        "services": [
+            "Social Media Marketing",
+            "SMO",
+            "Meta Ads",
+            "Google Ads",
+            "YouTube SEO",
+            "YouTube Management",
+            "Content Creation"
+        ],
+        "objective": "Hot Shot Music needed to strengthen its digital presence across social media and YouTube while promoting Punjabi and devotional music releases. The requirement included managing regular content, increasing reach and audience growth, promoting new songs through paid advertising, and maintaining the digital publishing and promotional workflow for multiple music channels.",
+        "solution": "I independently managed the brand's Instagram and Facebook presence, Meta Ads, Google Ads for music promotions, and two YouTube channels covering Punjabi and devotional music. My responsibilities included YouTube SEO, daily song uploads and Shorts, thumbnail creation, reel editing, poster and image designing, and content optimization. I also managed the official paperwork and song distribution process through Believe Music, while creating contracts and other required documentation.",
+        "role": [
+            "Managed Instagram and Facebook marketing and content publishing",
+            "Planned and executed Meta Ads campaigns for music promotion",
+            "Managed Google Ads for song and music promotions",
+            "Managed two YouTube channels — music and devotional",
+            "Performed YouTube SEO for songs and video content",
+            "Uploaded music videos and published YouTube Shorts on a daily basis",
+            "Created YouTube thumbnails and promotional creatives",
+            "Edited reels and short-form video content",
+            "Designed images, posters, and social media creatives",
+            "Managed official song paperwork through Believe Music",
+            "Created contracts and required documentation"
+        ],
+        "results": [
+            "YouTube Silver Play Button achieved for the music channel",
+            "Increased social media reach and follower growth",
+            "Contributed to growth in YouTube subscribers",
+            "YouTube Shorts achieved higher reach than the original song videos for multiple releases"
+        ],
+        "skills": "SMM | SMO | PPC | YouTube SEO | Social Media Marketing | Meta Ads | Google Ads | Content Creation | Video Editing | Graphic Design | YouTube Marketing",
+        "creativeWork": "Social Media Posts | Posters | YouTube Thumbnails | Reels | YouTube Shorts | Promotional Creatives | Song Promotion Content",
+        "tools": "Meta Ads Manager | Google Ads | YouTube Studio | Believe Music | Instagram | Facebook | YouTube",
+        "contribution": "I handled the digital marketing and content workflow independently, covering both the marketing and creative side of the music label. From planning and publishing content to creating visuals, optimizing YouTube videos, running paid promotions, and managing music-related documentation, I was involved across the complete digital promotion process.",
+        "metrics": {
+            "highlight": "YouTube Silver Play Button",
+            "shortsMultiplier": "Shorts > Video Reach",
+            "adRoas": "Believe Music Partner",
+            "campaignsCount": "2 YouTube Channels"
+        }
+    },
+    "pennep": {
+        "name": "PENNEP (Pennsylvania Enterprise)",
+        "location": "USA & Jalandhar, Punjab",
+        "industry": "IT Services & Technology",
+        "badge": "Strapi CMS & Enterprise SEO",
+        "services": [
+            "SEO",
+            "SMM",
+            "SMO",
+            "Meta Ads",
+            "LinkedIn Ads",
+            "Content Marketing",
+            "Website Management",
+            "Blog Writing"
+        ],
+        "objective": "PENNEP is a USA-based IT services company offering technology and digital solutions. The requirement was to strengthen PENNEP's own digital presence, improve its website and search visibility, promote its services, and maintain consistent marketing across website and social media platforms while supporting multiple projects across different industries.",
+        "solution": "I managed PENNEP's website through the Strapi CMS, handling website content, blog writing and publishing, and on-page, off-page, and technical SEO activities. I also worked closely with the team to revamp and restructure website content and supported social media marketing, Meta Ads, and LinkedIn Ads to promote the company's services. Alongside PENNEP's own marketing, I worked across multiple projects in eCommerce, food wholesale, edtech, and news media, adapting digital marketing activities according to each project's requirements.",
+        "role": [
+            "Managed website content through Strapi CMS",
+            "Worked on on-page, off-page, and technical SEO",
+            "Researched, wrote, optimized, and published blogs",
+            "Managed website content restructuring and revamp",
+            "Managed social media marketing and content",
+            "Planned and managed Meta Ads campaigns",
+            "Worked on LinkedIn Ads campaigns",
+            "Supported overall digital marketing activities for PENNEP",
+            "Worked across eCommerce, food wholesale, edtech, and news media projects",
+            "Collaborated with teams across different digital marketing requirements",
+            "Trained 10 interns as part of an industrial training program"
+        ],
+        "results": [
+            "Contributed to the revamp and restructuring of PENNEP's website content",
+            "Managed digital marketing activities across multiple industries",
+            "Successfully trained 10 interns, helping them develop practical digital marketing skills and begin their career journey"
+        ],
+        "skills": "SEO | SMM | SMO | PPC | Content Marketing | Website Management | Technical SEO | On-Page SEO | Off-Page SEO | Meta Ads | LinkedIn Ads | Blog Writing",
+        "creativeWork": "Website Content Restructure | Technical SEO Audits | Blog Articles | Social Media Posts | Ad Creatives | Industrial Training Modules",
+        "tools": "Strapi CMS | Meta Ads Manager | LinkedIn Campaign Manager | SEO Tools | Social Media Platforms",
+        "contribution": "I worked across both PENNEP's in-house digital marketing and multiple industry-specific projects, giving me hands-on experience in managing different digital marketing requirements. My role involved both strategic and execution-level responsibilities, from website and SEO management to content creation, social media, paid advertising, and team collaboration.",
+        "metrics": {
+            "highlight": "10 Interns Trained",
+            "shortsMultiplier": "Multi-Industry Scope",
+            "adRoas": "Full CMS & SEO Revamp",
+            "campaignsCount": "Strapi CMS Architecture"
+        }
+    },
+    "skuk": {
+        "name": "SKUK",
+        "location": "United Kingdom (UK Market)",
+        "industry": "eCommerce — UK Market",
+        "badge": "Adobe Magento & Meta Sales Engine",
+        "services": [
+            "eCommerce Management",
+            "Social Media Marketing",
+            "Meta Ads",
+            "Sales Campaigns",
+            "Website Content",
+            "Product Management"
+        ],
+        "objective": "SKUK is a UK-based eCommerce business looking to improve its online presence, optimize its website, and drive sales through digital marketing. The requirement included managing the Magento website, improving product and offer presentation, strengthening social media presence, and running effective sales campaigns through Meta Ads.",
+        "solution": "I managed the website through Adobe Magento, handling product additions, website content, pricing, and promotional offers. I also worked on revamping the website structure and ensuring that promotional campaigns and offers were properly reflected online. Alongside website management, I optimized the brand's social media presence and planned and executed Meta Ads sales campaigns focused on driving purchases and promoting offers.",
+        "role": [
+            "Managed products and website content through Adobe Magento",
+            "Added and updated products, offers, and promotional information",
+            "Worked on website revamp and content restructuring",
+            "Managed social media presence and content",
+            "Planned and executed Meta Ads sales campaigns",
+            "Created and managed promotional campaigns",
+            "Coordinated website offers with ongoing sales campaigns",
+            "Monitored campaign performance and optimized campaigns accordingly"
+        ],
+        "results": [
+            "Generated profit through successful sales and promotional campaigns",
+            "Successfully implemented and promoted multiple sales offers",
+            "Improved the brand's overall digital presence across website and social media",
+            "Strengthened coordination between website promotions, social media, and paid advertising"
+        ],
+        "skills": "eCommerce Marketing | SMM | SMO | PPC | Meta Ads | Social Media Marketing | Website Management | Product Management | Sales Campaigns | Content Management",
+        "creativeWork": "Product Visuals | Sales Offer Banners | Promotional Graphics | Social Media Ad Creatives | Catalog Showcases",
+        "tools": "Adobe Magento | Meta Ads Manager | Instagram | Facebook",
+        "contribution": "I independently handled key aspects of SKUK's digital marketing and eCommerce operations, connecting website management, promotional offers, social media, and paid advertising into a coordinated sales approach. My focus was not only on maintaining the digital presence but also on using paid campaigns and promotional strategies to drive measurable business results.",
+        "metrics": {
+            "highlight": "Profitable Sales ROI",
+            "shortsMultiplier": "Adobe Magento Revamp",
+            "adRoas": "Coordinated Sales Offers",
+            "campaignsCount": "UK eCommerce Operations"
+        }
+    },
+    "arclantic": {
+        "name": "ARCLANTIC",
+        "location": "Digital News & Media",
+        "industry": "News & Media",
+        "badge": "Digital News, Giveaways & Podcasts",
+        "services": [
+            "Social Media Marketing",
+            "YouTube Management",
+            "Content Creation",
+            "Meta Ads",
+            "Brand Awareness",
+            "Audience Growth"
+        ],
+        "objective": "ARCLANTIC is a digital news platform covering a wide range of news, trending topics, and current affairs. The primary objective was to build a consistent online presence, deliver timely news updates across social media platforms, increase audience engagement, and grow brand awareness and followers.",
+        "solution": "I managed social media content and YouTube activities across Facebook, Instagram, and YouTube, creating and publishing news posts, reels, and video updates. To increase audience engagement and create excitement around the brand, I also worked on giveaway campaigns and online podcasts. Additionally, I managed Meta Ads campaigns focused on improving brand awareness and follower growth.",
+        "role": [
+            "Managed social media posting across Facebook and Instagram",
+            "Created and published news posts, reels, and timely updates",
+            "Managed YouTube content publishing",
+            "Worked on creative giveaway concepts to increase audience engagement",
+            "Supported the planning and execution of online podcasts",
+            "Managed Meta Ads campaigns for awareness and follower growth",
+            "Maintained consistent content publishing around trending news and current affairs"
+        ],
+        "results": [
+            "Executed multiple giveaway campaigns to generate audience interest and engagement",
+            "Expanded the platform's digital marketing activities across Facebook, Instagram, and YouTube",
+            "Used paid advertising to support brand awareness and follower growth"
+        ],
+        "skills": "SMM | SMO | Content Marketing | Social Media Management | Meta Ads | Video Content Marketing | Audience Engagement",
+        "creativeWork": "Timely News Graphics | Video News Updates | Reel Formats | Giveaway Campaign Creatives | Online Podcast Concepts",
+        "tools": "Meta Ads Manager | Facebook | Instagram | YouTube",
+        "contribution": "I contributed to the platform's day-to-day digital presence by combining timely news content, creative social media campaigns, video publishing, and paid advertising. My work covered both content execution and audience-growth activities across multiple digital channels.",
+        "metrics": {
+            "highlight": "Viral News Publishing",
+            "shortsMultiplier": "Giveaways & Contests",
+            "adRoas": "Meta Ads Follower Growth",
+            "campaignsCount": "FB, IG & YouTube Operations"
+        }
+    },
+    "empenhance": {
+        "name": "EMPENHANCE",
+        "location": "India & Canada",
+        "industry": "EdTech | Online Learning",
+        "badge": "100+ Qualified Tutor Leads Generated",
+        "services": [
+            "Social Media Marketing",
+            "Website Content",
+            "Landing Page Creation",
+            "Meta Ads",
+            "LinkedIn Ads",
+            "Lead Generation"
+        ],
+        "objective": "EMPENHANCE is a Canadian EdTech startup that provides an online platform where tutors can create and sell courses while students can discover and enrol in learning programs. As a growing startup, its initial requirement was to attract qualified tutors from India and Canada who could publish courses on the platform, building a course catalogue to support future student acquisition.",
+        "solution": "I managed social media marketing, updated the website and web portal content, and created landing pages to support the platform's growth objectives. To attract tutors, I planned and executed lead generation campaigns across Meta Ads and LinkedIn Ads, targeting audiences in India and Canada. I also independently created the ad creatives and promotional videos, ensuring that the platform's features and unique selling points were communicated clearly to potential tutors.",
+        "role": [
+            "Managed social media marketing and content creation",
+            "Updated website and web portal content",
+            "Created landing pages for lead generation campaigns",
+            "Planned and executed Meta Ads campaigns",
+            "Managed LinkedIn lead generation campaigns",
+            "Targeted potential tutors in India and Canada",
+            "Designed ad creatives and promotional content independently",
+            "Created client introduction and USP-focused videos",
+            "Monitored campaign performance and optimized lead generation activities"
+        ],
+        "results": [
+            "Generated 100+ tutor leads through Meta and LinkedIn advertising campaigns",
+            "Attracted potential tutors from both India and Canada",
+            "Generated quality leads aligned with the platform's tutor acquisition objectives"
+        ],
+        "skills": "SMM | SMO | PPC | Meta Ads | LinkedIn Ads | Lead Generation | Landing Page Creation | Website Content Management | Ad Creative Development | Video Marketing",
+        "creativeWork": "Tutor Acquisition Ad Creatives | High-Converting Landing Pages | Introduction Videos | USP Promo Videos | Lead Forms",
+        "tools": "Meta Ads Manager | LinkedIn Campaign Manager | Website CMS | Social Media Platforms",
+        "contribution": "I independently handled key creative and executional aspects of the tutor acquisition campaign, from developing ad creatives and landing pages to managing paid advertising across Meta and LinkedIn. My work supported EMPENHANCE's early-stage growth by helping the startup attract potential course creators from two target markets.",
+        "metrics": {
+            "highlight": "100+ Tutor Leads",
+            "shortsMultiplier": "India & Canada Target",
+            "adRoas": "Meta & LinkedIn Ads",
+            "campaignsCount": "High-Intent Lead Funnel"
+        }
+    },
+    "socialindigo": {
+        "name": "SocialIndigo",
+        "location": "Digital News & Viral Trends",
+        "industry": "News & Digital Media",
+        "badge": "1M Organic Reach in 1 Month",
+        "services": [
+            "Social Media Marketing",
+            "Content Strategy",
+            "Branding",
+            "YouTube Management",
+            "Meta Ads",
+            "AI Reel Creation",
+            "Graphic Design"
+        ],
+        "objective": "SocialIndigo is a digital news and updates platform covering viral content, trending topics, and news across multiple industries. The objective was to build the brand from scratch, establish a recognizable visual identity, grow its social media presence organically, and create engaging content for Instagram, Facebook, and YouTube.",
+        "solution": "I independently handled the project's branding and content workflow, including social media logo assets, creative post templates, reel templates, content research, design, and publishing. I created content around trending topics and viral updates, experimented with AI-generated reels, and managed Meta Ads for brand awareness and follower growth. I also developed YouTube content in line with platform guidelines and trends.",
+        "role": [
+            "Built the social media content workflow from scratch",
+            "Developed branding assets, social media creatives, post templates, and reel templates",
+            "Researched, designed, and published news and trending content",
+            "Managed Instagram, Facebook, and YouTube content",
+            "Created AI-generated reels and short-form videos",
+            "Ran Meta Ads for brand awareness and follower growth",
+            "Identified viral trends and developed content around timely topics"
+        ],
+        "results": [
+            "1 million organic reach within one month",
+            "Achieved organic follower growth across social media",
+            "SocialIndigo's Labubu reel was shared by Urvashi Rautela on her Instagram",
+            "Received organic visibility through celebrity stories and shares",
+            "Continued developing YouTube content around trending topics and platform guidelines"
+        ],
+        "skills": "SMM | SMO | Content Strategy | Trend Research | Graphic Design | Video Editing | AI Content Creation | Meta Ads | YouTube Marketing | Brand Development",
+        "creativeWork": "Brand Identity & Logo Assets | Post & Reel Templates | AI-Generated Short-Form Videos | Trending Topic Graphics | Celebrity-Shared Reels",
+        "tools": "Instagram | Facebook | YouTube | Meta Ads Manager | AI Content Creation Tools",
+        "contribution": "I independently managed the end-to-end creative process, from developing the brand's visual identity and researching trends to designing content, editing reels, and publishing across platforms. My focus was on building organic visibility through timely, relevant, and shareable content while supporting growth through paid advertising.",
+        "metrics": {
+            "highlight": "1M Organic Reach / 1 Mo",
+            "shortsMultiplier": "Celebrity Shared (Urvashi Rautela)",
+            "adRoas": "Zero to 1M Viral Scale",
+            "campaignsCount": "AI Reels & Meta Ads"
+        }
+    },
+    "regenta": {
+        "name": "Regenta Hilltop Shimla",
+        "location": "Shimla, Himachal Pradesh",
+        "industry": "Hospitality | Hotels & Restaurants",
+        "badge": "4-Star Hotel & Revolving Restaurant",
+        "services": [
+            "Social Media Marketing",
+            "Content Strategy",
+            "Meta Ads",
+            "Professional Shoot Coordination",
+            "Influencer Marketing",
+            "Google Business Profile Management"
+        ],
+        "objective": "Regenta Hilltop Shimla is a four-star hotel in Shimla offering hospitality and dining experiences, including Four Winds, its 360-degree revolving restaurant. The objective was to strengthen the property's online presence, showcase its facilities and dining experience, attract potential guests, and support hotel bookings and restaurant sales through digital marketing.",
+        "solution": "I manage the hotel's social media presence, content calendars, and professional shoot coordination to showcase its rooms, amenities, dining experiences, and overall hospitality. I plan and execute Meta Ads campaigns, coordinate influencer collaborations, and manage both property Google Business Profiles. I also suggest promotional deals, content concepts, and marketing strategies to improve visibility and support bookings and restaurant sales.",
+        "role": [
+            "Manage social media strategy and content calendars",
+            "Plan and coordinate professional photoshoots and video shoots",
+            "Create content highlighting hotel facilities and guest experiences",
+            "Promote Four Winds 360-degree revolving restaurant",
+            "Plan and manage Meta Ads campaigns",
+            "Coordinate influencer collaborations",
+            "Update and manage both property Google Business Profiles",
+            "Suggest promotional offers, hotel packages, and restaurant deals",
+            "Develop ideas to support bookings and sales growth"
+        ],
+        "results": [
+            "Strengthened the property's digital marketing and content presence",
+            "Developed promotional content for hotel stays and restaurant experiences",
+            "Supported brand visibility through paid advertising and influencer collaborations"
+        ],
+        "skills": "SMM | SMO | PPC | Content Strategy | Meta Ads | Influencer Marketing | Local Marketing | Google Business Profile Management",
+        "creativeWork": "Hospitality Photography & Video Shoots | Four Winds Revolving Restaurant Promos | Room & Suite Walkthroughs | Deal Banners | GBP Content Updates",
+        "tools": "Meta Ads Manager | Instagram | Facebook | Google Business Profile",
+        "contribution": "I manage the hotel's digital marketing activities with a focus on professional brand presentation and business growth. My work combines content planning, shoot coordination, paid advertising, local visibility, and promotional ideas to support both hospitality bookings and restaurant sales.",
+        "metrics": {
+            "highlight": "4-Star Hotel Presence",
+            "shortsMultiplier": "Four Winds Revolving Dine",
+            "adRoas": "Dual Google Business Profiles",
+            "campaignsCount": "Meta Ads & Influencers"
+        }
+    },
+    "dineshdhall": {
+        "name": "Dinesh Dhall",
+        "location": "Jalandhar North, Punjab",
+        "industry": "Political Communications | Public Outreach",
+        "badge": "Strategic Public Outreach & Reels",
+        "services": [
+            "Social Media Management",
+            "Campaign Content",
+            "Reel Creation",
+            "Video Shoots",
+            "Content Strategy",
+            "Audience Engagement"
+        ],
+        "objective": "Dinesh Dhall is a political figure who previously served as the AAP Halka In-charge for Jalandhar North and is now associated with the BJP. The objective is to strengthen his digital presence, improve public engagement, communicate his activities and public interactions, and maintain a consistent social media presence in line with party guidelines.",
+        "solution": "I manage his Facebook and Instagram content, plan video shoots, and develop engaging reels around public meetings, community interactions, and relevant updates. I suggest content ideas, voice-over reels, trending formats, podcast opportunities, and campaign concepts to improve visibility and audience engagement while ensuring the content follows the applicable party guidelines.",
+        "role": [
+            "Manage Facebook and Instagram content",
+            "Plan and develop engaging reels and video concepts",
+            "Coordinate video shoots and content production",
+            "Cover meetings, public interactions, and political activities",
+            "Suggest voice-over reels and relevant trending formats",
+            "Develop content ideas for public outreach and campaign periods",
+            "Explore podcast concepts and publicity opportunities",
+            "Align content with party guidelines and communication requirements"
+        ],
+        "results": [
+            "Established a consistent social media content workflow",
+            "Developed content concepts focused on public engagement and visibility",
+            "Supported digital communication around meetings, activities, and campaign initiatives"
+        ],
+        "skills": "SMM | Social Media Strategy | Video Content Planning | Reel Creation | Personal Branding | Audience Engagement | Content Production",
+        "creativeWork": "Public Meeting Video Coverage | Voice-Over Reels | Community Outreach Visuals | Campaign Creatives | Political Banners",
+        "tools": "Instagram | Facebook | Video Editing Tools | Social Media Publishing Tools",
+        "contribution": "I handle the planning and execution of social media content, combining timely updates, creative reels, video production, and new content ideas to strengthen digital visibility and encourage public engagement.",
+        "metrics": {
+            "highlight": "Public Engagement Growth",
+            "shortsMultiplier": "High-Impact Voiceover Reels",
+            "adRoas": "Ground-Level Video Shoots",
+            "campaignsCount": "Consistent Communication"
+        }
+    },
+    "troubletracers": {
+        "name": "Trouble Tracers",
+        "location": "Punjab, India",
+        "industry": "Electronics Retail | IT Products & Security Solutions",
+        "badge": "100+ Relevant Call Enquiries Per Day",
+        "services": [
+            "Social Media Marketing",
+            "Performance Marketing",
+            "Meta Ads",
+            "Lead Generation",
+            "Video Production",
+            "Promotional Campaigns"
+        ],
+        "objective": "Trouble Tracers is an electronics retailer dealing in laptops, CCTV systems, printers, and related products. The objective was to improve its digital presence, generate relevant customer enquiries, and increase sales through targeted advertising, engaging social media content, and attractive promotional offers.",
+        "solution": "I manage the brand's social media, plan and shoot product-focused content, and run Meta Ads campaigns designed to generate relevant customer enquiries. I also suggest promotional offers, product deals, and trending content concepts to attract potential buyers. By combining performance marketing with regular content creation, I help the business maintain a consistent digital presence and support its sales objectives.",
+        "role": [
+            "Manage social media content and publishing",
+            "Plan and shoot product-focused videos",
+            "Develop creative concepts for reels and promotional posts",
+            "Run and optimize Meta Ads campaigns",
+            "Focus on generating relevant calls and customer enquiries",
+            "Suggest product deals, offers, and sales campaigns",
+            "Monitor campaign performance and adjust advertising activities"
+        ],
+        "results": [
+            "100+ relevant call enquiries per day generated through Meta Ads, as reported for the campaigns",
+            "Supported recurring sales through paid advertising and promotional offers",
+            "Strengthened the brand's online product promotion through regular social media content"
+        ],
+        "skills": "SMM | SMO | PPC | Meta Ads | Performance Marketing | Lead Generation | Video Production | Content Strategy | Campaign Optimization",
+        "creativeWork": "Product Demo Videos | Laptop & CCTV Promos | Click-to-Call Ad Creatives | Price Deal Banners | Festive Offers",
+        "tools": "Meta Ads Manager | Instagram | Facebook | Video Editing Tools",
+        "contribution": "I independently handle the key marketing activities, from planning and shooting product content to running paid campaigns and suggesting sales promotions. My focus is on generating relevant enquiries and connecting digital marketing activities with the business's sales goals.",
+        "metrics": {
+            "highlight": "100+ Calls / Day",
+            "shortsMultiplier": "Click-to-Call Meta Ads",
+            "adRoas": "High Purchase Intent",
+            "campaignsCount": "Recurring Sales Engine"
+        }
+    },
+    "tagore": {
+        "name": "Tagore Hospital",
+        "location": "Jalandhar, Punjab, India",
+        "industry": "Healthcare | Hospital & Medical Services",
+        "badge": "Healthcare Brand Awareness & Shoots",
+        "services": [
+            "Social Media Marketing",
+            "Content Strategy",
+            "Meta Ads",
+            "Video Production",
+            "Brand Awareness",
+            "Audience Growth"
+        ],
+        "objective": "Tagore Hospital is an established healthcare provider seeking to maintain a professional digital presence, strengthen its brand reputation, and improve audience awareness through social media. The requirement includes communicating hospital services, showcasing facilities, and sharing relevant healthcare information while maintaining the hospital's professional standards and communication guidelines.",
+        "solution": "I manage the hospital's social media content planning, coordinate shoots, and develop content around healthcare awareness days, patient testimonials, laboratory facilities, operation theatres, and OPD services. I also manage Meta Ads campaigns to support brand awareness and audience growth, ensuring that the content remains professional, informative, and aligned with the hospital's guidelines.",
+        "role": [
+            "Manage social media platforms and content calendars",
+            "Plan and coordinate hospital shoots",
+            "Create content around healthcare awareness days",
+            "Coordinate patient testimonial content",
+            "Cover laboratory, OT, and OPD facilities through visual content",
+            "Develop reels, posts, and educational content",
+            "Manage Meta Ads campaigns",
+            "Support brand awareness and social media growth"
+        ],
+        "results": [
+            "Established a consistent social media content workflow",
+            "Expanded digital content coverage of hospital facilities and services",
+            "Supported brand visibility and audience growth through organic content and paid promotion"
+        ],
+        "skills": "SMM | SMO | Meta Ads | Healthcare Content Marketing | Video Production | Content Strategy | Brand Management",
+        "creativeWork": "Doctor Explainer Reels | OT & Lab Facility Shoots | Patient Testimonial Videos | Health Awareness Infographics | Meta Ads",
+        "tools": "Meta Ads Manager | Instagram | Facebook | Video Editing Tools",
+        "contribution": "I manage the hospital's digital content and promotional activities, combining content planning, shoot coordination, healthcare awareness posts, and paid advertising. My focus is on presenting the hospital professionally and communicating its services clearly while following its guidelines.",
+        "metrics": {
+            "highlight": "Healthcare Brand Trust",
+            "shortsMultiplier": "Facility & OPD Tours",
+            "adRoas": "Patient Testimonial Reels",
+            "campaignsCount": "Meta Awareness Ads"
+        }
+    },
+    "trivedi": {
+        "name": "Trivedi Overseas",
+        "location": "Punjab, India",
+        "industry": "Immigration | Study Visas | Tourist Visas",
+        "badge": "Study & Tourist Visa Lead Generation",
+        "services": [
+            "Social Media Marketing",
+            "Meta Ads",
+            "Lead Generation",
+            "Content Strategy",
+            "Video Production",
+            "Podcast Content",
+            "Client Testimonials"
+        ],
+        "objective": "Trivedi Overseas is an established immigration consultancy with around two decades of experience, offering study visa, tourist visa, and other immigration-related services. The objective is to strengthen its online brand presence, communicate its services and expertise, generate relevant enquiries, and maintain audience engagement in a competitive immigration market.",
+        "solution": "I manage the brand's social media strategy, content planning, and video shoots, developing content around immigration trends, policy updates, visa-related information, client testimonials, and frequently asked questions. I also plan and execute Meta Ads lead generation campaigns, create engaging reels with strong hooks, and suggest podcast concepts and other content ideas to improve brand visibility and attract potential customers.",
+        "role": [
+            "Manage social media platforms and content calendars",
+            "Plan and coordinate video shoots",
+            "Develop reels around immigration trends and policy updates",
+            "Create content hooks and concepts for audience engagement",
+            "Manage Meta Ads lead generation campaigns",
+            "Develop client testimonial videos",
+            "Suggest podcast topics and video formats",
+            "Monitor campaign performance and support lead generation objectives"
+        ],
+        "results": [
+            "Maintained consistent social media communication around immigration services",
+            "Supported lead generation through Meta Ads campaigns",
+            "Developed content covering service information, market trends, and client experiences"
+        ],
+        "skills": "SMM | SMO | PPC | Meta Ads | Lead Generation | Content Strategy | Video Production | Testimonial Marketing | Campaign Optimization",
+        "creativeWork": "Immigration Policy Reels | Visa Success Stories | Podcast Format Videos | Lead Generation Ad Creatives | FAQ Video Series",
+        "tools": "Meta Ads Manager | Instagram | Facebook | Video Editing Tools",
+        "contribution": "I handle the brand's digital marketing execution, from researching relevant immigration topics and developing content ideas to coordinating shoots and running lead generation campaigns. My approach combines informative content, client experiences, and performance marketing to support brand credibility and business enquiries.",
+        "metrics": {
+            "highlight": "2 Decades Brand Credibility",
+            "shortsMultiplier": "Policy Trends & Hooks",
+            "adRoas": "Visa Lead Generation",
+            "campaignsCount": "Podcasts & Testimonials"
+        }
+    },
+    "curo": {
+        "name": "The Curo High Street",
+        "location": "Jalandhar, Punjab, India",
+        "industry": "Retail | Shopping Mall | Commercial Real Estate",
+        "badge": "Retail Footfall & Lifestyle Content",
+        "services": [
+            "Social Media Marketing",
+            "Content Strategy",
+            "Meta Ads",
+            "Video Production",
+            "Brand Awareness",
+            "Promotional Campaigns"
+        ],
+        "objective": "The Curo High Street is a prominent shopping destination in Jalandhar, bringing together multiple retail brands and shopping experiences. The objective is to increase the mall's visibility, strengthen its social media presence, showcase its brands and attractions, and encourage audiences to visit through engaging and trend-driven content.",
+        "solution": "I manage the mall's social media content strategy, plan shoots, and create engaging reels and promotional content highlighting its different brands, shopping experiences, and attractions. I use relevant trends, creative hooks, and brand-focused storytelling to make the content engaging for social media audiences. I also manage Meta Ads campaigns to support brand awareness and promotional activities.",
+        "role": [
+            "Manage social media content planning and publishing",
+            "Plan and coordinate shoots across the mall",
+            "Create engaging reels featuring retail brands and attractions",
+            "Develop trend-based content and creative hooks",
+            "Promote shopping experiences and mall activities",
+            "Manage Meta Ads campaigns",
+            "Suggest promotional concepts to improve visibility and engagement"
+        ],
+        "results": [
+            "Maintained consistent social media promotion of the mall and its retail brands",
+            "Expanded content coverage of shopping experiences and attractions",
+            "Supported brand awareness through organic content and paid campaigns"
+        ],
+        "skills": "SMM | SMO | Meta Ads | Content Strategy | Video Production | Trend Research | Brand Awareness | Promotional Marketing",
+        "creativeWork": "Mall Brand Showcase Reels | Dining & Entertainment Promos | Trend-Driven Instagram Hooks | Event & Festive Ads | Store Walkthroughs",
+        "tools": "Meta Ads Manager | Instagram | Facebook | Video Editing Tools",
+        "contribution": "I manage the mall's social media marketing from content planning to shoot coordination, reel creation, and paid promotion. My focus is on showcasing the variety of brands and experiences available at the mall through engaging content that strengthens visibility and encourages audience interest.",
+        "metrics": {
+            "highlight": "Premier Retail Mall",
+            "shortsMultiplier": "Viral Shopping Reels",
+            "adRoas": "Brand Awareness Ads",
+            "campaignsCount": "Multi-Brand Mall Shoots"
+        }
+    }
+};
 
         // Get URL parameter for client ID
         const urlParams = new URLSearchParams(window.location.search);
