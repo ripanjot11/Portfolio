@@ -531,6 +531,83 @@
             color: var(--text-dim);
             font-size: 0.9rem;
         }
+
+        /* Mobile Responsive for client.html (320px - 430px & <= 768px) */
+        @media (max-width: 768px) {
+            .client-nav {
+                padding: 0.75rem 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+            .nav-actions {
+                width: 100%;
+                display: flex;
+                gap: 0.5rem;
+            }
+            .nav-actions .btn {
+                flex: 1;
+                justify-content: center;
+                padding: 0.5rem 0.8rem;
+                font-size: 0.82rem;
+                text-align: center;
+            }
+            .client-pill-container {
+                padding: 0.6rem 1rem;
+            }
+            .case-study-container {
+                padding: 0 12px;
+                margin: 0.5rem auto 3rem auto;
+            }
+            .client-header-card {
+                padding: 1.25rem 1rem;
+                border-radius: 14px;
+            }
+            .client-name-title {
+                font-size: 1.6rem;
+            }
+            .laptop-screen-frame {
+                border-width: 6px;
+                border-radius: 12px 12px 0 0;
+            }
+            .laptop-screen-content {
+                padding: 1rem 0.8rem;
+                min-height: 400px;
+                max-height: 520px;
+            }
+            .laptop-base {
+                height: 12px;
+            }
+            .laptop-base-notch {
+                width: 80px;
+                height: 4px;
+            }
+            .screen-stats-grid {
+                grid-template-columns: 1fr;
+                gap: 0.6rem;
+            }
+            .screen-stat-card {
+                padding: 0.75rem;
+            }
+            .detail-block, .results-card {
+                padding: 1.15rem 0.9rem;
+                border-radius: 12px;
+            }
+        }
+    
+        .laptop-interior-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        @media (max-width: 768px) {
+            .laptop-interior-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+        }
+    
     </style>
 </head>
 <body>
@@ -1215,7 +1292,7 @@
                                 </div>
 
                                 <!-- Laptop Interior Detailed Content -->
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+                                <div class="laptop-interior-grid">
                                     <div style="background: rgba(255,255,255,0.02); padding: 1.2rem; border-radius: 10px; border: 1px solid var(--glass-border);">
                                         <h4 style="color: var(--neon-blue); font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;">
                                             <i data-lucide="crosshair" style="width: 16px; height: 16px;"></i> Objective & Requirement

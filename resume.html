@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ripanjot Singh | Curriculum Vitae (Resume)</title>
+    <title>Ripanjot Singh | Curriculum Vitae & Professional Resume</title>
+    <meta name="description" content="Official Curriculum Vitae of Ripanjot Singh - Junior Digital Marketing Analyst & Digital Marketer. Experience across SEO, Meta Ads, Google Ads, Strapi CMS, Magento, and YouTube Growth.">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #050505;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --neon-blue: #00f2ff;
-            --neon-purple: #bc13fe;
-            --neon-cyan: #00ffff;
-            --text-main: #e0e0e0;
-            --text-dim: #a0a0a0;
-            --glass-border: rgba(255, 255, 255, 0.12);
-            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --bg-dark: #07090e;
+            --card-bg: rgba(16, 22, 36, 0.7);
+            --card-border: rgba(0, 242, 255, 0.15);
+            --neon-cyan: #00f2ff;
+            --neon-blue: #0099ff;
+            --neon-purple: #9d4edd;
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+            --text-muted: #64748b;
+            --accent-glow: rgba(0, 242, 255, 0.12);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-heading: 'Outfit', 'Inter', sans-serif;
         }
 
         * {
@@ -29,510 +37,955 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             font-family: var(--font-sans);
-            line-height: 1.6;
-            padding: 2rem 1rem;
+            line-height: 1.65;
+            padding-bottom: 4rem;
             min-height: 100vh;
         }
 
-        .resume-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: rgba(10, 15, 25, 0.9);
-            border: 1px solid var(--neon-blue);
-            border-radius: 16px;
-            padding: 3rem;
-            box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
-            position: relative;
-        }
-
-        .header-section {
+        /* Top Action Bar */
+        .cv-action-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(7, 9, 14, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.85rem 5%;
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            border-bottom: 2px solid var(--neon-blue);
-            padding-bottom: 1.5rem;
-            margin-bottom: 2rem;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
-        .header-title h1 {
-            font-size: 2.5rem;
-            color: #ffffff;
-            font-weight: 800;
-            margin-bottom: 0.3rem;
-            letter-spacing: -0.5px;
-        }
-
-        .header-title h2 {
+        .brand-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             color: var(--neon-cyan);
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            font-family: var(--font-heading);
+            letter-spacing: 0.5px;
+            transition: opacity 0.2s;
         }
 
-        .header-title p {
-            color: var(--text-dim);
-            font-size: 0.95rem;
+        .brand-link:hover {
+            opacity: 0.85;
         }
 
         .action-buttons {
             display: flex;
-            gap: 0.8rem;
+            align-items: center;
+            gap: 0.75rem;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 0.7rem 1.4rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.45rem;
+            padding: 0.55rem 1.15rem;
+            border-radius: 8px;
             font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: var(--font-sans);
             border: none;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+            background: linear-gradient(135deg, #00f2ff, #7000ff);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.35);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
             box-shadow: 0 0 25px rgba(0, 242, 255, 0.6);
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: var(--neon-cyan);
-            border: 1px solid var(--neon-cyan);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .btn-secondary:hover {
-            background: rgba(0, 242, 255, 0.1);
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
         }
 
-        .section-block {
-            margin-bottom: 2rem;
+        /* CV Sheet / Document */
+        .cv-document {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 3rem 3.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            position: relative;
+            backdrop-filter: blur(12px);
         }
 
-        .section-title {
-            font-size: 1.15rem;
-            color: var(--neon-blue);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            border-bottom: 1px solid var(--glass-border);
-            padding-bottom: 0.4rem;
-            margin-bottom: 1rem;
+        /* Header */
+        .cv-header {
+            border-bottom: 2px solid rgba(0, 242, 255, 0.3);
+            padding-bottom: 2rem;
+            margin-bottom: 2.2rem;
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1rem;
+        .cv-title-area h1 {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--neon-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.35rem;
+        }
+
+        .cv-title-area .cv-role {
+            font-size: 1.15rem;
+            color: var(--neon-cyan);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .cv-title-area .cv-company {
+            color: var(--text-dim);
             font-size: 0.95rem;
+            margin-top: 0.3rem;
+        }
+
+        .cv-contact-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.85rem 1.5rem;
+            background: rgba(0, 242, 255, 0.04);
+            border: 1px solid rgba(0, 242, 255, 0.12);
+            padding: 1.1rem 1.4rem;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            color: var(--text-main);
+            gap: 0.65rem;
+            font-size: 0.88rem;
+            color: var(--text-dim);
+        }
+
+        .contact-item i {
+            color: var(--neon-cyan);
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
         }
 
         .contact-item a {
-            color: var(--neon-cyan);
+            color: var(--text-main);
             text-decoration: none;
+            transition: color 0.2s;
+            word-break: break-all;
         }
 
         .contact-item a:hover {
+            color: var(--neon-cyan);
             text-decoration: underline;
         }
 
-        .job-card {
-            margin-bottom: 1.5rem;
+        /* Highlights Grid */
+        .cv-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
         }
 
-        .job-header {
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            text-align: center;
+            transition: all 0.25s ease;
+        }
+
+        .highlight-box:hover {
+            border-color: var(--neon-cyan);
+            background: rgba(0, 242, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .highlight-value {
+            font-size: 1.6rem;
+            font-weight: 800;
+            font-family: var(--font-heading);
+            color: var(--neon-cyan);
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
+        }
+
+        .highlight-label {
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Sections */
+        .cv-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .cv-section-title {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--neon-cyan);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .cv-section-title i {
+            width: 20px;
+            height: 20px;
+            color: var(--neon-cyan);
+        }
+
+        .cv-summary-text {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+
+        .cv-summary-text p {
+            margin-bottom: 0.75rem;
+        }
+
+        /* Experience Items */
+        .experience-item {
+            position: relative;
+            padding-left: 1.4rem;
+            border-left: 2px solid rgba(0, 242, 255, 0.3);
+            margin-bottom: 1.8rem;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 8px var(--neon-cyan);
+        }
+
+        .experience-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.25rem;
         }
 
-        .job-title {
-            font-size: 1.1rem;
+        .experience-role {
+            font-size: 1.05rem;
             font-weight: 700;
-            color: #ffffff;
+            color: #fff;
         }
 
-        .job-date {
-            font-size: 0.85rem;
+        .experience-date {
+            font-size: 0.82rem;
             color: var(--neon-cyan);
             font-weight: 600;
+            background: rgba(0, 242, 255, 0.08);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 242, 255, 0.2);
         }
 
-        .job-company {
-            font-size: 0.95rem;
-            color: var(--neon-purple);
+        .experience-company {
+            color: #a78bfa;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            font-size: 0.92rem;
+            margin-bottom: 0.65rem;
         }
 
-        .bullet-list {
+        .experience-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        .experience-list li {
+            position: relative;
             padding-left: 1.2rem;
+            font-size: 0.9rem;
             color: var(--text-dim);
-            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        .bullet-list li {
+        .experience-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--neon-cyan);
+            font-weight: bold;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .experience-list strong {
+            color: #fff;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .education-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            transition: border-color 0.2s;
+        }
+
+        .education-card:hover {
+            border-color: rgba(0, 242, 255, 0.35);
+        }
+
+        .education-degree {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-institution {
+            font-size: 0.88rem;
+            color: #a78bfa;
+            font-weight: 500;
             margin-bottom: 0.4rem;
         }
 
-        .bullet-list li strong {
-            color: #ffffff;
+        .education-date {
+            font-size: 0.8rem;
+            color: var(--neon-cyan);
+            display: inline-block;
         }
 
-        .tags-container {
+        /* Skills Matrix */
+        .skills-category-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .skill-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 1.2rem;
+        }
+
+        .skill-box-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.45rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-box-title i {
+            color: var(--neon-cyan);
+            width: 16px;
+            height: 16px;
+        }
+
+        .skill-box-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .skill-tags-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.6rem;
+            gap: 0.4rem;
         }
 
-        .tag {
-            font-size: 0.8rem;
-            padding: 0.35rem 0.85rem;
-            background: rgba(0, 242, 255, 0.1);
-            border: 1px solid rgba(0, 242, 255, 0.25);
-            border-radius: 20px;
-            color: var(--neon-cyan);
+        .skill-tag {
+            background: rgba(0, 242, 255, 0.08);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            color: #e2e8f0;
+            font-size: 0.75rem;
+            padding: 0.22rem 0.65rem;
+            border-radius: 6px;
             font-weight: 500;
         }
 
-        .back-nav {
-            max-width: 900px;
-            margin: 0 auto 1.5rem auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* Footer */
+        .cv-footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
 
-        .back-link {
-            color: var(--neon-cyan);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.2s;
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .cv-document {
+                margin: 1rem 0.8rem;
+                padding: 1.8rem 1.4rem;
+                border-radius: 12px;
+            }
+
+            .cv-title-area h1 {
+                font-size: 1.85rem;
+            }
+
+            .skills-category-group {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-highlights {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .back-link:hover {
-            color: #ffffff;
-        }
-
+        /* Print Stylesheet */
         @media print {
             body {
-                background: #ffffff !important;
-                color: #000000 !important;
+                background: #fff !important;
+                color: #0f172a !important;
                 padding: 0 !important;
             }
 
-            .back-nav, .action-buttons {
+            .cv-action-bar, .cv-footer, .btn {
                 display: none !important;
             }
 
-            .resume-container {
+            .cv-document {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
                 border: none !important;
                 box-shadow: none !important;
-                background: #ffffff !important;
-                padding: 0 !important;
-                max-width: 100% !important;
+                background: #fff !important;
             }
 
-            .header-title h1, .job-title, .bullet-list li strong {
-                color: #000000 !important;
+            .cv-title-area h1 {
+                color: #0f172a !important;
+                -webkit-text-fill-color: #0f172a !important;
             }
 
-            .header-title h2, .job-date, .contact-item a {
-                color: #006699 !important;
+            .cv-role, .highlight-value, .experience-date, .cv-section-title {
+                color: #0284c7 !important;
             }
 
-            .job-company, .section-title {
-                color: #440088 !important;
+            .experience-company, .education-institution {
+                color: #6b21a8 !important;
             }
 
-            .section-title {
-                border-bottom: 1px solid #cccccc !important;
+            .contact-item, .experience-list li, .cv-summary-text, .education-card {
+                color: #334155 !important;
             }
 
-            .bullet-list {
-                color: #333333 !important;
+            .cv-contact-bar, .highlight-box, .education-card, .skill-box {
+                background: #f8fafc !important;
+                border: 1px solid #cbd5e1 !important;
             }
 
-            .tag {
-                background: #f0f0f0 !important;
-                color: #222222 !important;
-                border: 1px solid #cccccc !important;
+            .skill-tag {
+                background: #e0f2fe !important;
+                color: #0369a1 !important;
+                border: 1px solid #bae6fd !important;
+            }
+
+            .experience-item {
+                border-left-color: #0284c7 !important;
+            }
+
+            .experience-item::before {
+                background: #0284c7 !important;
+                box-shadow: none !important;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="back-nav">
-        <a href="index.html" class="back-link">
-            <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i> Back to Portfolio
+    <!-- Sticky Action Toolbar -->
+    <header class="cv-action-bar">
+        <a href="index.html" class="brand-link">
+            <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
+            <span>Back to Portfolio</span>
         </a>
-    </div>
+        <div class="action-buttons">
+            <button onclick="window.print()" class="btn btn-primary" title="Print or save as PDF">
+                <i data-lucide="printer" style="width: 16px; height: 16px;"></i>
+                <span>Print / Save as PDF</span>
+            </button>
+            <button onclick="downloadCVDocument()" class="btn btn-secondary" title="Download CV HTML">
+                <i data-lucide="download" style="width: 16px; height: 16px;"></i>
+                <span>Download CV</span>
+            </button>
+            <a href="mailto:projot007@gmail.com" class="btn btn-secondary">
+                <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
+                <span>Email Ripanjot</span>
+            </a>
+        </div>
+    </header>
 
-    <div class="resume-container">
+    <!-- Main CV Container -->
+    <main class="cv-document" id="cv-root">
         <!-- Header -->
-        <div class="header-section">
-            <div class="header-title">
+        <header class="cv-header">
+            <div class="cv-title-area">
                 <h1>Ripanjot Singh</h1>
-                <h2>Junior Digital Marketing Analyst</h2>
-                <p>Pennsylvania Enterprise (PENNEP) | Jalandhar, Punjab, India</p>
+                <div class="cv-role">Junior Digital Marketing Analyst & Digital Marketer</div>
+                <div class="cv-company">Pennsylvania Enterprise (PENNEP) | Jalandhar, Punjab, India</div>
             </div>
-            <div class="action-buttons">
-                <button onclick="downloadResume()" class="btn btn-primary">
-                    <i data-lucide="download" style="width: 16px; height: 16px;"></i> Download CV
-                </button>
-                <button onclick="window.print()" class="btn btn-secondary">
-                    <i data-lucide="printer" style="width: 16px; height: 16px;"></i> Print
-                </button>
+        </header>
+
+        <!-- Contact Information Bar -->
+        <div class="cv-contact-bar">
+            <div class="contact-item">
+                <i data-lucide="mail"></i>
+                <div><strong>Email:</strong> <a href="mailto:projot007@gmail.com">projot007@gmail.com</a></div>
+            </div>
+            <div class="contact-item">
+                <i data-lucide="phone"></i>
+                <div><strong>Phone:</strong> <a href="tel:+919877616442">+91 98776-16442</a></div>
+            </div>
+            <div class="contact-item">
+                <i data-lucide="github"></i>
+                <div><strong>GitHub:</strong> <a href="https://github.com/ripanjot11" target="_blank">github.com/ripanjot11</a></div>
+            </div>
+            <div class="contact-item">
+                <i data-lucide="linkedin"></i>
+                <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ripanjot-singh" target="_blank">linkedin.com/in/ripanjot-singh</a></div>
+            </div>
+            <div class="contact-item">
+                <i data-lucide="map-pin"></i>
+                <div><strong>Location:</strong> Jalandhar, Punjab, India</div>
+            </div>
+            <div class="contact-item">
+                <i data-lucide="globe"></i>
+                <div><strong>Portfolio:</strong> <a href="index.html">Ripanjot.Portfolio</a></div>
+            </div>
+        </div>
+
+        <!-- Key Milestones / Highlights -->
+        <div class="cv-highlights">
+            <div class="highlight-box">
+                <div class="highlight-value">4+</div>
+                <div class="highlight-label">Years Experience</div>
+            </div>
+            <div class="highlight-box">
+                <div class="highlight-value">100K+</div>
+                <div class="highlight-label">YouTube Subscribers (Silver Play Button)</div>
+            </div>
+            <div class="highlight-box">
+                <div class="highlight-value">1M+</div>
+                <div class="highlight-label">Monthly Organic Reach</div>
+            </div>
+            <div class="highlight-box">
+                <div class="highlight-value">100+</div>
+                <div class="highlight-label">Daily Qualified Leads (Meta Ads)</div>
+            </div>
+            <div class="highlight-box">
+                <div class="highlight-value">360°</div>
+                <div class="highlight-label">Digital Marketing</div>
             </div>
         </div>
 
         <!-- Executive Summary -->
-        <div class="section-block">
-            <h3 class="section-title">
-                <i data-lucide="user-check" style="width: 18px; height: 18px;"></i> Executive Summary
-            </h3>
-            <p style="color: var(--text-dim); font-size: 0.95rem; leading-height: 1.7;">
-                Results-driven Junior Digital Marketing Analyst with an <strong>MBA in Marketing Management</strong> from NMIMS. Hands-on expertise in Search Engine Optimization (SEO), PPC campaigns, Google Ads, Meta Ads, and Enterprise Content Management Systems including <strong>Strapi</strong> and <strong>Magento</strong>. Specialized in website content optimization, product catalog management, and data-driven marketing campaigns.
-            </p>
-        </div>
-
-        <!-- Contact Information -->
-        <div class="section-block">
-            <h3 class="section-title">
-                <i data-lucide="mail" style="width: 18px; height: 18px;"></i> Contact Information
-            </h3>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <i data-lucide="mail" style="width: 16px; height: 16px; color: var(--neon-blue);"></i>
-                    <span>Email: <a href="mailto:ripanjotsehgal11@gmail.com">ripanjotsehgal11@gmail.com</a></span>
-                </div>
-                <div class="contact-item">
-                    <i data-lucide="phone" style="width: 16px; height: 16px; color: var(--neon-blue);"></i>
-                    <span>Phone: <a href="tel:+919877616442">+91 98776-16442</a></span>
-                </div>
-                <div class="contact-item">
-                    <i data-lucide="map-pin" style="width: 16px; height: 16px; color: var(--neon-blue);"></i>
-                    <span>Location: Jalandhar, Punjab, India</span>
-                </div>
-                <div class="contact-item">
-                    <i data-lucide="linkedin" style="width: 16px; height: 16px; color: var(--neon-blue);"></i>
-                    <span>LinkedIn: <a href="https://www.linkedin.com/in/ripanjot-singh" target="_blank">linkedin.com/in/ripanjot-singh</a></span>
-                </div>
+        <section class="cv-section">
+            <h2 class="cv-section-title">
+                <i data-lucide="file-text"></i>
+                <span>Executive Summary</span>
+            </h2>
+            <div class="cv-summary-text">
+                <p>
+                    I am a digital marketer with <strong>4 years of experience</strong> managing digital marketing across diverse verticals including IT services, eCommerce, news and media, edtech, music and entertainment, hospitality, healthcare, immigration and education consultancy, retail electronics, and political outreach.
+                </p>
+                <p>
+                    I specialize in <strong>SEO, SMM, SMO, PPC</strong>, performance marketing, and paid advertising across Meta Ads, Google Ads, and LinkedIn Ads. My core competencies include social media management, website optimization, high-converting lead generation, campaign orchestration, and digital brand elevation.
+                </p>
+                <p>
+                    I independently produce creative assets including social media posts, ad creatives, responsive landing pages, professional business videos, reels, and YouTube Shorts. Combined with practical CMS mastery in <strong>Strapi Headless CMS</strong> and <strong>Magento E-Commerce CMS</strong>, my approach pairs strategic market analysis with meticulous hands-on execution to deliver quantifiable, bottom-line growth.
+                </p>
             </div>
-        </div>
+        </section>
 
-        <!-- Work Experience -->
-        <div class="section-block">
-            <h3 class="section-title">
-                <i data-lucide="briefcase" style="width: 18px; height: 18px;"></i> Professional Experience
-            </h3>
+        <!-- Professional Experience -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">
+                <i data-lucide="briefcase"></i>
+                <span>Professional Experience</span>
+            </h2>
 
-            <div class="job-card">
-                <div class="job-header">
-                    <span class="job-title">Junior Digital Marketing Analyst</span>
-                    <span class="job-date">Dec 2023 - Present</span>
+            <!-- PENNEP Junior Analyst -->
+            <article class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-role">Junior Analyst</span>
+                    <span class="experience-date">Dec 2023 - Dec 2024</span>
                 </div>
-                <div class="job-company">Pennsylvania Enterprise (PENNEP)</div>
-                <ul class="bullet-list">
-                    <li><strong>PENNEP In-House Projects:</strong> Managing website content, SEO strategies, on-page optimization, and social media marketing.</li>
-                    <li><strong>eCommerce Projects:</strong> Managing website content, product catalog metadata, and social media marketing of eCommerce clients.</li>
-                    <li><strong>CMS Platform Management:</strong> Managing multiple CMS platforms including <strong>Strapi and Magento</strong>, ensuring seamless content management and eCommerce store functionality.</li>
+                <div class="experience-company">Pennsylvania Enterprise (PENNEP) | Jalandhar, Punjab, India</div>
+                <ul class="experience-list">
+                    <li>Managed website content updates, SEO architecture, landing pages, and eCommerce product listings across <strong>Strapi Headless CMS</strong> and <strong>Magento E-Commerce CMS</strong>.</li>
+                    <li>Conducted comprehensive keyword research, competitor SEO analysis, meta-tag optimization, and technical site health audits to accelerate indexation and organic search rankings.</li>
+                    <li>Collaborated with design and development teams to build responsive, high-converting landing pages and promotional banners.</li>
+                    <li>Tracked and evaluated website traffic, user journey funnels, and organic lead acquisition using <strong>Google Analytics (GA4)</strong> and <strong>Google Search Console</strong>.</li>
+                    <li>Delivered digital marketing solutions across diverse verticals including IT services, eCommerce, and news & media portals.</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="job-card">
-                <div class="job-header">
-                    <span class="job-title">Digital Marketing Intern</span>
-                    <span class="job-date">Aug 2023 - Nov 2023</span>
+            <!-- PENNEP Intern -->
+            <article class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-role">Digital Marketing Intern</span>
+                    <span class="experience-date">Aug 2023 - Nov 2023</span>
                 </div>
-                <div class="job-company">Pennsylvania Enterprise (PENNEP)</div>
-                <ul class="bullet-list">
-                    <li>Learnt and gained practical experience across core Digital Marketing channels and workflows.</li>
-                    <li>Managed website content, keyword research, and social media posts for PENNEP internal projects.</li>
-                    <li>Managed eCommerce product listings, catalog updates, and client content.</li>
+                <div class="experience-company">Pennsylvania Enterprise (PENNEP) | Jalandhar, Punjab, India</div>
+                <ul class="experience-list">
+                    <li>Executed day-to-day digital marketing tasks, social media scheduling, and keyword tracking for PENNEP in-house initiatives.</li>
+                    <li>Managed catalog updates, product descriptions, and metadata for client eCommerce portals.</li>
+                    <li>Benchmarked competitors and evaluated backlink profiles to discover high-authority outreach and content opportunities.</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="job-card">
-                <div class="job-header">
-                    <span class="job-title">Social Media & YouTube Manager, Google Ads & Meta Ads Manager</span>
-                    <span class="job-date">Oct 2022 - May 2023</span>
+            <!-- Hot Shot Music -->
+            <article class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-role">Social Media & YouTube Manager, Google Ads & Meta Ads Manager</span>
+                    <span class="experience-date">Oct 2022 - May 2023</span>
                 </div>
-                <div class="job-company">Hot Shot Music | Jalandhar, Punjab (Music & Entertainment — Punjabi & Devotional Music)</div>
-                <div style="margin-bottom: 0.8rem; font-size: 0.9rem; color: var(--neon-cyan); display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-                    <span>Key Milestone: <strong>YouTube Silver Play Button Achieved (100K+ Subscribers)</strong></span>
-                    <span>|</span>
-                    <a href="client.html?id=hotshot" target="_blank" style="color: var(--neon-blue); text-decoration: underline; font-weight: 600;">View Interactive Laptop Case Study &rarr;</a>
-                </div>
-                <ul class="bullet-list">
-                    <li><strong>Social Media & Ads:</strong> Managed Instagram and Facebook marketing, content publishing, and executed targeted Meta Ads and Google Ads campaigns for song and music releases.</li>
-                    <li><strong>YouTube Channels & SEO:</strong> Managed two official YouTube channels (Punjabi Music & Devotional), performed comprehensive YouTube SEO, uploaded music videos, and published daily YouTube Shorts.</li>
-                    <li><strong>Creative Direction:</strong> Created high-CTR YouTube thumbnails, designed posters and social creatives, and edited engaging short-form video reels and Shorts.</li>
-                    <li><strong>Distribution & Contracts:</strong> Managed official song paperwork and digital distribution workflow through Believe Music, while creating artist contracts and necessary documentation.</li>
-                    <li><strong>Results:</strong> Achieved YouTube Silver Play Button; YouTube Shorts achieved significantly higher reach than original song videos for multiple releases.</li>
+                <div class="experience-company">Hot Shot Music | Jalandhar, Punjab, India</div>
+                <ul class="experience-list">
+                    <li>Led end-to-end digital promotion and publishing workflows across two official YouTube channels, driving audience growth past <strong>100,000+ subscribers</strong> and earning the official <strong>YouTube Silver Play Button</strong>.</li>
+                    <li>Designed and executed high-ROI performance advertising campaigns on <strong>Meta Ads Manager</strong> (Instagram/Facebook) and <strong>Google Ads</strong> (YouTube Video Ads) to maximize release velocity and streaming conversions.</li>
+                    <li>Produced engaging short-form video reels, YouTube Shorts, high-CTR thumbnail designs, promotional posters, and social media copy.</li>
+                    <li>Administered official music release paperwork, coordinated distribution workflows with <strong>Believe Music</strong>, and drafted artist copyright agreements.</li>
                 </ul>
-            </div>
-        </div>
+            </article>
+        </section>
 
-        <!-- Education -->
-        <div class="section-block">
-            <h3 class="section-title">
-                <i data-lucide="graduation-cap" style="width: 18px; height: 18px;"></i> Education & Qualifications
-            </h3>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <span class="job-title">MBA in Marketing Management</span>
-                    <span class="job-date">July 2022 - June 2024</span>
+        <!-- Education & Credentials -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">
+                <i data-lucide="graduation-cap"></i>
+                <span>Education & Qualifications</span>
+            </h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-degree">MBA (Marketing Management)</div>
+                    <div class="education-institution">NMIMS</div>
+                    <span class="education-date">July 2022 - June 2024</span>
                 </div>
-                <div class="job-company">NMIMS</div>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <span class="job-title">Diploma in Digital Marketing</span>
-                    <span class="job-date">July 2022 - Oct 2022</span>
+                <div class="education-card">
+                    <div class="education-degree">Diploma in Digital Marketing</div>
+                    <div class="education-institution">GTB Computer Education</div>
+                    <span class="education-date">July 2022 - Oct 2022</span>
                 </div>
-                <div class="job-company">GTB Computer Education</div>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <span class="job-title">Bachelor of Commerce (B.Com)</span>
-                    <span class="job-date">May 2019 - May 2022</span>
-                </div>
-                <div class="job-company">Guru Nanak Dev University</div>
-            </div>
-        </div>
-
-        <!-- Familiar with CMS -->
-        <div class="section-block">
-            <h3 class="section-title">
-                <i data-lucide="layers" style="width: 18px; height: 18px;"></i> Familiar with CMS
-            </h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                <div style="background: rgba(255,255,255,0.03); padding: 1.2rem; border-radius: 10px; border: 1px solid var(--glass-border);">
-                    <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;">Strapi</h4>
-                    <ul class="bullet-list">
-                        <li>Knowledge about how to manage website content.</li>
-                        <li>Optimization of website content & structures.</li>
-                    </ul>
-                </div>
-                <div style="background: rgba(255,255,255,0.03); padding: 1.2rem; border-radius: 10px; border: 1px solid var(--glass-border);">
-                    <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;">Magento</h4>
-                    <ul class="bullet-list">
-                        <li>Know how to manage website products and content.</li>
-                        <li>Optimization of website storefronts.</li>
-                    </ul>
+                <div class="education-card">
+                    <div class="education-degree">Bachelor of Commerce (B.Com)</div>
+                    <div class="education-institution">Guru Nanak Dev University</div>
+                    <span class="education-date">May 2019 - May 2022</span>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Expertise Skills -->
-        <div class="section-block">
-            <h3 class="section-title">
-                <i data-lucide="award" style="width: 18px; height: 18px;"></i> Core Expertise
-            </h3>
-            <div class="tags-container">
-                <span class="tag">SEO (Search Engine Optimization)</span>
-                <span class="tag">SEM (Search Engine Marketing)</span>
-                <span class="tag">SMO (Social Media Optimization)</span>
-                <span class="tag">SMM (Social Media Marketing)</span>
-                <span class="tag">PPC (Pay-Per-Click)</span>
-                <span class="tag">Google Ads</span>
-                <span class="tag">Meta Ads</span>
-                <span class="tag">Strapi CMS</span>
-                <span class="tag">Magento CMS</span>
-                <span class="tag">YouTube Growth & Shorts</span>
+        <!-- Skills & Core Competencies Matrix -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">
+                <i data-lucide="sparkles"></i>
+                <span>Skills & Core Competencies</span>
+            </h2>
+            <div class="skills-category-group">
+                <!-- 1. SEO -->
+                <div class="skill-box">
+                    <div class="skill-box-title"><i data-lucide="search"></i> 1. Search Engine Optimization (SEO)</div>
+                    <div class="skill-box-desc">Improving search visibility through keyword research, technical optimization, website structure, metadata, content optimization, and organic traffic growth.</div>
+                    <div class="skill-tags-list">
+                        <span class="skill-tag">On-Page SEO</span>
+                        <span class="skill-tag">Off-Page SEO</span>
+                        <span class="skill-tag">Technical SEO</span>
+                        <span class="skill-tag">Keyword Research</span>
+                        <span class="skill-tag">YouTube SEO</span>
+                        <span class="skill-tag">Metadata Optimization</span>
+                        <span class="skill-tag">Website Architecture</span>
+                        <span class="skill-tag">Organic Growth</span>
+                    </div>
+                </div>
+
+                <!-- 2. SMM -->
+                <div class="skill-box">
+                    <div class="skill-box-title"><i data-lucide="share-2"></i> 2. Social Media Marketing (SMM)</div>
+                    <div class="skill-box-desc">Managing social media presence through strategic content planning, audience engagement, trend-based content, and brand-building activities across platforms.</div>
+                    <div class="skill-tags-list">
+                        <span class="skill-tag">Social Media Management</span>
+                        <span class="skill-tag">Content Calendar</span>
+                        <span class="skill-tag">Audience Growth</span>
+                        <span class="skill-tag">Trend Research</span>
+                        <span class="skill-tag">Brand Awareness</span>
+                        <span class="skill-tag">Community Engagement</span>
+                        <span class="skill-tag">Competitor Research</span>
+                    </div>
+                </div>
+
+                <!-- 3. SMO -->
+                <div class="skill-box">
+                    <div class="skill-box-title"><i data-lucide="trending-up"></i> 3. Social Media Optimization (SMO)</div>
+                    <div class="skill-box-desc">Optimizing social profiles and content to improve discoverability, engagement, reach, and overall organic performance.</div>
+                    <div class="skill-tags-list">
+                        <span class="skill-tag">Profile Optimization</span>
+                        <span class="skill-tag">Content Optimization</span>
+                        <span class="skill-tag">Organic Reach</span>
+                        <span class="skill-tag">Engagement Growth</span>
+                        <span class="skill-tag">Hashtag Strategy</span>
+                        <span class="skill-tag">Platform Optimization</span>
+                    </div>
+                </div>
+
+                <!-- 4. Paid Advertising -->
+                <div class="skill-box">
+                    <div class="skill-box-title"><i data-lucide="target"></i> 4. Paid Advertising & Performance Marketing</div>
+                    <div class="skill-box-desc">Planning, launching, and optimizing paid campaigns to drive brand awareness, leads, enquiries, website traffic, and sales.</div>
+                    <div class="skill-tags-list">
+                        <span class="skill-tag">Meta Ads</span>
+                        <span class="skill-tag">Google Ads</span>
+                        <span class="skill-tag">LinkedIn Ads</span>
+                        <span class="skill-tag">PPC Campaigns</span>
+                        <span class="skill-tag">Lead Generation</span>
+                        <span class="skill-tag">Sales Campaigns</span>
+                        <span class="skill-tag">Audience Targeting</span>
+                        <span class="skill-tag">Campaign Optimization</span>
+                        <span class="skill-tag">Performance Tracking</span>
+                    </div>
+                </div>
+
+                <!-- 5. Content Marketing -->
+                <div class="skill-box">
+                    <div class="skill-box-title"><i data-lucide="edit-3"></i> 5. Content Marketing & Strategy</div>
+                    <div class="skill-box-desc">Developing content strategies that communicate brand value, attract audiences, support SEO, and achieve marketing objectives.</div>
+                    <div class="skill-tags-list">
+                        <span class="skill-tag">Content Strategy</span>
+                        <span class="skill-tag">Blog Writing</span>
+                        <span class="skill-tag">Website Copywriting</span>
+                        <span class="skill-tag">Ad Copywriting</span>
+                        <span class="skill-tag">Content Research</span>
+                        <span class="skill-tag">Promotional Content</span>
+                        <span class="skill-tag">Content Planning</span>
+                        <span class="skill-tag">Marketing Strategy</span>
+                    </div>
+                </div>
+
+                <!-- 6. Creative Design & Video -->
+                <div class="skill-box">
+                    <div class="skill-box-title"><i data-lucide="video"></i> 6. Creative Design & Video Production</div>
+                    <div class="skill-box-desc">Creating visual and video content for social media, advertising, brand promotion, and digital engagement.</div>
+                    <div class="skill-tags-list">
+                        <span class="skill-tag">Social Media Creatives</span>
+                        <span class="skill-tag">Graphic Design</span>
+                        <span class="skill-tag">Poster Design</span>
+                        <span class="skill-tag">Reel Creation</span>
+                        <span class="skill-tag">YouTube Shorts</span>
+                        <span class="skill-tag">Video Editing</span>
+                        <span class="skill-tag">AI Reels</span>
+                        <span class="skill-tag">Voice-over Videos</span>
+                        <span class="skill-tag">Business Videos</span>
+                        <span class="skill-tag">Thumbnail Design</span>
+                    </div>
+                </div>
+
+                <!-- 7. CMS Management -->
+                <div class="skill-box">
+                    <div class="skill-box-title"><i data-lucide="layout"></i> 7. Website & CMS Management</div>
+                    <div class="skill-box-desc">Managing website content, landing pages, product listings, and website structure to support user experience, SEO, and conversions.</div>
+                    <div class="skill-tags-list">
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">Strapi CMS</span>
+                        <span class="skill-tag">Adobe Magento</span>
+                        <span class="skill-tag">Website Content Management</span>
+                        <span class="skill-tag">Landing Page Creation</span>
+                        <span class="skill-tag">Website Revamp</span>
+                        <span class="skill-tag">eCommerce Product Management</span>
+                        <span class="skill-tag">Content Optimization</span>
+                    </div>
+                </div>
+
+                <!-- 8. YouTube & Publishing -->
+                <div class="skill-box">
+                    <div class="skill-box-title"><i data-lucide="youtube"></i> 8. YouTube & Digital Publishing</div>
+                    <div class="skill-box-desc">Managing video channels and publishing workflows, with a focus on discoverability, content consistency, audience growth, and music promotion.</div>
+                    <div class="skill-tags-list">
+                        <span class="skill-tag">YouTube Channel Management</span>
+                        <span class="skill-tag">Video SEO</span>
+                        <span class="skill-tag">Video Publishing</span>
+                        <span class="skill-tag">Channel Growth</span>
+                        <span class="skill-tag">Short-Form Strategy</span>
+                        <span class="skill-tag">Music Promotion</span>
+                        <span class="skill-tag">Digital Publishing</span>
+                        <span class="skill-tag">YouTube Studio</span>
+                    </div>
+                </div>
+
+                <!-- 9. Brand Management -->
+                <div class="skill-box">
+                    <div class="skill-box-title"><i data-lucide="award"></i> 9. Brand Management & Campaign Strategy</div>
+                    <div class="skill-box-desc">Building brand visibility through integrated campaigns, promotional activities, market research, and audience-focused communication.</div>
+                    <div class="skill-tags-list">
+                        <span class="skill-tag">Digital Brand Management</span>
+                        <span class="skill-tag">Campaign Planning</span>
+                        <span class="skill-tag">Brand Positioning</span>
+                        <span class="skill-tag">Market Research</span>
+                        <span class="skill-tag">Promotional Offers</span>
+                        <span class="skill-tag">Influencer Collaborations</span>
+                        <span class="skill-tag">Giveaway Campaigns</span>
+                        <span class="skill-tag">Podcast Promotion</span>
+                        <span class="skill-tag">Client Testimonials</span>
+                    </div>
+                </div>
+
+                <!-- 10. Music Promotion & Admin -->
+                <div class="skill-box">
+                    <div class="skill-box-title"><i data-lucide="music"></i> 10. Music Promotion & Administration</div>
+                    <div class="skill-box-desc">Supporting music releases through digital promotion, video publishing, channel optimization, and music-related administrative documentation.</div>
+                    <div class="skill-tags-list">
+                        <span class="skill-tag">Music Promotion</span>
+                        <span class="skill-tag">Music Distribution</span>
+                        <span class="skill-tag">Paperwork</span>
+                        <span class="skill-tag">Copyright-Related Coordination</span>
+                        <span class="skill-tag">Music Video SEO</span>
+                        <span class="skill-tag">Reels Promotion</span>
+                        <span class="skill-tag">YouTube Growth</span>
+                    </div>
+                </div>
+
+                <!-- 11. Analytics & Optimization -->
+                <div class="skill-box">
+                    <div class="skill-box-title"><i data-lucide="bar-chart-2"></i> 11. Analytics & Campaign Optimization</div>
+                    <div class="skill-box-desc">Monitoring campaign performance and using insights to improve targeting, creative effectiveness, audience engagement, and marketing outcomes.</div>
+                    <div class="skill-tags-list">
+                        <span class="skill-tag">Campaign Performance Monitoring</span>
+                        <span class="skill-tag">Lead Tracking</span>
+                        <span class="skill-tag">Audience Analysis</span>
+                        <span class="skill-tag">Performance Optimization</span>
+                        <span class="skill-tag">Competitor Analysis</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Results-Oriented Execution</span>
+                    </div>
+                </div>
+
+                <!-- 12. Project Management -->
+                <div class="skill-box">
+                    <div class="skill-box-title"><i data-lucide="users"></i> 12. Professional & Project Management Skills</div>
+                    <div class="skill-box-desc">Managing projects independently while coordinating with clients, collaborating with teams, and supporting training and execution across different industries.</div>
+                    <div class="skill-tags-list">
+                        <span class="skill-tag">Independent Project Management</span>
+                        <span class="skill-tag">Client Communication</span>
+                        <span class="skill-tag">Team Collaboration</span>
+                        <span class="skill-tag">Intern Training</span>
+                        <span class="skill-tag">Creative Thinking</span>
+                        <span class="skill-tag">Cross-Industry Adaptability</span>
+                        <span class="skill-tag">Attention to Detail</span>
+                        <span class="skill-tag">Content Planning</span>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Languages -->
-        <div class="section-block">
-            <h3 class="section-title">
-                <i data-lucide="globe" style="width: 18px; height: 18px;"></i> Languages
-            </h3>
-            <p style="color: var(--text-dim); font-size: 0.95rem;">
-                English | Hindi | Punjabi
-            </p>
-        </div>
-    </div>
+        <!-- Footer inside document -->
+        <footer class="cv-footer">
+            <p>© 2026 Ripanjot Singh | Digital Marketer Portfolio. Contact: <a href="mailto:projot007@gmail.com" style="color: var(--neon-cyan);">projot007@gmail.com</a> | <a href="https://github.com/ripanjot11" target="_blank" style="color: var(--neon-cyan);">github.com/ripanjot11</a></p>
+        </footer>
+    </main>
 
     <script>
-        // Initialize Lucide Icons
         if (window.lucide) {
             lucide.createIcons();
         }
 
-        function downloadResume() {
-            const container = document.querySelector('.resume-container').cloneNode(true);
-            const actionButtons = container.querySelector('.action-buttons');
-            if (actionButtons) actionButtons.remove();
+        function downloadCVDocument() {
+            const docElement = document.getElementById('cv-root');
+            if (!docElement) return;
 
             const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ripanjot_Singh_Resume</title>
+    <title>Ripanjot_Singh_Curriculum_Vitae</title>
     <style>
-        body { font-family: system-ui, -apple-system, sans-serif; padding: 40px; color: #1a1a1a; line-height: 1.6; max-width: 850px; margin: 0 auto; background: #fff; }
-        h1 { color: #0088cc; margin-bottom: 4px; font-size: 28px; }
-        h2 { color: #005580; margin-bottom: 6px; font-size: 18px; }
-        h3 { border-bottom: 2px solid #0088cc; padding-bottom: 4px; margin-top: 24px; color: #005580; font-size: 16px; text-transform: uppercase; }
-        p { margin-bottom: 10px; color: #333; }
-        ul { padding-left: 20px; color: #333; }
-        li { margin-bottom: 6px; }
-        strong { color: #000; }
-        .tag { display: inline-block; background: #e6f7ff; color: #006699; padding: 4px 10px; margin: 3px; border-radius: 15px; font-size: 12px; font-weight: 600; border: 1px solid #b3e0ff; }
-        a { color: #0088cc; text-decoration: none; }
-        .job-card { margin-bottom: 16px; }
-        .job-header { display: flex; justify-content: space-between; font-weight: bold; }
-        .job-company { color: #5500aa; margin-bottom: 6px; font-weight: 600; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; padding: 40px; color: #1e293b; line-height: 1.6; max-width: 860px; margin: 0 auto; background: #fff; }
+        h1 { color: #0284c7; margin-bottom: 4px; font-size: 28px; }
+        .role { font-size: 16px; color: #0f766e; font-weight: bold; margin-bottom: 20px; }
+        .contact-box { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 12px 18px; border-radius: 8px; margin-bottom: 24px; font-size: 14px; }
+        .section-title { border-bottom: 2px solid #0284c7; padding-bottom: 6px; margin-top: 28px; margin-bottom: 14px; color: #0369a1; font-size: 18px; font-weight: bold; text-transform: uppercase; }
+        .experience-item { margin-bottom: 18px; }
+        .role-title { font-weight: bold; color: #0f172a; font-size: 15px; }
+        .company { color: #7e22ce; font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+        .date { float: right; color: #0284c7; font-weight: 600; font-size: 13px; }
+        ul { padding-left: 20px; margin-top: 6px; }
+        li { margin-bottom: 5px; font-size: 14px; color: #334155; }
+        .tag { display: inline-block; background: #f1f5f9; color: #0f172a; padding: 3px 8px; margin: 2px; border-radius: 4px; font-size: 12px; border: 1px solid #cbd5e1; }
+        a { color: #0284c7; text-decoration: none; }
     </style>
 </head>
 <body>
-    ${container.innerHTML}
+    <h1>Ripanjot Singh</h1>
+    <div class="role">Junior Digital Marketing Analyst & Growth Lead</div>
+    <div class="contact-box">
+        <strong>Email:</strong> projot007@gmail.com &nbsp;|&nbsp; 
+        <strong>Phone:</strong> +91 98776-16442 &nbsp;|&nbsp; 
+        <strong>GitHub:</strong> https://github.com/ripanjot11 &nbsp;|&nbsp; 
+        <strong>LinkedIn:</strong> https://www.linkedin.com/in/ripanjot-singh &nbsp;|&nbsp; 
+        <strong>Location:</strong> Jalandhar, Punjab, India
+    </div>
+    ${docElement.innerHTML}
 </body>
 </html>`;
 
-            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'Ripanjot_Singh_Resume.html';
+            a.download = 'Ripanjot_Singh_CV.html';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);

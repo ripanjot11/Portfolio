@@ -85,7 +85,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
+            z-index: 10005;
             background: rgba(5, 5, 5, 0.75);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
@@ -112,6 +112,10 @@
             display: inline-block;
         }
 
+        section {
+            scroll-margin-top: 85px;
+        }
+
         .nav-links {
             display: flex;
             align-items: center;
@@ -126,6 +130,18 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: color 0.3s, text-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-mobile-icon {
+            display: none;
+        }
+
+        .mobile-drawer-header,
+        .mobile-drawer-footer {
+            display: none;
         }
 
         .nav-links a:hover {
@@ -151,21 +167,29 @@
         /* Mobile Hamburger Button */
         .mobile-menu-btn {
             display: none;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid var(--glass-border);
-            color: #fff;
-            padding: 0.5rem;
+            background: rgba(0, 242, 255, 0.1);
+            border: 1px solid rgba(0, 242, 255, 0.45);
+            color: var(--neon-cyan);
+            padding: 0.6rem;
+            min-width: 44px;
+            min-height: 44px;
             border-radius: 10px;
             cursor: pointer;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 1001;
+            transition: all 0.25s ease;
+            z-index: 10007;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
         }
 
-        .mobile-menu-btn:hover {
-            background: rgba(0, 242, 255, 0.2);
-            border-color: var(--neon-blue);
+        .mobile-menu-btn:hover,
+        .mobile-menu-btn:active {
+            background: rgba(0, 242, 255, 0.25);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 18px rgba(0, 242, 255, 0.5);
+            transform: scale(1.04);
         }
 
         /* Hero Section */
@@ -991,36 +1015,153 @@
         @media (max-width: 992px) {
             nav {
                 padding: 1rem 5%;
+                z-index: 10005;
             }
             .mobile-menu-btn {
                 display: flex;
+                z-index: 10007;
             }
             .nav-links {
                 position: fixed;
                 top: 0;
-                right: -100%;
-                width: 280px;
+                right: 0;
+                width: min(320px, 86vw);
                 height: 100vh;
-                background: rgba(8, 12, 20, 0.98);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                border-left: 1px solid var(--neon-blue);
+                height: 100dvh;
+                background: #090e18;
+                background: rgba(8, 12, 22, 0.98);
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                border-left: 1px solid rgba(0, 242, 255, 0.35);
                 flex-direction: column;
-                align-items: flex-start;
-                padding: 5rem 2rem 2rem 2rem;
-                gap: 1.2rem;
-                transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
-                z-index: 999;
+                align-items: stretch;
+                padding: 1.25rem 1.4rem 2rem 1.4rem;
+                gap: 0.55rem;
+                transform: translateX(110%);
+                transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+                box-shadow: -15px 0 45px rgba(0, 0, 0, 0.9);
+                z-index: 10006;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                pointer-events: none;
+                visibility: hidden;
             }
             .nav-links.mobile-active {
-                right: 0;
+                transform: translateX(0) !important;
+                pointer-events: auto !important;
+                visibility: visible !important;
+            }
+            .nav-mobile-icon {
+                display: inline-flex;
+                color: var(--neon-cyan);
+                flex-shrink: 0;
+            }
+            .mobile-drawer-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding-bottom: 0.9rem;
+                margin-bottom: 0.4rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .mobile-drawer-title {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: var(--neon-cyan);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            .drawer-glow-dot {
+                width: 8px;
+                height: 8px;
+                background: var(--neon-cyan);
+                border-radius: 50%;
+                box-shadow: 0 0 10px var(--neon-cyan);
+                display: inline-block;
+            }
+            .drawer-close-btn {
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                color: #fff;
+                width: 40px;
+                height: 40px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                touch-action: manipulation;
+                transition: all 0.2s ease;
+            }
+            .drawer-close-btn:hover,
+            .drawer-close-btn:active {
+                background: rgba(255, 0, 85, 0.2);
+                border-color: #ff0055;
+                color: #ff0055;
             }
             .nav-links a {
-                font-size: 1rem;
+                font-size: 0.95rem;
                 width: 100%;
-                padding: 0.5rem 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 0.75rem 1rem;
+                min-height: 46px;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.07);
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                color: var(--text-main);
+                transition: all 0.2s ease;
+                touch-action: manipulation;
+                cursor: pointer;
+            }
+            .nav-links a:hover,
+            .nav-links a:active {
+                background: rgba(0, 242, 255, 0.12);
+                border-color: rgba(0, 242, 255, 0.4);
+                color: #fff;
+                transform: translateX(-3px);
+            }
+            .nav-links a:hover,
+            .nav-links a:active {
+                background: rgba(0, 242, 255, 0.12);
+                border-color: rgba(0, 242, 255, 0.35);
+                color: var(--neon-cyan);
+                transform: translateX(4px);
+            }
+            .nav-links a.nav-resume-link {
+                background: linear-gradient(135deg, rgba(0, 242, 255, 0.15), rgba(112, 0, 255, 0.2)) !important;
+                border: 1px solid var(--neon-cyan) !important;
+                color: #fff !important;
+            }
+            .mobile-drawer-footer {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                margin-top: auto;
+                padding-top: 1rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+                width: 100%;
+            }
+            .mobile-drawer-contact-item {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                font-size: 0.82rem;
+                color: var(--text-dim);
+            }
+            .mobile-drawer-contact-item a {
+                color: var(--neon-cyan) !important;
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                font-size: 0.82rem !important;
+                text-transform: none !important;
+                letter-spacing: 0 !important;
             }
             .about-grid, .contact-container, .hero-container {
                 grid-template-columns: 1fr;
@@ -1399,10 +1540,10 @@
         .nav-backdrop {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            z-index: 998;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 9999;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
@@ -1803,16 +1944,35 @@
     <nav id="navbar">
         <a href="#hero" class="logo">Ripanjot.Portfolio</a>
         <div class="nav-links" id="nav-links">
-            <a href="#hero" class="nav-item">Home</a>
-            <a href="#about" class="nav-item">About</a>
-            <a href="#certifications" class="nav-item">Education</a>
-            <a href="#skills" class="nav-item">Skills</a>
-            <a href="#clients" class="nav-item">Clients</a>
-            <a href="#experience" class="nav-item">Experience</a>
-            <a href="resume.html" target="_blank" class="nav-item">Resume</a>
-            <a href="#contact" class="nav-item">Contact</a>
+            <div class="mobile-drawer-header">
+                <div class="mobile-drawer-title">
+                    <span class="drawer-glow-dot"></span>
+                    <span>Ripanjot Singh</span>
+                </div>
+                <button type="button" class="drawer-close-btn" id="drawer-close-btn" aria-label="Close navigation menu">
+                    <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+                </button>
+            </div>
+            <a href="#hero" class="nav-item"><i data-lucide="home" class="nav-mobile-icon" style="width: 17px; height: 17px;"></i><span>Home</span></a>
+            <a href="#about" class="nav-item"><i data-lucide="user" class="nav-mobile-icon" style="width: 17px; height: 17px;"></i><span>About</span></a>
+            <a href="#education" class="nav-item"><i data-lucide="graduation-cap" class="nav-mobile-icon" style="width: 17px; height: 17px;"></i><span>Education</span></a>
+            <a href="#skills" class="nav-item"><i data-lucide="sparkles" class="nav-mobile-icon" style="width: 17px; height: 17px;"></i><span>Skills</span></a>
+            <a href="#clients" class="nav-item"><i data-lucide="users" class="nav-mobile-icon" style="width: 17px; height: 17px;"></i><span>Clients</span></a>
+            <a href="#experience" class="nav-item"><i data-lucide="briefcase" class="nav-mobile-icon" style="width: 17px; height: 17px;"></i><span>Experience</span></a>
+         <a href="resume.html" class="nav-item"><i data-lucide="briefcase" class="nav-mobile-icon" style="width: 17px; height: 17px;"></i><span>Resume</span></a>
+            <a href="#contact" class="nav-item"><i data-lucide="mail" class="nav-mobile-icon" style="width: 17px; height: 17px;"></i><span>Contact</span></a>
+            <div class="mobile-drawer-footer">
+                <div class="mobile-drawer-contact-item">
+                    <i data-lucide="mail" style="width: 15px; height: 15px; color: var(--neon-cyan);"></i>
+                    <a href="mailto:projot007@gmail.com">projot007@gmail.com</a>
+                </div>
+                <div class="mobile-drawer-contact-item">
+                    <i data-lucide="github" style="width: 15px; height: 15px; color: var(--neon-cyan);"></i>
+                    <a href="https://github.com/ripanjot11" target="_blank">github.com/ripanjot11</a>
+                </div>
+            </div>
         </div>
-        <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle navigation menu">
+        <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle navigation menu" type="button">
             <i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i>
         </button>
     </nav>
@@ -1847,10 +2007,10 @@
                     </a>
                 </div>
                 <div class="hero-socials" data-reveal style="margin-top: 1.5rem; display: flex; gap: 1.5rem;">
-                    <a href="mailto:ripanjotsehgal11@gmail.com" class="social-icon" title="Email"><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail" style="width: 24px; height: 24px;"></a>
+                    <a href="mailto:projot007@gmail.com" class="social-icon" title="Email"><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail" style="width: 24px; height: 24px;"></a>
                     <a href="tel:+919877616442" class="social-icon" title="Phone"><img src="https://png.pngtree.com/png-vector/20221118/ourmid/pngtree-flat-phone-icon-on-white-background-for-mobile-business-vector-png-image_41545250.jpg" alt="Phone" style="width: 24px; height: 24px;"></a>
                     <a href="https://www.linkedin.com/in/ripanjot-singh" target="_blank" class="social-icon" title="LinkedIn"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="width: 24px; height: 24px;"></a>
-                    <a href="https://github.com/ripanjot-singh" target="_blank" class="social-icon" title="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 24px; height: 24px; filter: invert(1);"></a>
+                    <a href="https://github.com/ripanjot11" target="_blank" class="social-icon" title="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 24px; height: 24px; filter: invert(1);"></a>
                 </div>
             </div>
             <div class="hero-image" data-reveal>
@@ -1896,7 +2056,8 @@
     </section>
 
         <!-- EDUCATION & QUALIFICATIONS SECTION (AFTER ABOUT) -->
-    <section id="certifications">
+    <section id="education">
+        <span id="certifications" style="position: absolute; margin-top: -90px;"></span>
         <h2 class="section-title" data-reveal>Education & Qualifications</h2>
         <div class="certs-grid">
             <div class="cert-card glass" data-reveal>
@@ -1929,6 +2090,38 @@
         <!-- 12 CIRCLE SKILLS SECTION -->
     <section id="skills">
         <h2 class="section-title" data-reveal>Skills & Core Competencies</h2>
+
+        <!-- Interactive Category Filter Tabs & Live Keyword Search -->
+        <div class="skills-toolbar-wrap" data-reveal>
+            <div class="skills-search-box">
+                <i data-lucide="search" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--neon-cyan); pointer-events: none;"></i>
+                <input type="text" id="skills-search-input" placeholder="Search skills, tools, or keywords (e.g. SEO, Strapi, Meta Ads, YouTube)..." aria-label="Search skills and competencies" autocomplete="off">
+                <span id="skills-count-pill" class="skills-count-pill">12 Skills</span>
+            </div>
+            <div class="skills-filter-tabs" role="tablist" aria-label="Filter skills by category">
+                <button type="button" class="skill-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+                    <i data-lucide="layout-grid" style="width: 15px; height: 15px;"></i>
+                    <span>All Skills</span>
+                </button>
+                <button type="button" class="skill-filter-btn" data-filter="organic" role="tab" aria-selected="false">
+                    <i data-lucide="search" style="width: 15px; height: 15px;"></i>
+                    <span>SEO & Organic</span>
+                </button>
+                <button type="button" class="skill-filter-btn" data-filter="paid" role="tab" aria-selected="false">
+                    <i data-lucide="trending-up" style="width: 15px; height: 15px;"></i>
+                    <span>Paid Ads & SEM</span>
+                </button>
+                <button type="button" class="skill-filter-btn" data-filter="creative" role="tab" aria-selected="false">
+                    <i data-lucide="sparkles" style="width: 15px; height: 15px;"></i>
+                    <span>Creative & Video</span>
+                </button>
+                <button type="button" class="skill-filter-btn" data-filter="management" role="tab" aria-selected="false">
+                    <i data-lucide="layers" style="width: 15px; height: 15px;"></i>
+                    <span>CMS & Management</span>
+                </button>
+            </div>
+        </div>
+
         <div class="circle-skills-grid">
             <!-- 1. 1. Search Engine Optimization (SEO) -->
             <div class="circle-skill-card" data-category="organic" data-reveal>
@@ -2570,13 +2763,15 @@
         <div class="experience-timeline">
             <!-- PENNEP Junior Analyst -->
             <div class="timeline-item glass" data-reveal>
-                <span class="timeline-date">Dec 2023 - Present</span>
-                <h3>Junior Digital Marketing Analyst</h3>
+                <span class="timeline-date">Dec 2023 - Dec 2024</span>
+                <h3>Junior Analyst</h3>
                 <p style="color: var(--neon-blue); font-weight: 600; margin-bottom: 0.5rem;">Pennsylvania Enterprise (PENNEP) | Jalandhar, Punjab, India</p>
                 <ul>
-                    <li><strong>PENNEP In-House Project:</strong> Managing website content, SEO optimizations, and social media marketing.</li>
-                    <li><strong>eCommerce Projects:</strong> Managing website content, products catalog metadata, and social media marketing for eCommerce clients.</li>
-                    <li><strong>CMS Management:</strong> Managing multiple CMS platforms (Strapi and Magento), ensuring seamless content management and eCommerce functionality.</li>
+                    <li><strong>Strapi & Magento CMS:</strong> Managed website content, landing pages, product catalogs, and metadata across <strong>Strapi Headless CMS</strong> and <strong>Magento E-Commerce CMS</strong>.</li>
+                    <li><strong>SEO & Technical Audits:</strong> Executed comprehensive keyword research, competitor SEO analysis, on-page & off-page SEO, site speed audits, and metadata optimization.</li>
+                    <li><strong>Landing Pages & Creatives:</strong> Collaborated with cross-functional development and UI/UX design teams to build high-converting landing pages and promotional banners.</li>
+                    <li><strong>Analytics & Funnels:</strong> Tracked and evaluated organic search traffic, user acquisition funnels, and conversions using Google Analytics (GA4) and Google Search Console.</li>
+                    <li><strong>Multi-Vertical Execution:</strong> Delivered digital marketing solutions across IT services, eCommerce, and news & media portals.</li>
                 </ul>
             </div>
             <!-- PENNEP Intern -->
@@ -2585,9 +2780,9 @@
                 <h3>Digital Marketing Intern</h3>
                 <p style="color: var(--neon-blue); font-weight: 600; margin-bottom: 0.5rem;">Pennsylvania Enterprise (PENNEP) | Jalandhar, Punjab, India</p>
                 <ul>
-                    <li>Learnt and gained extensive hands-on knowledge about Digital Marketing execution.</li>
-                    <li>Managed website content, SEO keywords, and social media for PENNEP inhouse projects.</li>
-                    <li>Handled product management and content updates for client eCommerce platforms.</li>
+                    <li><strong>Digital Marketing Operations:</strong> Executed day-to-day marketing tasks, social media scheduling, and keyword tracking for PENNEP in-house initiatives.</li>
+                    <li><strong>eCommerce Product Management:</strong> Managed catalog updates, product descriptions, and metadata for client eCommerce portals.</li>
+                    <li><strong>Competitor & Backlink Research:</strong> Benchmarked competitors and evaluated backlink profiles to discover high-authority outreach and content opportunities.</li>
                 </ul>
             </div>
             <!-- Hot Shot Music -->
@@ -2601,10 +2796,10 @@
                     </a>
                 </div>
                 <ul>
-                    <li><strong>Social Media & Ads:</strong> Managed brand Instagram & Facebook, Meta Ads Manager, and Google Ads campaigns for Punjabi and devotional song releases.</li>
-                    <li><strong>YouTube & Video SEO:</strong> Managed two official YouTube channels, performed metadata SEO, uploaded videos, and drove audience growth resulting in the <strong>YouTube Silver Play Button (100K+ Subscribers)</strong>.</li>
-                    <li><strong>Creative Work:</strong> Created high-CTR thumbnails, posters, promotional creatives, and edited engaging short-form video reels and YouTube Shorts.</li>
-                    <li><strong>Distribution & Contracts:</strong> Managed official song paperwork and distribution workflow with Believe Music, and drafted artist agreements.</li>
+                    <li><strong>YouTube Silver Play Button (100K+ Subscribers):</strong> Led end-to-end digital promotion across 2 official YouTube channels, driving subscriber growth past <strong>100,000+ subscribers</strong> and earning the official <strong>YouTube Silver Play Button</strong>.</li>
+                    <li><strong>Performance Ads (Meta & Google):</strong> Managed high-ROI paid advertising campaigns on <strong>Meta Ads Manager</strong> (Facebook/Instagram) and <strong>Google Ads</strong> (YouTube Video Ads) for regional Punjabi and devotional releases.</li>
+                    <li><strong>Creative Asset Production:</strong> Produced viral short-form video reels, YouTube Shorts, high-CTR thumbnail artwork, and promotional creative banners.</li>
+                    <li><strong>Distribution & Licensing:</strong> Coordinated song releases and metadata distribution via <strong>Believe Music</strong>, and drafted artist copyright agreements.</li>
                 </ul>
             </div>
         </div>
@@ -2620,11 +2815,17 @@
                     Based in Jalandhar, Punjab, India. Open to opportunities in Digital Marketing, SEO, Paid Advertising, and E-Commerce CMS Management.
                 </p>
                 <div class="contact-methods">
-                    <a href="mailto:ripanjotsehgal11@gmail.com" class="contact-method">
+                    <a href="mailto:projot007@gmail.com" class="contact-method">
                         <div class="contact-icon-bg">
                             <img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail">
                         </div>
-                        <span>ripanjotsehgal11@gmail.com</span>
+                        <span>projot007@gmail.com</span>
+                    </a>
+                    <a href="https://github.com/ripanjot11" target="_blank" class="contact-method">
+                        <div class="contact-icon-bg">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 20px; height: 20px; filter: invert(1);">
+                        </div>
+                        <span>github.com/ripanjot11</span>
                     </a>
                     <a href="tel:+919877616442" class="contact-method">
                         <div class="contact-icon-bg">
@@ -2704,10 +2905,11 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
                     <div>
                         <h3 style="color: var(--neon-blue); font-size: 1.1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.4rem; margin-bottom: 0.8rem;">CONTACT DETAILS</h3>
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; font-size: 0.9rem;">
-                            <div><strong>Email:</strong> <a href="mailto:ripanjotsehgal11@gmail.com" style="color: var(--neon-cyan);">ripanjotsehgal11@gmail.com</a></div>
+                            <div><strong>Email:</strong> <a href="mailto:projot007@gmail.com" style="color: var(--neon-cyan);">projot007@gmail.com</a></div>
                             <div><strong>Phone:</strong> <a href="tel:+919877616442" style="color: var(--neon-cyan);">+91 98776-16442</a></div>
                             <div><strong>Location:</strong> Jalandhar, Punjab, India</div>
                             <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ripanjot-singh" target="_blank" style="color: var(--neon-cyan);">linkedin.com/in/ripanjot-singh</a></div>
+                            <div><strong>GitHub:</strong> <a href="https://github.com/ripanjot11" target="_blank" style="color: var(--neon-cyan);">github.com/ripanjot11</a></div>
                         </div>
                     </div>
 
@@ -2715,29 +2917,47 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
                     <div>
                         <h3 style="color: var(--neon-blue); font-size: 1.1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.4rem; margin-bottom: 0.8rem;">PROFESSIONAL EXPERIENCE</h3>
                         
+                        <!-- PENNEP Junior Analyst -->
                         <div style="margin-bottom: 1.2rem;">
-                            <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                                <strong style="font-size: 1rem; color: #fff;">Junior Digital Marketing Analyst</strong>
-                                <span style="font-size: 0.85rem; color: var(--neon-cyan);">2023 - Present</span>
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.3rem;">
+                                <strong style="font-size: 1rem; color: #fff;">Junior Analyst</strong>
+                                <span style="font-size: 0.85rem; color: var(--neon-cyan);">Dec 2023 - Dec 2024</span>
                             </div>
-                            <div style="font-size: 0.9rem; color: var(--neon-purple); font-weight: 600; margin-bottom: 0.4rem;">Pennsylvania Enterprise (PENNEP)</div>
+                            <div style="font-size: 0.9rem; color: var(--neon-purple); font-weight: 600; margin-bottom: 0.4rem;">Pennsylvania Enterprise (PENNEP) | Jalandhar, Punjab, India</div>
                             <ul style="font-size: 0.9rem; color: var(--text-dim); padding-left: 1.2rem; line-height: 1.6;">
-                                <li>Managed website content updates, SEO optimizations, and digital assets using <strong>Strapi Headless CMS</strong> and <strong>Magento E-Commerce CMS</strong>.</li>
-                                <li>Conducted keyword research, competitor SEO analysis, and on-page optimization to improve search engine indexability and organic positioning.</li>
-                                <li>Collaborated with design and development teams to ensure catalog accuracy, responsive page delivery, and seamless user browsing.</li>
+                                <li>Managed website content updates, SEO architecture, landing pages, and eCommerce product listings across <strong>Strapi Headless CMS</strong> and <strong>Magento E-Commerce CMS</strong>.</li>
+                                <li>Conducted comprehensive keyword research, competitor SEO analysis, meta-tag optimization, and technical site health audits to accelerate indexation and keyword rankings.</li>
+                                <li>Collaborated with design and development teams to build responsive, high-converting landing pages and promotional banners.</li>
+                                <li>Analyzed site traffic, user journey funnels, and organic lead acquisition using Google Analytics (GA4) and Google Search Console.</li>
                             </ul>
                         </div>
 
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                                <strong style="font-size: 1rem; color: #fff;">Digital Marketing Executive & YouTube Channel Lead</strong>
-                                <span style="font-size: 0.85rem; color: var(--neon-cyan);">2022 - 2023</span>
+                        <!-- PENNEP Intern -->
+                        <div style="margin-bottom: 1.2rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.3rem;">
+                                <strong style="font-size: 1rem; color: #fff;">Digital Marketing Intern</strong>
+                                <span style="font-size: 0.85rem; color: var(--neon-cyan);">Aug 2023 - Nov 2023</span>
                             </div>
-                            <div style="font-size: 0.9rem; color: var(--neon-purple); font-weight: 600; margin-bottom: 0.4rem;">Hot Shot Music | Jalandhar, Punjab</div>
+                            <div style="font-size: 0.9rem; color: var(--neon-purple); font-weight: 600; margin-bottom: 0.4rem;">Pennsylvania Enterprise (PENNEP) | Jalandhar, Punjab, India</div>
                             <ul style="font-size: 0.9rem; color: var(--text-dim); padding-left: 1.2rem; line-height: 1.6;">
-                                <li>Directed digital promotion strategies across two official YouTube channels, publishing music videos and optimizing YouTube Shorts.</li>
-                                <li>Ran PPC ad campaigns on <strong>Google Ads & Meta Ads</strong> (Facebook/Instagram) to maximize song release reach and subscriber conversion.</li>
-                                <li>Handled organic Social Media Optimization (SMO) and audience interaction campaigns to build brand loyalty.</li>
+                                <li>Executed day-to-day digital marketing tasks, social media scheduling, and keyword tracking for PENNEP in-house initiatives.</li>
+                                <li>Managed catalog updates, product descriptions, and metadata for client eCommerce portals.</li>
+                                <li>Benchmarked competitors and evaluated backlink profiles to discover high-authority outreach and content opportunities.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Hot Shot Music -->
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.3rem;">
+                                <strong style="font-size: 1rem; color: #fff;">Social Media & YouTube Manager, Google Ads & Meta Ads Manager</strong>
+                                <span style="font-size: 0.85rem; color: var(--neon-cyan);">Oct 2022 - May 2023</span>
+                            </div>
+                            <div style="font-size: 0.9rem; color: var(--neon-purple); font-weight: 600; margin-bottom: 0.4rem;">Hot Shot Music | Jalandhar, Punjab, India</div>
+                            <ul style="font-size: 0.9rem; color: var(--text-dim); padding-left: 1.2rem; line-height: 1.6;">
+                                <li>Directed digital promotion across 2 official YouTube channels, driving audience growth past <strong>100,000+ subscribers</strong> and earning the official <strong>YouTube Silver Play Button</strong>.</li>
+                                <li>Managed performance advertising campaigns on <strong>Meta Ads Manager</strong> (Facebook/Instagram) and <strong>Google Ads</strong> (YouTube Video Ads) for regional Punjabi and devotional releases.</li>
+                                <li>Produced viral short-form video reels, YouTube Shorts, high-CTR thumbnail artwork, and promotional creative banners.</li>
+                                <li>Coordinated song releases and metadata distribution via <strong>Believe Music</strong>, and drafted artist copyright agreements.</li>
                             </ul>
                         </div>
                     </div>
@@ -2957,28 +3177,7 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
             }
         });
 
-        // Mobile Menu Toggle
-        const mobileToggle = document.getElementById('mobile-toggle');
-        const navLinks = document.getElementById('nav-links');
-        if (mobileToggle && navLinks) {
-            mobileToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('mobile-active');
-                const isOpen = navLinks.classList.contains('mobile-active');
-                mobileToggle.innerHTML = isOpen 
-                    ? '<i data-lucide="x" style="width: 22px; height: 22px;"></i>' 
-                    : '<i data-lucide="menu" style="width: 22px; height: 22px;"></i>';
-                if (window.lucide) lucide.createIcons();
-            });
 
-            // Close mobile menu when a nav link is clicked
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('mobile-active');
-                    mobileToggle.innerHTML = '<i data-lucide="menu" style="width: 22px; height: 22px;"></i>';
-                    if (window.lucide) lucide.createIcons();
-                });
-            });
-        }
 
         // Charts Initialization
         const chartOptions = {
@@ -3240,18 +3439,18 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
                 });
             }
 
-            // 2. Category Tab Filtering with Smooth Animation
+            // 2. Category Tab Filtering with Smooth Animation & Live Count
             let activeFilter = 'all';
 
             function applyFilters() {
                 const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
                 let visibleCount = 0;
 
-                skillCards.forEach((card, index) => {
-                    const cardCat = card.getAttribute('data-category') || '';
+                skillCards.forEach((card) => {
+                    const cardCat = (card.getAttribute('data-category') || '').toLowerCase();
                     const text = card.textContent.toLowerCase();
 
-                    const matchesCategory = (activeFilter === 'all') || cardCat.includes(activeFilter);
+                    const matchesCategory = (activeFilter === 'all') || cardCat.split(/\s+/).includes(activeFilter);
                     const matchesQuery = !query || text.includes(query);
 
                     if (matchesCategory && matchesQuery) {
@@ -3262,15 +3461,18 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
                         } else {
                             card.classList.remove('skill-highlighted');
                         }
-                        card.style.animation = `fadeInUp 0.4s ease forwards ${(visibleCount * 0.05).toFixed(2)}s`;
+                        card.style.display = '';
+                        card.style.animation = `fadeInUp 0.35s ease forwards ${(visibleCount * 0.04).toFixed(2)}s`;
                         visibleCount++;
                     } else if (matchesCategory && !matchesQuery) {
                         card.classList.remove('skill-hidden');
                         card.classList.add('skill-dimmed');
                         card.classList.remove('skill-highlighted');
+                        card.style.display = '';
                     } else {
                         card.classList.add('skill-hidden');
                         card.classList.remove('skill-highlighted');
+                        card.style.display = 'none';
                     }
                 });
 
@@ -3280,9 +3482,14 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
             }
 
             filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-selected', 'false');
+                    });
                     btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
                     activeFilter = btn.getAttribute('data-filter') || 'all';
                     applyFilters();
                 });
@@ -3305,12 +3512,117 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
                     }
                 });
             });
+
+            // Run once on load to ensure sync
+            applyFilters();
         })();
 
     
-        // === MOBILE DRAWER & SCROLL-TO-TOP ENHANCEMENTS ===
-        (function initMobileExperience() {
-            // 1. Back to Top Button
+        // === DEFINITIVE ROBUST MOBILE SLIDER DRAWER NAVIGATION ===
+        (function initMobileNav() {
+            const navLinks = document.getElementById('nav-links');
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const navBackdrop = document.getElementById('nav-backdrop');
+            const drawerCloseBtn = document.getElementById('drawer-close-btn');
+
+            function openMobileMenu() {
+                if (!navLinks) return;
+                navLinks.classList.add('mobile-active');
+                if (navBackdrop) navBackdrop.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                if (mobileToggle) {
+                    mobileToggle.setAttribute('aria-expanded', 'true');
+                    mobileToggle.innerHTML = '<i data-lucide="x" id="menu-icon" style="width: 22px; height: 22px; color: var(--neon-cyan);"></i>';
+                    if (window.lucide) lucide.createIcons();
+                }
+            }
+
+            function closeMobileMenu() {
+                if (!navLinks) return;
+                navLinks.classList.remove('mobile-active');
+                if (navBackdrop) navBackdrop.classList.remove('active');
+                document.body.style.overflow = '';
+                if (mobileToggle) {
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                    mobileToggle.innerHTML = '<i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px; color: var(--neon-cyan);"></i>';
+                    if (window.lucide) lucide.createIcons();
+                }
+            }
+
+            function toggleMobileMenu(e) {
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                const isOpen = navLinks && navLinks.classList.contains('mobile-active');
+                if (isOpen) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            }
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', toggleMobileMenu);
+                mobileToggle.addEventListener('touchend', (e) => {
+                    toggleMobileMenu(e);
+                });
+            }
+
+            if (drawerCloseBtn) {
+                drawerCloseBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeMobileMenu();
+                });
+                drawerCloseBtn.addEventListener('touchend', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeMobileMenu();
+                });
+            }
+
+            if (navBackdrop) {
+                navBackdrop.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    closeMobileMenu();
+                });
+                navBackdrop.addEventListener('touchend', (e) => {
+                    e.preventDefault();
+                    closeMobileMenu();
+                });
+            }
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navLinks && navLinks.classList.contains('mobile-active')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Smooth scroll and auto-close for all drawer navigation links
+            if (navLinks) {
+                navLinks.addEventListener('click', function(e) {
+                    const link = e.target.closest('a');
+                    if (!link) return;
+                    const href = link.getAttribute('href');
+                    closeMobileMenu();
+
+                    if (href && href.startsWith('#')) {
+                        let target = document.querySelector(href);
+                        if (!target && href === '#education') {
+                            target = document.getElementById('certifications') || document.getElementById('education');
+                        }
+                        if (target) {
+                            e.preventDefault();
+                            target.scrollIntoView({ behavior: 'smooth' });
+                            history.pushState(null, '', href);
+                        }
+                    }
+                });
+            }
+
+            // Back to Top Button
             const scrollTopBtn = document.getElementById('mobile-scroll-top');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 350) {
@@ -3325,54 +3637,6 @@ With a blend of creativity, analytical thinking, and hands-on execution, I focus
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
-
-            // 2. Mobile Backdrop & Drawer Close
-            const navLinks = document.getElementById('nav-links');
-            const mobileToggle = document.getElementById('mobile-toggle');
-            const navBackdrop = document.getElementById('nav-backdrop');
-            const drawerCloseBtn = document.getElementById('drawer-close-btn');
-
-            function closeMobileMenu() {
-                if (navLinks) navLinks.classList.remove('mobile-active');
-                if (navBackdrop) navBackdrop.classList.remove('active');
-                if (mobileToggle) {
-                    mobileToggle.innerHTML = '<i data-lucide="menu" id="menu-icon" style="width: 22px; height: 22px;"></i>';
-                    if (window.lucide) lucide.createIcons();
-                }
-            }
-
-            function openMobileMenu() {
-                if (navLinks) navLinks.classList.add('mobile-active');
-                if (navBackdrop) navBackdrop.classList.add('active');
-                if (mobileToggle) {
-                    mobileToggle.innerHTML = '<i data-lucide="x" id="menu-icon" style="width: 22px; height: 22px;"></i>';
-                    if (window.lucide) lucide.createIcons();
-                }
-            }
-
-            if (mobileToggle) {
-                mobileToggle.onclick = (e) => {
-                    e.stopPropagation();
-                    const isOpen = navLinks && navLinks.classList.contains('mobile-active');
-                    if (isOpen) {
-                        closeMobileMenu();
-                    } else {
-                        openMobileMenu();
-                    }
-                };
-            }
-
-            if (navBackdrop) {
-                navBackdrop.addEventListener('click', closeMobileMenu);
-            }
-
-            if (drawerCloseBtn) {
-                drawerCloseBtn.addEventListener('click', closeMobileMenu);
-            }
-
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', closeMobileMenu);
-            });
         })();
 
     </script>
